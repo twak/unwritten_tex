@@ -1,0 +1,89 @@
+%% Creator: Inkscape inkscape 0.48.3.1, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'wss_incremental.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{1902.82704404bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.73876631)%
+    \put(0,0){\includegraphics[width=\unitlength]{wss_incremental.pdf}}%
+    \put(0.87349523,0.55963975){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{1}}}%
+    \put(0.8289022,0.56898304){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{2}}}%
+    \put(0.79874882,0.65986787){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{3}}}%
+    \put(0.87349523,0.70361151){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{4}}}%
+    \put(0.96353068,0.61569955){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{5}}}%
+    \put(0.95227189,0.54698796){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.03613153\unitlength}\raggedright graduated fill from edges fails on this guy\end{minipage}}}%
+    \put(0.58807097,0.56820249){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{1}}}%
+    \put(0.54347793,0.57754578){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{2}}}%
+    \put(0.51332457,0.66843059){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{3}}}%
+    \put(0.58807097,0.71217424){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{4}}}%
+    \put(0.67810641,0.62426227){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{5}}}%
+    \put(0.66684762,0.55555069){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.03613153\unitlength}\raggedright graduated fill from edges fails on this guy\end{minipage}}}%
+    \put(0.62323044,0.55788943){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{m}}}%
+    \put(0.5835381,0.55183465){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{f}}}%
+    \put(0.55158241,0.55755304){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{m}}}%
+    \put(0.53240899,0.57369907){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{f}}}%
+    \put(0.49338941,0.655102){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{m}}}%
+    \put(0.50381705,0.69176695){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{f}}}%
+    \put(0.57075582,0.72675003){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{m}}}%
+    \put(0.60069326,0.73515943){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{f}}}%
+    \put(0.68815094,0.65173825){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{m}}}%
+    \put(0.70665161,0.62045531){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{f}}}%
+    \put(0.56675051,0.39251619){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{m}}}%
+    \put(0.59124942,0.39204049){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{f}}}%
+    \put(0.65118852,0.37063366){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{m}}}%
+    \put(0.65618345,0.35089186){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{f}}}%
+    \put(0.64762072,0.33804769){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{m}}}%
+    \put(0.64119867,0.31568946){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{f}}}%
+    \put(0.58030817,0.28048716){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{m}}}%
+    \put(0.55652281,0.29142843){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{f}}}%
+    \put(0.53701881,0.32996073){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{m}}}%
+    \put(0.5320239,0.35350819){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{f}}}%
+    \put(0.533451,0.36373593){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{m}}}%
+    \put(0.5391595,0.38894839){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{f}}}%
+    \put(0.40618283,0.55555069){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.03613153\unitlength}\raggedright graduated fill from edges fails on this guy\end{minipage}}}%
+  \end{picture}%
+\endgroup%

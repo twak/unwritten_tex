@@ -1,0 +1,33 @@
+
+\subsection{Multiple union approach}
+
+This section presents an algorithm that does introduce zero length edges, the \emph{multiple union} approach. We analyse the topology immediately after an event, and perform area-unions with sets of edges to decide on an edge topology for after the event. Note that by the sector property, this topology of the chains is independent of time after the event. Therefore we define an ordering over the chains so that they can be added or subtracted from the \emph{output topology}. We use 2D Boolean geometry operations to build up this topology.
+
+
+\begin{figure}
+  \centering
+  \def\svgwidth{1.0\columnwidth}
+  \includesvg{12-skeleton/images/wss_union_vs_gie}
+  \caption[A comparison of the GIE and multiple union procedure]{\label{fig:wss_union_vs_gie} In the MWSS, the GIE and the multiple union procedure  have different advantages. In the top example, the GIE creates the best output, without 0 length edges, while in the bottom example it creates an undesirable inverted (red) region on the now badly formed active plan. The multiple union procedure adds additional zero length edges in the first example, but always creates valid geometry (top and bottom examples). Compare to ``perfect'' manual results in Fig.~\ref{fig:wss_hand_examples}.}
+\end{figure}
+
+
+We start by ordering the chains into enclosed \emph{levels} of chains they contain before the event, Fig.~\ref{fig:wss_numbered_union}. The levels are enumerated from the location of the event, towards the deepest level. If the location (before the event) is inside (respectively outside) the region the output topology is initialised to be an inside (outside) region. Using the chains after the event, we iterate over the level, starting with the lowest-ordered level chains and add or subtract the union of all chains at that level them from the output topology as explained by Fig.~\ref{fig:wss_gie_example}. 
+
+\begin{figure}
+  \centering
+  \def\svgwidth{1.0\columnwidth}
+  \includesvg{12-skeleton/images/wss_numbered_union}
+  \caption[Identify the level of chains]{\label{fig:wss_numbered_union} The levels of two different events. Note how the location of the event changes the definition of the levels. A chain's level is $1$ if it is adjacent to the event, otherwise it is one higher than the enclosing chain.}
+\end{figure}
+
+Because the angles between consecutive chains around a point is always greater that zero (by the \emph{$>$ approaching edges} property), we can be sure that the output topology will be compatible with the global active plan.
+
+While this is one solution to this relatively rare problem, there are situations where the result isn't equivalent to the SS, and other quite strange topologies can occur, Fig.~\ref{fig:wss_union_vs_gie}
+
+\begin{figure}
+  \centering
+  \def\svgwidth{1.0\columnwidth}
+  \includesvg{12-skeleton/images/wss_gie_example}
+  \caption[A multiple union calculation]{\label{fig:wss_gie_example} An example multiple union calculation. Given an input plan (a), several edges (marked with an asterisk) may collide (orange point). The edges involved can be split into levels, just before the event (b). After the event we can view the topology without intersections (d: green chains bound interior regions, white chains bound exterior regions). We can then use an union operation on those chains in the first level (e), before calculating the union of those chains in level 2 (f, yellow). We can then subtract the second level from the first (g). Because of the sector property, this new topology of edges will not intersect immediately after the event. It is also still compatible with the global geometry (h).}
+\end{figure}

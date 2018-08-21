@@ -1,0 +1,75 @@
+%% Creator: Inkscape 0.48.2, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'phily.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{719.82985229bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,1.40413005)%
+    \put(0,0){\includegraphics[width=\unitlength]{phily.pdf}}%
+    \put(0.34680064,1.3598929){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{0.00}}}%
+    \put(0.34621456,1.32105796){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{1349.50}}}%
+    \put(0.34670296,1.28222296){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{2699.00}}}%
+    \put(0.34702856,1.24338798){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{4048.50}}}%
+    \put(0.34665086,1.20455306){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{5398.00}}}%
+    \put(0.35128697,0.88644531){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{0.00}}}%
+    \put(0.35118929,0.84811417){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{2.49}}}%
+    \put(0.35151489,0.80978297){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{4.97}}}%
+    \put(0.35107207,0.77145177){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{7.46}}}%
+    \put(0.35132604,0.73312064){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{9.95}}}%
+    \put(0.34411459,0.42277983){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{0.00}}}%
+    \put(0.34434251,0.38401036){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{4.00}}}%
+    \put(0.34408854,0.34524096){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{8.00}}}%
+    \put(0.34352851,0.30647149){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{12.00}}}%
+    \put(0.34352851,0.26770202){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{16.00}}}%
+    \put(0.00095958,1.33073803){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{area($m^2$)}}}%
+    \put(0.00095958,0.8666209){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{ratio}}}%
+    \put(0.00095958,0.41771283){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{neighbour count}}}%
+    \put(0.18345995,1.39114601){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Observed}}}%
+    \put(0.52801456,1.39114601){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Procedural (Skeleton)}}}%
+    \put(0.86795309,1.39114601){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{Procedural (OBB)}}}%
+  \end{picture}%
+\endgroup%

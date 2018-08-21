@@ -1,0 +1,120 @@
+\chapter{Conclusion}
+\label{c:conclusion}
+
+\begin{comment}
+We propose that a geometric construct, the \emph{straight skeleton}, and its generalisations, are a powerful technique for the creation of PGM systems that are accessible to people without programming skills.  Systems exploiting these skeletons and variations thereof are able to generate large scale, varied and highly realistic results within the domain of urban procedural modeling.
+\end{comment}
+
+
+
+%%%%%%%%%%%%%%%
+
+%#1. Expand hypothesis intro introductory story.
+%. exapand the contributions of intro 1.2 using below text
+%3. as now
+
+%%%%%%%%%%%%%%%
+
+\section{Summary of Objectives}
+
+In this dissertation we examined the straight skeleton as a procedural modeling technique. We proposed that the straight skeleton is a powerful PGM primitive that is useful in a variety of situations to users who are unable or unwilling to write classical computer programs. In particular we suggested that skeletons are able to create highly realistic results within the domain or urban procedural modeling.
+
+To pursue this goal, Chapter~\ref{c:readings} studied the wide variety of geometric modeling tools available, forming a spectrum of proceduralisation. We saw a strong correlation between this spectrum and the requirement that users must write computer programs. Those systems that required programming were the most general and expressive, while those that didn't were easier to use and more specialised. This led to the realisation that the concept of a ``procedural system'' was poorly defined between these two extremes. Eventually we took the stance that the ``most procedural'' systems lay in the middle of this spectrum, those that gave the most expressive power, with the simplest possible interaction. When we examined a variety of man-made objects, it became clear that some generalised offset mechanism may be able to describe many features of man-made geometry.
+
+This offset mechanism was formalised in Chapter~\ref{c:various_skels}, which introduced the protagonist of this dissertation, the straight skeleton. A theoretical diversion at this point led us to examine the types of events that occur in generalisations of the straight skeleton. This line of enquiry led to both positive and negative outcomes. We discovered a novel skeleton with unique categories of events that would prove to be usefully applied to urban modelling, but at the same time we showed that there were some situations in which we could not define this new skeleton well. This mixed weighted straight skeleton, however, proved to be a very flexible and powerful modeling primitive.
+
+The SS was applied to two urban PGM scenarios. We were not able to apply our techniques to a wider range of applications due to time limitations. The first application was given in Chapter~\ref{c:pgop} and described how to use the straight skeleton to subdivide city blocks into parcels. The direction of this work was heavily motivated by the requirements of the commercial CityEngine PGM system. This lead to a real-time system with an emphasis on robust results for application to industry requirements.
+
+Chapter~\ref{c:procex} introduced the second application of the SS, in particular the mixed weighted straight skeleton, to the modeling of buildings themselves. This work was strongly motivated by our offset observations, and the relationships between the straight skeleton and the classical form of buildings' roofs. As we explored the modeling possibilities of the MWSS we found several varied and related techniques for its application to architectural modeling. Given our emphasis on procedural modeling we showed how cities could be reconstructed from their floorplans using this approach.
+
+%%%%%%%%%%%%%%%
+
+Both the systems we have applied the MWSS to have proven robust and flexible enough to generate kilometer-scale geometry procedurally. The block subdivision system was shown to reproduce particular subdivision styles over several expansive real-world examples, whilst the procedural extrusion system was able to generate a cityscape of multiple building styles from given building footprints. In both systems additional variation could be added without programming -- either by changing parameters, or by editing polylines. Importantly, in both systems a wide range of inputs were shown to create domain-meaningful output; a wide range of inputs created output with an urban appearance. 
+
+These systems utilising the straight skeleton take a position in the spectrum of proceduralisation, of Chapter~\ref{c:readings}, that would otherwise require a written programming. While the urban modeling domain of applications in this dissertation pushes the skeleton based systems towards the specific end of the spectrum of generality; both the parcel subdivision and procedural extrusion systems have shown ---
+
+\begin{itemize}
+
+\item{self sensitivity: Usually reserved for very general procedural modeling system, the SS is a geometrically self-sensitive construct. Because any part of the perimeter of the polygon may affect the resulting skeleton, the skeleton responds to any change in the perimeter. This is particularly true of the MWSS used in the PE system.}
+
+\item{themselves capable of producing a wide range of results within their domain: Both systems were tested on a wide range of input data, and were able to create realistic procedural approximations in the parcel subdivision and architecture domains.}
+
+\item{that they are useful without programming: The systems require no end user programming. The procedural extrusion system was demonstrated to be useful to users with no programming expertise, while the parcel subdivision was shown to be able to extract the required parameters automatically.}
+
+\end{itemize}
+
+In addition the SS and MWSS proved to be intuitive geometric elements in the interactive systems. Users were able to understand the logic behind the centreline position in the parcel subdivision system, and were satisfied with the way it moved when the block's boundary was interactively edited. Similarly, users of the procedural extrusion system were able to control the MWSS, without understanding the underlying geometry, or algorithms, involved. Even when chaotic configurations were encountered, users were able to interactively modify the plans to explore and understand what was causing the instability.
+
+
+\section{Contributions}
+
+\subsubsection{The general intersection event}
+
+Chapter~\ref{c:various_skels} introduced our contributions to straight skeleton theory. 
+
+The SS is formed by shrinking a polygon, and allowing each edge to move towards the interior with a constant speed. By generalising SS we encounter the \emph{positively weighted straight skeleton}. In this case each individual edge could move with an independent, if positive speed. For this case we introduced novel degeneracies as well as a simplification of existing events for computing the PWSS. This \emph{general intersection event} was able to calculate the result of all PWSS events encountered, with fewer special cases.
+
+This unification of existing skeleton events allows for both more general events and more general skeletons, such as the PWSS. In addition the resulting algorithm is simpler and easier to implement.
+
+\subsubsection{The mixed weighted straight skeleton}
+
+When we again generalised the PWSS we discovered the \emph{mixed weighted straight skeleton}, a novel skeleton which allowed the edges to move either towards the interior of the plan, or toward the exterior. These new skeletons had interesting geometric features such as splitting faces into two, introducing holes into faces, or allowing faces to merge together and split apart.
+
+The degeneracies in the MWSS were quite involved, including one category of events which appeared to have no ``nice'' solution. We introduced the \emph{pincushion problem} as a description of this situation.
+
+This mixed weighted skeleton is relevant to many modeling tools which extrude 3D surface geometry. In addition we continue to use and evaluate the MWSS as a powerful PGM tool in Chapter~\ref{c:procex}.
+
+\subsubsection{A city block-to-lot subdivision system and evaluation}
+
+We introduced a system for city block to lot subdivision in Chapter~\ref{c:pgop}. 
+
+Within this system we used the SS to model the block centrelines. The geometric sensitivity of the skeleton ensured that the entire block was taken into account when calculating centrelines, therefore even complex concave blocks were realistically divided. The presence of commercial robust implementations of the straight skeleton algorithm was also an advantage. In addition, because the skeleton could be intuitively understood by users as the ``limit of an offset'', we ensured a smooth parametrisation between patio and non-patio lot subdivisions via a single parameter. Users were able to modify a small number of parameters to change the characteristics of the subdivision, or automatically extract such statistics from existing subdivisions. 
+
+We  quantitatively evaluated two block subdivision systems over a range of North American real-world data. Analysis of the generated parcels was performed by visualising the areas, aspect ratios, and the number of neighbours of both the real and procedural subdivisions. We found that after automatically fitting several parameters, the new procedural models compared favourably across our metrics. In addition, we found local lot arrangements that were very close to the baseline data.
+
+The most frequently observed deficit in our subdivision system was the inability to model parcel subdivisions with external patterns in a manner similar to observed data. For example power-lines or rivers create divisions between sets of lots that our subdivision schemes are unable to model. We hypothesise that additional simulation elements in the subdivision process may resolve this issue. Another issue was the inability to move the centreline closer to either one side of the block or the other, this would have created better matches when the strips of a lot were of different depths. Selecting the corner priority was a further weakness in the system; we did not develop a mechanism to extract the priority of the streets at the corners from the example data automatically.
+
+This application and evaluation of the skeleton to modeling block subdivision is the first within computer graphics, and presents a baseline for future work in this area. In addition our integration of the system within a commercial product allows a high level of robustness and interoperability with other GIS systems. For example the product has been used by commercial special effects houses and architects worldwide.
+
+% the first evaluation of block to lot in graphics
+% real time
+% robust commercial software used by foster and partners, dneg etc..
+% parameter retreval
+
+\subsubsection{A method for the modeling of architectural shells using the MWSS}
+
+Our final contribution is the procedural extrusion architectural shell modeling system of Chapter~\ref{c:procex}.
+
+By applying the 3D interpretation of the MWSS to this problem, we created the procedural extrusion system. It proved very capable at creating mass models of many complex buildings, and in particular roof structures.
+
+The procedural extrusion system applies the MWSS in a variety of ways to create procedural models. Basic buildings without overhangs can be assembled by stacking truncated MWSS geometry. In order to create over-hangs or hollow roofs we use a sub-application of the MWSS to robustly create the offsets. Lastly, to introduce new features at a certain height, plan events can use the MWSS to create a robust perturbation of the buildings geometry. To model the windows and doors themselves we resorted to a deformable bone-based system which could ``stretch'' decorative meshes across models. These meshes were external to our system, and had to be created using an external 3D package. 
+
+Because the entire PE input is geometric, it is possible to describe the system entirely with a graphical editor for plans and profiles. We were able to evaluate the system and show that it is both usable and useful to people without significant programming experience. The expressibility of the system was successfully evaluated by modeling a large number of sample buildings from a catalogue with our user interface. In addition, we also illustrated that PEs are suitable for kilometer scale procedural cityscape visualisation. We built a framework to generate large scale geometry given a set of floorplans provided from a GIS source. In this framework we observed minimal geometric errors and proved that the PE system was useful for robust large scale procedural geometry creation.
+
+There were several limitations of the basic approach. One is that conventional programming was used to position the decorative meshes on the large scale evaluation project. Ideally this could be specified graphically, in a per-plan-edge manner. However, accounting for different ways of repeating elements over varied geometry is challenging. Another issue was that the \facades{} of the output geometry were not rectangular, making it difficult for conventional systems, such as split shape grammars, to position windows and doors. To resolve this issue we introduced several types of anchors, giving different parametrisations of \facades{}. Finally our evaluations also showed that our floating point implementation of the MWSS had some numerical issues, and would occasionally fail to generate a polygon. An arbitrary precision implementation would lessen these issues, at the expense of execution time.
+
+The ease of use of the PE system, combined with its proven expressivness and suitability to large-scale geometry creation are rare. Because of these features, concepts from the procedural extrusion system have been adopted by commercial video game creators and a research PGM system. Finally, the system provides a concrete application and validation of our theoretical work on the MWSS.
+
+% wider range of surfaces than before
+% concepts used in video games and wider research
+% relitevely easy to use
+% large scale proof
+
+\section{Future Work}
+
+There is a wide variety of work still to be undertaken in understanding the application of the SS to procedural modeling. The most obvious direction to undertake would be to attempt to combine the work of Chapter~\ref{c:pgop} and Chapter~\ref{c:procex}. Given the wide range of polygon subdivision results in Sec.~\ref{sec:subdiv_events}, we may ask ``is there a general language of offsets?'' Such a language may be applicable to parcel subdivision, footprint extrusion, and other urban modeling situations. When we consider the objects in the home, it may be that a large number of the frames, borders, skirting boards and other features can be created using such a system.
+
+More specific future work might attempt to combine the techniques documented in this dissertation with the more mainstream shape grammar modeling systems. In particular extending CGA Shape\cite{Pascal06} to work intuitively with non-rectangular \facades{}, such that the MWSS can become a primitive within the large existing libraries of CGA Shape operations. We suspect that it is possible to construct such an irregular \facade{} only using some language of skeletons.
+
+With the PE system it would be most advantageous to be able to generate unique plans and profiles, or even position and repeat the anchors. This problem is quite challenging, and solutions may involve shape grammars, pattern synthesis or even by-example modeling.
+
+One further avenue for future work is to question whether the techniques introduced in this dissertation are applicable to other domains. Geometric techniques to simulate other types of skeleton, such as the medial axis, with the straight skeleton\cite{Tuanase:2004} offer the promise of being able to model more curved forms in unison with the human-designed appearance of the SS. In particular exploring 3D growth mechanisms, such the 3D WSS, offer some interesting avenues of research into the modeling the growth of flora and fauna. However, it becomes clear quite quickly that the first stumbling block of the 3D WSS is the degeneracy caused by a valency four mesh vertex --- an imaginative solution would be required!
+
+An early problem in our studies was that of evaluating procedural content. This dissertation has used several different methods for evaluation --- comparing statistical measures against ground truth with the lot subdivision project, examining the ability to recreate the ground truth exactly in the PE UI demonstration, or subjective analysis of procedural output as in the PE GIS evaluation. Because PGM has no requirement to reconstruct such a ground truth, only create a novel, yet characteristically valid geometry, objective evaluation is difficult. The trade off between producing realistic or novel geometry is probably something the user wants to control very closely.  The ``best'' solution probably changes for each application of procedural technology and is thus highly subjective. It may depend on the amount of user input desirable, the required speed or the level of detail required. Future work in this direction would be very useful, although there is a question as to whether we need better, more photo-realistic procedural systems for it to begin. 
+
+One extreme application of the WSS may be in the classification of data points, from the field of machine learning. In 2D we can imagine using a skeleton to ``colonise'' the space around each data point. The area composed of skeleton faces would form a classification boundary. This would be somewhat similar to a weighted Voronoi diagram, but with the potential to change the propagation weights based on direction, propagation distance, or a property of the data point. The initial problem is how to generalise the skeleton higher dimensions efficiently.
+
+%It is informative to attempt to place the PE on our spectrum of proceduralisation. The interactive system, is, at it's simplest a very specific mesh modeling system. However, the ease of reparameterisation of the plan places it somewhere in the middle of the spectrum. It is a system dedicated to the generation of architecture from one domain, but it still able to create a range of such architecture. In particular, the PE system stands out against other systems at this level of specialisation in that it requires no end user programming, and can be entirely graphically driven.
+
+%In conclusion, we have explored some of the theory and properties of several new varieties of straight skeletons. We found that these geometric structures have the nice properties of being both intuitively understandable, yet still modeling a wide range of behaviours. We exploited these behaviours to create elements in the urban procedural geometric modeling pipeline. Both the block to lot subdivision and procedural extrusion systems proved to be powerful procedural tools which exploited the skeleton to ensure that users no longer had to write programs to create procedural urban models. 
+

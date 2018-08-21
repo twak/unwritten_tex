@@ -1,0 +1,97 @@
+%% Creator: Inkscape inkscape 0.48.2, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'graphGrammar.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{434.15557769bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.61147435)%
+    \put(0,0){\includegraphics[width=\unitlength]{graphGrammar.pdf}}%
+    \put(0.8333367,0.2335385){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{c}}}%
+    \put(0.68378403,0.13870023){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{a}}}%
+    \put(0.65041415,0.0452181){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{b}}}%
+    \put(0.61198151,0.14142171){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{a}}}%
+    \put(0.57907696,0.04561297){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{b}}}%
+    \put(0.13289058,0.29411091){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{A}}}%
+    \put(0.09998603,0.20039619){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{B}}}%
+    \put(0.2618766,0.29620499){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{a}}}%
+    \put(0.22897205,0.20039619){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{b}}}%
+    \put(0.3353502,0.2945763){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{A}}}%
+    \put(0.30267835,0.20039619){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{B}}}%
+    \put(0.35424217,0.43415293){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{A}}}%
+    \put(0.32110492,0.34043816){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{B}}}%
+    \put(0.12943796,0.40746246){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{C}}}%
+    \put(0.75749032,0.13870023){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{a}}}%
+    \put(0.72412044,0.0452181){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{b}}}%
+    \put(0.83119662,0.13870023){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{a}}}%
+    \put(0.79782674,0.0452181){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{b}}}%
+    \put(0.90490286,0.13870023){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{a}}}%
+    \put(0.87153304,0.0452181){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{b}}}%
+    \put(0.68378403,0.32296598){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{a}}}%
+    \put(0.65041415,0.22948384){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{b}}}%
+    \put(0.61198151,0.32568745){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{a}}}%
+    \put(0.57907696,0.22987871){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{b}}}%
+    \put(0.75749032,0.32296598){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{a}}}%
+    \put(0.72412044,0.22948384){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{b}}}%
+    \put(0.13358861,0.14669832){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{A}}}%
+    \put(0.09998603,0.0529836){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{B}}}%
+    \put(0.2618766,0.14879234){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{a}}}%
+    \put(0.22897205,0.0529836){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{b}}}%
+    \put(0.6867441,0.41912044){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{c}}}%
+    \put(0.61186517,0.51012769){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{a}}}%
+    \put(0.57907696,0.41414445){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{b}}}%
+    \put(0.50134846,0.50991855){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{c}}}%
+    \put(0.31508769,0.52033878){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{C}}}%
+    \put(0.00363764,0.52395155){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{initial host graph, $\gamma_0 =$}}}%
+    \put(-0.00042381,0.4884146){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{production rules, $R =$}}}%
+    \put(0.50231646,0.32501327){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{c}}}%
+    \put(0.50165836,0.14140563){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{c}}}%
+    \put(0.98140733,0.05058895){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{c}}}%
+    \put(0.33976768,0.06046028){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{c}}}%
+    \put(0.24306809,0.43615091){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{c}}}%
+    \put(0.00363764,0.5608047){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$V = \{A,B,C,a,b,c\}, N = \{A,B,C\}$}}}%
+  \end{picture}%
+\endgroup%

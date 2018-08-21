@@ -1,0 +1,62 @@
+%% Creator: Inkscape inkscape 0.48.3.1, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'cgaScope.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{269.72366767bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.55265673)%
+    \put(0,0){\includegraphics[width=\unitlength]{cgaScope.pdf}}%
+    \put(0.15151881,0.36755699){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{y}}}%
+    \put(0.11235017,0.43454105){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{x}}}%
+    \put(0.48487376,0.11727506){\color[rgb]{1,1,1}\makebox(0,0)[lb]{\smash{y}}}%
+    \put(0.45649067,0.21150698){\color[rgb]{1,1,1}\makebox(0,0)[lb]{\smash{x }}}%
+    \put(0.04522175,0.36647859){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{z}}}%
+    \put(0.64311363,0.2901612){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.38175999\unitlength}\raggedright 3: hex $\leadsto$\\ Subdiv(``x'',1r,1r,1r) \{A\textbar A\textbar A\}\\ \end{minipage}}}%
+    \put(0.34564218,0.09104009){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.40726572\unitlength}\raggedright 2: hex $\leadsto$\\ Comp(``sidefaces'') \{A\}\end{minipage}}}%
+    \put(-0.00036949,0.22363487){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.49755903\unitlength}\raggedright 1: hex $\leadsto$\\ T(1,0,0) \\ S(0.4, 0.5, 0.5) \\ I(``hex'')\end{minipage}}}%
+  \end{picture}%
+\endgroup%

@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="663.63776"
+   height="336.67792"
+   id="svg3156"
+   version="1.1"
+   inkscape:version="0.48.2 r9819"
+   sodipodi:docname="figSubdivOBB.svg">
+  <defs
+     id="defs3158">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3029">
+      <path
+         sodipodi:nodetypes="cczcccc"
+         inkscape:connector-curvature="0"
+         id="path3031"
+         d="m 527.14286,-231.92353 30.71428,-21.42857 c 12.72478,63.6746 31.24194,88.0326 82.14286,92.85714 50.90091,4.82454 65.71429,-12.14286 65.71429,-12.14286 6.60572,39.75687 -2.3781,53.07319 -29.28572,82.85714 -16.95279,-12.04988 -29.30295,-20.19971 -72.14286,-2.14285 z"
+         style="color:#000000;fill:#259625;fill-opacity:1;fill-rule:nonzero;stroke:#1c6b1c;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         inkscape:export-filename="/home/twak/Documents/obb.png"
+         inkscape:export-xdpi="152.43045"
+         inkscape:export-ydpi="152.43045" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3082">
+      <path
+         style="color:#000000;fill:#259625;fill-opacity:1;fill-rule:nonzero;stroke:#1c6b1c;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         d="m 549.52255,-108.57347 17.58527,-33.06515 c 40.32707,50.893056 67.90557,64.145429 115.41872,45.259516 47.51316,-18.885916 52.97398,-40.737886 52.97398,-40.737886 23.98684,32.38634 22.05323,48.332949 11.66206,87.103121 -20.58043,-3.007169 -35.28711,-4.638307 -65.20317,30.947317 z"
+         id="path3084"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cczcccc"
+         inkscape:export-filename="/home/twak/Documents/obb.png"
+         inkscape:export-xdpi="152.43045"
+         inkscape:export-ydpi="152.43045" />
+    </clipPath>
+    <filter
+       color-interpolation-filters="sRGB"
+       height="1.1856302"
+       y="-0.092815123"
+       width="1.2414331"
+       x="-0.1207166"
+       id="filter3996"
+       inkscape:collect="always">
+      <feGaussianBlur
+         id="feGaussianBlur3998"
+         stdDeviation="5.8561923"
+         inkscape:collect="always" />
+    </filter>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3076">
+      <path
+         style="color:#000000;fill:#259625;fill-opacity:1;fill-rule:nonzero;stroke:#1c6b1c;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         d="m 887.1429,-411.92353 30.7142,-21.42857 c 12.7248,63.6746 31.242,88.0326 82.1429,92.85714 50.9009,4.82454 65.7143,-12.14286 65.7143,-12.14286 6.6057,39.75687 -2.3781,53.07319 -29.2857,82.85714 -16.9528,-12.04988 -29.303,-20.19971 -72.1429,-2.14285 z"
+         id="path3078"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cczcccc"
+         inkscape:export-filename="/home/twak/Documents/obb.png"
+         inkscape:export-xdpi="152.43045"
+         inkscape:export-ydpi="152.43045" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3070">
+      <path
+         sodipodi:nodetypes="cczcccc"
+         inkscape:connector-curvature="0"
+         id="path3072"
+         d="m 667.14286,-411.92353 30.71428,-21.42857 c 12.72478,63.6746 31.24194,88.0326 82.14286,92.85714 50.90091,4.82454 65.71429,-12.14286 65.71429,-12.14286 6.60572,39.75687 -2.3781,53.07319 -29.28572,82.85714 -16.95279,-12.04988 -29.30295,-20.19971 -72.14286,-2.14285 z"
+         style="color:#000000;fill:#259625;fill-opacity:1;fill-rule:nonzero;stroke:#1c6b1c;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         inkscape:export-filename="/home/twak/Documents/obb.png"
+         inkscape:export-xdpi="152.43045"
+         inkscape:export-ydpi="152.43045" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3070-2">
+      <path
+         sodipodi:nodetypes="cczcccc"
+         inkscape:connector-curvature="0"
+         id="path3072-1"
+         d="m 667.14286,-411.92353 30.71428,-21.42857 c 12.72478,63.6746 31.24194,88.0326 82.14286,92.85714 50.90091,4.82454 65.71429,-12.14286 65.71429,-12.14286 6.60572,39.75687 -2.3781,53.07319 -29.28572,82.85714 -16.95279,-12.04988 -29.30295,-20.19971 -72.14286,-2.14285 z"
+         style="color:#000000;fill:#259625;fill-opacity:1;fill-rule:nonzero;stroke:#1c6b1c;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         inkscape:export-filename="/home/twak/Documents/obb.png"
+         inkscape:export-xdpi="152.43045"
+         inkscape:export-ydpi="152.43045" />
+    </clipPath>
+    <filter
+       color-interpolation-filters="sRGB"
+       height="1.1856302"
+       y="-0.092815123"
+       width="1.2414331"
+       x="-0.1207166"
+       id="filter3996-64"
+       inkscape:collect="always">
+      <feGaussianBlur
+         id="feGaussianBlur3998-1"
+         stdDeviation="5.8561923"
+         inkscape:collect="always" />
+    </filter>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3070-1">
+      <path
+         sodipodi:nodetypes="cczcccc"
+         inkscape:connector-curvature="0"
+         id="path3072-15"
+         d="m 667.14286,-411.92353 30.71428,-21.42857 c 12.72478,63.6746 31.24194,88.0326 82.14286,92.85714 50.90091,4.82454 65.71429,-12.14286 65.71429,-12.14286 6.60572,39.75687 -2.3781,53.07319 -29.28572,82.85714 -16.95279,-12.04988 -29.30295,-20.19971 -72.14286,-2.14285 z"
+         style="color:#000000;fill:#259625;fill-opacity:1;fill-rule:nonzero;stroke:#1c6b1c;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         inkscape:export-filename="/home/twak/Documents/obb.png"
+         inkscape:export-xdpi="152.43045"
+         inkscape:export-ydpi="152.43045" />
+    </clipPath>
+    <filter
+       color-interpolation-filters="sRGB"
+       height="1.1856302"
+       y="-0.092815123"
+       width="1.2414331"
+       x="-0.1207166"
+       id="filter3996-1"
+       inkscape:collect="always">
+      <feGaussianBlur
+         id="feGaussianBlur3998-2"
+         stdDeviation="5.8561923"
+         inkscape:collect="always" />
+    </filter>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3070-4">
+      <path
+         sodipodi:nodetypes="cczcccc"
+         inkscape:connector-curvature="0"
+         id="path3072-8"
+         d="m 667.14286,-411.92353 30.71428,-21.42857 c 12.72478,63.6746 31.24194,88.0326 82.14286,92.85714 50.90091,4.82454 65.71429,-12.14286 65.71429,-12.14286 6.60572,39.75687 -2.3781,53.07319 -29.28572,82.85714 -16.95279,-12.04988 -29.30295,-20.19971 -72.14286,-2.14285 z"
+         style="color:#000000;fill:#259625;fill-opacity:1;fill-rule:nonzero;stroke:#1c6b1c;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         inkscape:export-filename="/home/twak/Documents/obb.png"
+         inkscape:export-xdpi="152.43045"
+         inkscape:export-ydpi="152.43045" />
+    </clipPath>
+    <filter
+       color-interpolation-filters="sRGB"
+       height="1.1856302"
+       y="-0.092815123"
+       width="1.2414331"
+       x="-0.1207166"
+       id="filter3996-7"
+       inkscape:collect="always">
+      <feGaussianBlur
+         id="feGaussianBlur3998-3"
+         stdDeviation="5.8561923"
+         inkscape:collect="always" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="5.6"
+     inkscape:cx="553.41019"
+     inkscape:cy="196.25939"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1549"
+     inkscape:window-height="1129"
+     inkscape:window-x="178"
+     inkscape:window-y="30"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata3161">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-6.1583287,3.0841701)">
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       sodipodi:nodetypes="cczcccc"
+       inkscape:connector-curvature="0"
+       id="path2996"
+       d="m 50.950852,31.043361 28.724351,-20.0375 c 11.900356,59.54107 29.217817,82.31784 76.820947,86.82919 47.60313,4.511359 61.45678,-11.35459 61.45678,-11.35459 6.17775,37.176009 -2.22402,49.627889 -27.38835,77.478369 -15.85445,-11.26765 -27.40446,-18.88842 -67.46884,-2.00374 z"
+       style="color:#000000;fill:#7ddc7d;fill-opacity:1;fill-rule:nonzero;stroke:#299b29;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       inkscape:connector-curvature="0"
+       id="path3768"
+       d="M 155.08113,51.080871 97.043419,145.25716"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2, 5.99999997;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       style="color:#000000;fill:#7ddc7d;fill-opacity:1;fill-rule:nonzero;stroke:#299b29;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 256.69741,31.043361 28.72435,-20.0375 c 11.90037,59.54107 29.21783,82.31784 76.82096,86.82919 47.60312,4.511359 61.45676,-11.35459 61.45676,-11.35459 6.17775,37.176009 -2.22403,49.627889 -27.38834,77.478369 -15.85444,-11.26765 -27.40445,-18.88842 -67.46884,-2.00374 z"
+       id="path3787"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cczcccc" />
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       inkscape:connector-curvature="0"
+       id="path3793"
+       d="M 311.4741,131.2309 334.85439,91.155881"
+       style="color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#299b29;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       sodipodi:nodetypes="cczcccc"
+       inkscape:connector-curvature="0"
+       id="path3812"
+       d="m 462.444,31.043361 28.72428,-20.0375 c 11.90038,59.54107 29.21788,82.31784 76.82099,86.82919 47.60312,4.511359 61.45678,-11.35459 61.45678,-11.35459 6.17773,37.176009 -2.22403,49.627889 -27.38833,77.478369 -15.85445,-11.26765 -27.4045,-18.88842 -67.46888,-2.00374 z"
+       style="color:#000000;fill:#7ddc7d;fill-opacity:1;fill-rule:nonzero;stroke:#299b29;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       style="color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#299b29;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="M 517.22065,131.2309 540.60094,91.155881"
+       id="path3818"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       inkscape:connector-curvature="0"
+       id="path3820"
+       d="m 573.33335,98.502961 -1.33604,52.765459"
+       style="color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#299b29;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       style="color:#000000;fill:#7ddc7d;fill-opacity:1;fill-rule:nonzero;stroke:#299b29;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 125.76778,199.35843 28.72435,-20.0375 c 11.90036,59.54108 29.21782,82.31785 76.82096,86.8292 47.60313,4.51134 61.45677,-11.35459 61.45677,-11.35459 6.17775,37.176 -2.22402,49.62787 -27.38834,77.47836 -15.85445,-11.26765 -27.40446,-18.88842 -67.46885,-2.00375 z"
+       id="path3943"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cczcccc" />
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       inkscape:connector-curvature="0"
+       id="path3953"
+       d="m 185.22052,291.86493 51.10263,13.02438"
+       style="color:#000000;fill:#259625;fill-opacity:1;fill-rule:nonzero;stroke:#1c6b1c;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       inkscape:connector-curvature="0"
+       id="path3945"
+       d="m 180.54446,299.54597 23.38029,-40.07502"
+       style="color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#299b29;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       style="color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#299b29;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 236.65717,266.81804 -1.33603,52.76544"
+       id="path3947"
+       inkscape:connector-curvature="0" />
+    <rect
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:2.00008821;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.00008834, 6.00026509;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect3949"
+       width="53.71986"
+       height="37.227005"
+       x="233.41054"
+       y="218.50052"
+       transform="matrix(0.9826453,0.18549449,-0.17241651,0.98502414,0,0)" />
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2, 5.99999997;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 217.54828,265.27829 -6.66059,34.21622"
+       id="path3951"
+       inkscape:connector-curvature="0" />
+    <path
+       transform="matrix(0.93521163,0,0,0.93508369,-367.22236,416.22635)"
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       id="path3978"
+       d="m 656.42857,-416.92354 67.14286,115.71429 26.78571,-51.78572 c -21.88354,-20.37849 -46.7531,-36.07886 -41.07143,-99.64285 z"
+       style="opacity:0.55598456;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.06934988000000009px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter3996)"
+       clip-path="url(#clipPath3070)" />
+    <path
+       transform="matrix(0.93521163,0,0,0.93508369,-367.22236,416.22635)"
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       sodipodi:nodetypes="ccccc"
+       style="opacity:0.55598455999999996;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.06934984px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter3996-64);color:#000000;fill-rule:nonzero;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 874.28571,-416.92354 67.14289,115.71429 29.64284,-53.57143 c -22.70727,-4.8977 -36.44836,-40.61667 -43.92864,-97.85714 z"
+       id="path4000"
+       inkscape:connector-curvature="0"
+       clip-path="url(#clipPath3076)" />
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       sodipodi:nodetypes="ccccc"
+       transform="matrix(0.83259892,0.42585232,-0.42591058,0.83248502,-41.330454,-112.58629)"
+       inkscape:connector-curvature="0"
+       id="path4002"
+       d="m 689.32488,-102.46577 32.49753,59.030957 26.08714,-5.531095 c 21.77545,-43.146613 7.8899,-59.330262 -15.03636,-94.080072 z"
+       style="opacity:0.55598455999999996;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.06934984px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter3996-1);color:#000000;fill-rule:nonzero;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       clip-path="url(#clipPath3082)" />
+    <path
+       transform="matrix(0.93521163,0,0,0.93508369,-367.22236,416.22635)"
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       sodipodi:nodetypes="ccccccccccc"
+       inkscape:connector-curvature="0"
+       id="path4004"
+       d="m 548.80601,-263.41339 -35,24.64286 89.64286,154.642864 c 21.03506,-7.165864 41.2419,-13.245039 74.28571,6.071429 40.60951,-24.654713 35.28362,-67.130973 37.50001,-97.142863 l -65.35715,12.85714 2.14286,50.00001 -64.28571,-20 28.57143,-46.42858 c -41.81934,-3.16626 -37.09916,-43.80326 -44.28572,-80.71428 z"
+       style="opacity:0.55598455999999996;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1.06934984px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter3996-7);enable-background:accumulate"
+       clip-path="url(#clipPath3029)" />
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       sodipodi:nodetypes="cczcccc"
+       inkscape:connector-curvature="0"
+       id="path4029"
+       d="m 312.81011,199.35843 28.72435,-20.0375 c 11.90036,59.54108 29.21783,82.31785 76.82095,86.8292 47.60311,4.51134 61.45678,-11.35459 61.45678,-11.35459 6.17773,37.176 -2.22403,49.62787 -27.38836,77.47836 -15.85444,-11.26765 -27.40446,-18.88842 -67.46883,-2.00375 z"
+       style="color:#000000;fill:#7ddc7d;fill-opacity:1;fill-rule:nonzero;stroke:#299b29;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       sodipodi:nodetypes="ccccscc"
+       inkscape:connector-curvature="0"
+       id="path4149"
+       d="m 390.63307,260.13888 -19.03823,32.39396 50.60162,12.52345 1.37777,-38.07127 c 0,0 -12.65041,-1.62805 -13.31843,-1.79503 -0.668,-0.16698 -11.14738,-1.75328 -11.14738,-1.75328 z"
+       style="fill:#ffdd55;stroke:none" />
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       inkscape:connector-curvature="0"
+       id="path4043"
+       d="m 397.56854,297.9515 7.08529,-33.53249"
+       style="color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#299b29;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       style="color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#299b29;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 372.26285,291.86493 51.10262,13.02438"
+       id="path4031"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       style="color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#299b29;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 367.58679,299.54597 23.38029,-40.07502"
+       id="path4033"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       sodipodi:nodetypes="ccc"
+       inkscape:connector-curvature="0"
+       id="path4035"
+       d="m 389.96507,259.8884 c 8.67888,3.18361 19.1506,5.82394 33.92677,6.67981 l -1.52838,53.01527"
+       style="color:#000000;fill:none;stroke:#299b29;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       style="color:#000000;fill:#7ddc7d;fill-opacity:1;fill-rule:nonzero;stroke:#299b29;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 499.85246,199.35843 28.72428,-20.0375 c 11.90038,59.54108 29.21788,82.31785 76.821,86.8292 47.60311,4.51134 61.45677,-11.35459 61.45677,-11.35459 6.17773,37.176 -2.22402,49.62787 -27.38832,77.47836 -15.85446,-11.26765 -27.40451,-18.88842 -67.46888,-2.00375 z"
+       id="path4080"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cczcccc" />
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       style="color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#299b29;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 584.61088,297.9515 7.08526,-33.53249"
+       id="path4082"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       inkscape:connector-curvature="0"
+       id="path4084"
+       d="m 559.30518,291.86493 51.10258,13.02438"
+       style="color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#299b29;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       inkscape:connector-curvature="0"
+       id="path4086"
+       d="m 554.62912,299.54597 23.38029,-40.07502"
+       style="color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#299b29;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       style="color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#299b29;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 610.74182,266.81804 -1.33605,52.76544"
+       id="path4088"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       sodipodi:nodetypes="cc"
+       style="color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#299b29;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 538.76391,268.65481 24.21534,-15.86303"
+       id="path4090"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       sodipodi:nodetypes="cc"
+       style="color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#299b29;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 523.90068,241.60418 21.71029,-10.85366"
+       id="path4092"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       sodipodi:nodetypes="cc"
+       style="color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#299b29;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 510.70756,218.89501 23.04633,-15.69605"
+       id="path4094"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       sodipodi:nodetypes="cc"
+       style="color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#299b29;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 609.40577,292.8668 57.94974,-6.01126"
+       id="path4096"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       sodipodi:nodetypes="cc"
+       style="color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#299b29;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 636.12617,290.69607 1.33595,42.24575"
+       id="path4098"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       sodipodi:nodetypes="cc"
+       style="color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#299b29;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 640.63511,265.81617 1.16911,23.54406"
+       id="path4100"
+       inkscape:connector-curvature="0" />
+    <rect
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       transform="matrix(0.86341041,0.5045022,-0.5046051,0.86335027,0,0)"
+       y="-34.619762"
+       x="54.955376"
+       height="114.88571"
+       width="210.41528"
+       id="rect2998"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2, 6.00000002;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    <rect
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.00000001, 6.00000031;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect3789"
+       width="116.19427"
+       height="75.411316"
+       x="310.07031"
+       y="87.356041"
+       transform="matrix(0.99999981,-6.1496588e-4,4.3529465e-4,0.99999991,0,0)" />
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2, 5.99999997;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 367.6123,87.669591 -1.39591,72.594389"
+       id="path3791"
+       inkscape:connector-curvature="0" />
+    <rect
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       transform="matrix(0.22595589,-0.97413753,0.97396425,0.22670167,0,0)"
+       y="534.1319"
+       x="-37.234779"
+       height="58.634682"
+       width="70.387268"
+       id="rect3814"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:2.00000024;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.00000031, 6.0000009;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    <path
+       inkscape:export-ydpi="152.43045"
+       inkscape:export-xdpi="152.43045"
+       inkscape:export-filename="/home/twak/Documents/obb.png"
+       inkscape:connector-curvature="0"
+       id="path3816"
+       d="m 522.38358,123.63107 52.5256,13.32093"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2, 5.99999997;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+  </g>
+</svg>

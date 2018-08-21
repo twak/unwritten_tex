@@ -1,0 +1,1282 @@
+Index: procex.tex
+===================================================================
+--- procex.tex	(revision 1475)
++++ procex.tex	(working copy)
+@@ -1,79 +1,1236 @@
+-\graphicspath{{13-procex/images/}}
++\graphicspath{{13-procex/small_images/}}
++%\graphicspath{{13-procex/images/}}
+ 
+-Specify which degeneracy smashing technique we use.
++\chapter{Procedural Extrusions}
++\label{c:procex}
+ 
+-Havemann's in-out roofs.
++\greybox{This section is based on our paper \emph{Interactive Architectural Modeling with Procedural Extrusions}\cite{twak11}.}
+ 
+-Things to do as examples: loft sideways and upwards. sweep
+ 
+-~\cite{Fong11} levelshop designs from 2d profiles. uses hudini, but has problems iwth lofting intersections.
++%-------------------------------------------------------------------------
++\section{Introduction}
+ 
+-Symmetric Architecture Modeling with a Single Image~\cite{Jiang09}. Have a system for rapid roof construction. All boundaries manually defined from photographs, enhanced by symmetery (all models are regular).
++This chapter introduces an application of the mixed weighted straight skeleton to the interactive procedural modeling of architectural models. The \emph{procedural extrusion} (PE) system procedurally generates solid 3D meshes by extruding building footprints. Such an application of the straight skeleton to the generation of architectural surfaces allows for the generation of difficult architectural surfaces such as curved roofs, overhanging roofs, dormer windows, interior dormer windows, roof constructions with vertical walls, buttresses, chimneys, bay windows, columns, pilasters, and alcoves. The system comprises of a user interface to specify procedural extrusions and a tool for the automated generation large procedural cityscapes from footprints. Extensions to the the sweep plane algorithm of Chapter~\ref{c:various_skels} are utilised to compute a two-manifold architectural surface.
+ 
+-~\cite{Habbecke12}~\cite{Cabral09}~\cite{Gal09} examples of shape deformation on roofs that are limited by the systems to remain topologically similar (unlike our stuff). Same count of stuff, same intersections, except intersections have moved.
++The procedural extrusion system is designed to be an interactive and procedural modeling tool for complex architectural surfaces. Procedural geometric modeling offers several advantages over traditional static modeling of architectural forms. PGM descriptions of objects allow us to edit meshes at a higher sematic level; For example, editing roof angles rather than vertex descriptions, whilst ensuring constraints are enforced, such as polygon planarity. Additionally we can preseve subsequent edits after earlier ones are changed, such as changing the slope of the roof after the chimney has been created upon it, without adjusting the chimney. Nevertheless, the biggest advantage of procedural modeling over static modeling is the creation of large scale cityscapes, without a proportional increase in designer effort. Finally many of the current PGM systems require end user programming. In contrast the PE system allows people to use an interactive graphical tool instead of a programming language to specify geometry. This lowers the barriers of entry to PGM, hopefully allowing more people to create procedural content.
+ 
+-Structural approach for building reconstruction from a single DSM~\cite{Lafarge10}. (sticking roof sections together, minimised a ``join energy'' to ensure same shape.).
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{SingleHouse.png}
++  \caption[A house created using procedural extrusions.]{\label{fig:SingleHouse}
++Procedural extrusions allow a footprint (2d plan) to be extruded to form the walls and roof of a house (inset). Meshes and procedural details can then be attached (main).}
++\end{figure}
+ 
+-\chapter{Procedural Architectural Geometry}
+-\label{c:procex}
++Architectural surfaces are often deeply concave and contain complex architectural features such as overhanging roofs, dormer windows, interior dormer windows, roof constructions with vertical walls, buttresses, chimneys, bay windows, columns, pilasters, and alcoves. These intricate surfaces have not previously been available as watertight meshes in procedural environments. Systems such as shape grammars~\cite{Stiny80,Mueller:2006:PMB,Lipp:2008:IEV} have tended to concentrate on the combinatorial, rather than the geometric aspects of architecture generation, and are not able to generate such geometry themselves. Typically these systems rely on pre-existing meshes that are positioned and scaled to appropriate locations.
+ 
+-To add: modeling buildings from photos of their profiles.
+-Make sure the skeleton as a data-loss model isn't forgotton.
+-Do we do simplification as well?
+-Citation's for procedural model (plus that vision paper euan linked)
++Given buildings, such as in Fig.~\ref{fig:two_profiles}, it is not obvious how to construct 3D models of these structures. Procedural extrusions provide a novel parameterisation of such buildings by taking inspiration from architects' drawings consisting of floorplans and elevations. 
+ 
+-\subsubsection{Notes from Architectural Geometry, Pottman, Asperl et al.}
++\begin{figure}
++  \centering
++  \def\svgwidth{1.0\columnwidth}
++  \includesvg{13-procex/small_images/two_profiles}
++  \caption[Plans and profiles of two architectural models]{\label{fig:two_profiles}
++  These two examples show architectural surfaces overlayed with the user input. Plans (green), profiles (blue), natural steps (orange) and offset events (red) are specified in the user interface. The output of our system is an architectural shell (gray). }
++\end{figure}
+ 
+-extrusion / translational / rotational surfaces
+-ruled surface: generated by moving a straight line spiral ramps, cones, cylinders, mobius strips. can be created by drawing lines between two arbitrary parameterized curves in r3
+-sweeping along a path. (Parameterized path defines a parameterized path for the frennet frame).
+-skinning: filling in between arbitrary curves. a very under constrained problem
++The first, interactive, component of the system is presented in Sec.~\ref{sec:UI} and allows the user to draw a floorplan, and assign an arbitrary profiles to each edge. Nested sets of plans and profiels allow features such as dormer windows and alcoves (Fig.~\ref{fig:two_profiles}, orange) to be modeled. Interactive modeling using the user interface allows the expressivness of the system to be explored in depth. We evaluate the interactive portion of the PE system in Sec.~\ref{Sec:Evaluation} by modeling $50$ various structures from a catalogue, as well as seeking opinions from users as to the properties of the system.
+ 
+-is there something of a hierarchy here:
+-extrusion is translation along a straight line
+-ruled surface is an extrusion surface with a straight line profile
+-rotational surface is an extrusions surface with a circular plan
++In order to combine arbitarary plans and profiles, the second component of the system is a collection of algorithms to construct 3D meshes from plans an profiles. These algorithms utilise a variety of repeated applications of the MWSS (Chapter~\ref{c:various_skels}, Sec.~\ref{sec:mwss}) to create a a geometry modeling system. We take the sweep-plane that is used to calculate the MWSS and introduce additional types of events that may be encountered. These algorithms are presented in Sec.~\ref{sec:method}. To evaluate the real-world stability of these algorithms we evalute PEs over a large scale data of $6000$ building footprints in Sec.~\ref{Sec:Evaluation}. We want to note that the computational geometry community emphasizes provably correct algorithms and therefore often favors rational arithmetic. In contrast, our work consists of heuristic algorithms that emphasize computational speed and are geared towards a floating point implementation. While our heuristics include various mechanisms to make the results more robust, it is possible that the computations can fail. For example, in the Atlanta data set of $6000$ footprints we noted that two roof planes were not computed correctly. The approximate nature of our floating point computation also results in roof planes being moved by millimeters.
+ 
+-curve evolution - Darboux's polygon evolution (1878). always moves verticies of polygon to a point. or changing the offset in a level-set.
++We conclude  with a description of external applications that others have applied PE system have been sucessfully applied to.
+ 
+-osculating circle - curve of circle approaches local curvature of 3 points on a curve (as the three points move together in the limit). It forms one type of an offset - an evolut. 
++The contributions of our work are:
++\begin{itemize}
++\item the design of the system and tools to enable procedural modeling of complex architectural surfaces.
++\item the set of tool choices to enable procedural modeling of complex architectural surfaces.
++\item heuristic algorithms to generate a polygonal mesh from the user specification that is approximately consistent with the input data.
++\item the evaluation of the system on a collection of examples to verify its practical utility, and to identify configurations that are difficult to model with our tools.
++\end{itemize}
+ 
+ 
+-concepts of local trimming and global trimming required for offset curves to be slightly sensibel
++%-------------------------------------------------------------------------
++\section{Related work}
++%\section{Similar Techniques}
++\label{sec:alternatives}
+ 
+-photo chapters page 339.
++In this section we describe some examine common techniques applied to architectural modeling and analyze some of the properties of resulting architectural meshes. 
+ 
+-\subsubsection{Similar Techniques}
+-\label{sec:alternatives}
++We may make the observation that many architectural and man-made objects have a common property: \emph{There are many horizontal edges to the geometry, and the faces adjacent to these edges lie in the same plane}. For example Fig.~\ref{fig:horiz_lines} shows one building with many horizontal edges and associated faces. 
+ 
++\begin{figure}
++  \centering
++  \def\svgwidth{1.0\columnwidth}
++  \includesvg{13-procex/small_images/horiz_lines}
++  \caption[Horizontal edges are common in architectural form]{\label{fig:horiz_lines}In many buildings' geometries, there are many horizontal edges (green). Many faces of such geometry are coplanar to one or two such edges. In this case, only the red faces do not do not have such a horizontal edge.}
++\end{figure}
+ 
+-%surveys:
+-Survey used A Survey of Urban Reconstruction~\cite{Musialski12}
+-Modeling the Appearance and Behavior of Urban Spaces~\cite{Vanegas10:MAB}
++To describe such meshes, basic 3D modelling tools such as as those introduced in Sec.~\ref{sec:construction} may be used. Tools such as manual vertex modeling, extrusion, lofting and constructive solid geometry tools have all been used to model architecture in 3D modeling tools such as Maya~\cite{Maya}, 3D Studio Max~\cite{3DSMAX:2007:WEB} and Blender~\cite{Blender}. Given the common features of many architectural models, these general tools are not optimal when working with such a specific domain:
+ 
++\begin{itemize}
+ 
+-Laycock and Day's paper~\cite{Laycock03} how not to do it
+-and Detailed Building Facades \cite{Finken08}
++\item{Manual vertex and face specification gives users the tools to create and position verticies in $\mathbb{R}^3$. These tools allow unrestricted mesh creation, but it is possible, and even common, for such tools create non-planar polygons, non-manifold or self-intersecting meshes. Often additional post-processing stages must be applied to check for these conditions, and resolving them is left to the user. Fig.~\ref{fig:vertex_modeling} illustrates how moving a single vertex may result in several non-planar faces.}
+ 
+-Procedural extrusions bear a resemblance to several modeling techniques available in commercial packages. Here we outline several of these techniques in relation to archiectural shell design.
++\item{Extruding a plan-polygon either in a single direction or along a 3D path, Fig.~\ref{fig:Extrude}, is another method to construct meshes with rectangular faces. Careful positions of the plan an profile can produce meshes with many horizontal edges. An extrusion tool creates an instance of the plan at each vertex of the path. It continues to create a rectangular face between the pairs of corresponding plan edges from adjacent plan-instances. Fig.~\ref{fig:Extrude} TODO. In this manner each set of plan edges is identical.
+ 
+-Extruding a profile along a 3d path, Fig.~\ref{Ref:Extrude}, creates an identical 2d polychain instances at each vertex of the path.  It then creates a surface between adjacent chains on the path. A face is created between each corresponding pair of polychain segments on adjacent profile verticies. In this manner each polychain is connected with geometry of the same topology. Extrusion is a modeling primitive extensively used in 3d modeling packages and provides a simple method for the construction of rooflines, however because the profiles are unable to modify themselves in response to the remainder of the profiles the are not suitable for creating complex architecture, an example is show in Fig.~\ref{Ref:Extrude}.
++However there are some problems with the extrusion tool. If the path rotates, the faces of the resuling geometry may not be planar, Fig.~\ref{fig:Extrude}, right. Additionally, When modelling walls and roofs, the plans and profiles are not changed in response to the geometry; Self-interesctions may occur, such as when modeling roofs --- the crest of the roof may either fall short, or overshoot. Such deficiencies with geometry created by the extrude tool must be identified and removed manually, possible with manual vertex and face edits.
+ 
++\emph{Levelshop} is a rapid video game level prototyping tool that uses extrusions, together with user defined 2D plans ~\cite{Fong11}. Because of the above problems with extrusion, it is limited to relitevely output simple geometry.}
++
+ \begin{figure}[htb]
+   \centering
+   \includegraphics[width=1.0\columnwidth]{blender_extrude.png}
+-  \caption{\label{Ref:Extrude}The extrude tool in Blender is capable of creating pleasing architecture from a profile and plan (pink), but has no guarantees as to interior (green) or exterior (orange) intersections.}
++  \caption{\label{fig:Extrude}The extrude tool in Blender is capable of creating pleasing architecture from a profile and plan (pink), but has no guarantees as to interior (green) or exterior (orange) intersections.}
+ \end{figure}
+ 
+-A modificaiton to the extrusion algorithm allows different profiles to be used at each point on the plan, Fig.~\ref{Ref:Loft}. This \emph{loft tool} allows more artist interaction, such that when the geometry does intersect it can be manually edited. As when extruding there are no guarantees that the result will be a manifold. The manual editing can be quite involved as it requires the user to specify additional segments for some of the polychain instances as well as specifying corresponding topologies for face creation.
++\item{A modificaiton to the extrusion algorithm allows for different profiles to be used at each vertex on the profile, Fig.~\ref{fig:Loft}. This \emph{loft tool} allows more artist interaction, such that when the geometry does self-intersect, the profiles may be manually edited. Lofts are a modeling primitive extensively used in 3D modeling packages and provide a method for the construction of simple convex roofs, as in Fig.~\ref{fig:Loft}, right. However these roofs only contain a single maxima, and are not realistic in elongated or concave situations. As when extruding there are no guarantees that the result of a loft will not self-intersect. The manual editing of profiles can be quite involved as it requires the user to specify additional segments for some of the polychain instances as well as specifying corresponding topologies for face creation.}
+ 
+ \begin{figure}[htb]
+   \centering
+   \includegraphics[width=1.0\columnwidth]{loft.png}
+-  \caption{\label{Ref:Loft}The loft tool is a more advanced version of the extrude tool, Left: the unmodified profiles (red) form intersecting geometry similar to the extrude tool. Right: by manually modifying the individual profiles, the intersections can be resolved by an artist.}
++  \caption{\label{fig:Loft}The loft tool is a more advanced version of the extrude tool, Left: the unmodified profiles (red) form intersecting geometry similar to the extrude tool. Right: by manually modifying the individual profiles, the intersections can be resolved by an artist.}
+ \end{figure}
+ 
+-The medial axis skeleton\cite{Blum67} defines a skeleton shape for a given input polygon, every point on the skeleton is interior to the polygon and equidistant to the two nearest boundary edges. We can consider the medial axis in 3d as one possible roof-construction method. The medial axis is often used in raster environments and probably hasn't become a popular polygon modeling tool as it introduces curved surfaces into the mesh.
++\item{
++Another popular method for geometry creation is \emph{constructive solid geometry} ~\cite{Atherton83} to form polygonal solids from the addition and subtraction of geometry elements. CSG has been used by several systems since to create urban modeling tools. Sugihara and Hayashi~\cite{Sugihara08} create roofs on orthagonal geometry by unioning roofs after rectangular decomposition. This approach is adapted to building reconsutrction in ~\cite{Lafarge10}, by computing the CSG union of elements forma library of 3D roof-form blocks.
+ 
+-Another popular method for geometry creation is the union of several polygon solids to create a solid model. The mathematics of this approach is introduced by CSG~\cite{Atherton83}, and has been used by several system since to create urban modeling tools. Sugihara and Hayashi~\cite{Sugihara08} create roofs on orthagonal geometry by unioning roofs after rectangular decomposition. This concept is extended by CGA-Shape~\cite{cga_main} by the use of a visibility approach to determine which parts of the exterior walls are visible. The combination of simple primitives is not capable of expressing buildings with arbitrary floorplans, although it is possible to guarantee manifold results, and as such these techniques are the most popular in commercial procedural products.
++The advantages of CSG are that manifold results are guarenteed, and that all the output faces are subsets of the input faces. Thus if the input faces planar, then so will the result. The disadvantage is, however, that the range of results are limited by the availble CSG primitves to work with. As in Fig.~\ref{todo}
++}
++\end{itemize}
+ 
++\FloatBarrier
++
++As introduced in Chapter~\ref{c:readings} there are a wide range of languages and grammars for specifying geometry. Many of these systems, such as CGA Shape~\cite{Pascal06}, are concerned with the combinatorial and positional aspects of the modeling, rather than the geometetric elements. For example, CGA may specify the location of the roof, but would rely on extrude operations to specify the mass model and other geometric routines to calculate the roof geometry.
++
++%Modeling packages. unlear algorithms.
++Specialist architectural modeling tools... Procedural extrusions bear a resemblance to several modeling techniques available in commercial packages. Here we outline several of these techniques in relation to archiectural shell design. ~\cite{Revit}~\cite{AutoCAD}.
++
++% deformation techniques
++Several systems exist to deform existing architectural meshes into new configurations. Systems such as 
++
++In \cite{Habbecke12} Habbecke and Kobbelt introduce a mesh deformation tool that constrains specified edges to remain, for example, coplanar, horizontal or vertical. The system constructs a linear system that may be deformed in real time.
++
++Previous systems have applied the straight skeleton to the modeling of architectural roofs. Laycock and Day~\cite{Laycock03} use the SS to define roofs over arbitrary floorplans, and adjusts the positions of the verticies to create Gable roofs. Havemann~\cite{Havemann:2005:GMM} uses a SS with constant negative wieghts to create overhanging roofs. Our goals are similar to these approaches and we contribute new extensions to the straight skeleton to avoid the need for Laycock's vertex adjustment and to extend the skeleton beyond roof modeling to an interactive procedural modeling system for entire architectural meshes.
++
++%%-------------------------------------------------------------------------
++%%
++\section{User Interface Description}
++\label{sec:UI}
++
++Our interface controls a sequence of extrusions that are particularly suitable for creating the shell of architectural models. In this section we will introduce the functionality of our user interface.
++
++\subsection {Modeling With Profiles}
++
++The inspiration for our work comes from simple roofs, that are defined by a 2d polygonal floorplan and an angle that defines the roof slope. We extend this simple concept to construct a wide variety of roofs by using different angles on each edge and entire building shells by changing the angle as we ascend using \emph{profiles}, Fig.~\ref{fig:two_profiles}.
++
++To construct our geometry we use a sweep plane that rises vertically from the base of the building. This sweep plane defines an \emph{active plan} that combines the changing profiles, and discrete modifications to create complex architecture.
++
++\begin{figure*}[htb]
++  \centering
++  \includegraphics[width=1.\columnwidth]{ui_strip.png}
++  \caption{\label{fig:ui_strip} Three example buildings constructed in our user interface. We demonstrate multiple profiles on a simple plan (abcd), modeling overhangs (efghi) and anchors (jklmn). Simple profiles (ab) are applied to the green and purple edges of the plan (c) to create the geometry (d). Note the horizontal profile section. Overhangs are defined using an additional pair of profile polylines associated with every edge (ef) to create typical roof geometry (hi). Anchors (magenta circles) are defined on the profile (j) and the plan (l) to position features. In this example the anchors position a rectangular natural step (m) with a profile (k) that creates a roof-window (n).
++}
++\end{figure*}
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{ui.png}
++  \caption{\label{fig:ui}
++The interactive interface during the design of a temple. The right window contains the output preview whilst the left window contains the plan and the profile editors.
++}
++\end{figure}
++
++\subsection{Plans and Profiles}
++
++The UI consists of one pane showing the plan, one pane for profile, and a 3d preview window as shown in Fig.~\ref{fig:ui}.
++
++The plan is a set of edges (see Sec.~\ref{sec:method} for the definition of a plan). For each edge in the plan, there is an associated collection of polyline segments, called a \emph{profile}, that define the shape of a cross-section through the building at that plan edge. As the user edits either the plan or the profiles, our system shows the resulting architectural shell in the 3d preview window.
++
++The user interface presents standard operations for inserting, deleting, and moving vertices in the profile polylines, and vertices (called corners) in the floor plan. In Fig.~\ref{fig:ui_strip}(abcd) we show an example with one polygon as the plan (c) and two profiles (a and b). The plan edges are color coded  to show which of the two profiles is associated with each edge. Note that the profiles have to be monotonic in the vertical direction, but we allow horizontal polyline segments as special case. In the implementation, every change of direction in a profile will lead to an edge direction event (Sec.~\ref{section:edgeDirecitonEvents}).
++
++\subsection{Overhangs}
++
++Because of the underlying skeleton algorithm, and to present the user with easily understood behavior, the polylines which construct the profile must be monotonic in the vertical ($z$) direction. The underlying procedural extrusions grow the architecture upwards, so a downwards moving line-segment is meaningless. To this end an important design choice we had to make is how to model overhangs. 
++In an architectural setting, overhangs are often at the same height on several sides of a building.
++There are two possibilities: 1) Allow the user to draw arbitrary polylines as profiles that can go up or down in the vertical direction; 2) Force the user to explicitly model profiles as multiple polylines where each polyline must be monotonic in the vertical direction. After some experiments we decided that the second option makes it easier to synchronize overhangs across multiple profiles. The interface enforces this constraint in the polyline editor. We will explain the process of modeling overhangs using the second example in Fig.~\ref{fig:ui_strip} (efhgi).
++
++The user creates the input floor plan shown in (g). The edges in this floor plan are color coded as either red or blue. A red edge will be extruded according to the red profile (e) and the blue edges will be extruded according to the blue profile (f). The final geometric construction is shown in (h) and (i). The red profile as well as the blue profile each consist of three polylines. Each of these polylines is monotone in the vertical direction.
++In the red profile we can see that one of the polylines has two segments that are completely horizontal. Modeling horizontal segments is transparent to the user, but will be handled as special case later in the implementation.
++Modeling overhangs is an explicit operation. The overhang is modeled by inserting two new polylines into both profiles at a certain height. 
++In the user interface this is one atomic insertion operation. If the user clicks to add a new vertex overhang in one profile, then all profiles will obtain two new polylines at the same height. The user can edit the new polylines for each profile independently, only the starting height will remain synchronized. In the implementation, we will trigger a profile offset event (Sec.~\ref{section:profileOffsetEvents}) at this height.
++Further, the interface allows users to disable edges so that they do not contribute to the offset boundary. The profile associated with edges adjoining non-contributing edges can also be edited.  After they have been added to one profile, the offset event is copied to all profiles.
++ 
++The difficulty of this computation is that we cannot specify the offset region to insert in absolute coordinates, but only relative to the current region enclosed on the active plan. We found that another recursive application of procedural extrusions in 2d is a very powerful and elegant solution to this problem. Additionally the flexibility (angles per edge) and geometric output is much better suited for our application than other morphological operations. We can compute the position of the edits by the 2d projection of another extrusion operation on the current outline, these are detailed in Sec.~\ref{section:profileOffsetEvents}.
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{raising_roof.png}
++  \caption{\label{fig:Overhang}
++A profile offset event takes the active plan at the specified height as an input, and outputs the plan with an additional overhanging region. One profile offset event (a,b) may define a shared starting height for one roof with two different angles. Sharing this profile offset event (c) allows for the height of the roof to be parameterized.}
++\end{figure}
++
++\section{Subdivision events}
++
++A subdivision event splits the volume enclosed by the active plan into several sections at a particular height. It is used to model roofs that rely on an internal structures, such as prism roofs. The technique is to define a set of offsets, which bound new regions on the active plan. Again a recursive application of procedural extrusions is used to define these offset region boundaries.
++
++The faces of the flattened recursive application are used as the new active plan, ~\ref{fig:subdiv}.
++
++The user specifies:
++\begin{itemize}
++\item{a height for the subdivision event using a profile anchor.}
++\item{a map that defines the new profiles in the subdivision application of procedural extrusions, from the existing profiles.}
++\item{a set of tags applied to these new profiles that specify the new regions.}
++\item{a map that specifies the new profiles for the new regions in the new skeleton for the bottom, top and sides of the new region.}
++\end{itemize}
++
++Like profile offset events, the implementation difficulty is in defining a subdivision event that produces robust results for all active plans.
++
++\subsection{Anchors}
++
++Several editing operations require us to \emph{instance} features on the manifold. These might include meshes, such as doors and windows, or discrete changes to the plan, such as chimneys. The features have to be placed so that they can still be located after subsequent edits, and recalculations of the architectural shell. This is called the persistence problem in editing procedural models~\cite{Lipp:2008:IEV}, and we introduce \emph{anchors} as a partial solution in our system.
++
++The user can place anchors by selecting a location in the 3d view, or by selecting points on the input plan's edge and the corresponding profile polyline. In Fig.~\ref{fig:ui_strip} (jklmn) the anchors are shown as magenta circles on a floor plan edge and a profile edge.
++
++A plan anchor and a profile anchor are combined to specify the location of a feature instance, Fig.~\ref{fig:Marker_Product}. If the corresponding profile anchor is no longer associated with an edge in the active plan the specified height then it will not be instanced. 
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=0.6\columnwidth]{marker_locations.png}
++  \caption{\label{fig:Marker_Product} Positioning a feature, c, using plan anchor a and profile anchor b on the complex surface of a bay window.}
++\end{figure}
++
++\subsection{Plan Edits}
++
++Discrete edits to the plan at a certain height are know as \emph{plan edits}. These are located by anchors specified by the user, and may modify, create or delete edges in the active plan. In the example Fig.~\ref{fig:ui_strip} (jklmn) a plan edit is introduced at the location of the anchor. The plan edit itself is a set of edges (m). These edges are extruded along the new profile (k). Again the user is offered several techniques with different advantages. \emph{Forced steps} insert an arbitrarily set of edges into the plan, while \emph{natural steps} offer a range of simple shapes that can be inserted. For reasons that are discussed later, forced steps are more powerful, but can lead to self intersections, while natural steps are guaranteed to create manifold geometry.
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{chimney.png}
++  \caption{\label{fig:Chimney}
++Left: The plan (solid green line) and profiles (blue lines) define the shape of the structure. The anchors (orange) locate the chimney (red). A natural step is inserted into the building at the anchored location (dashed green lines). Middle: The finished 3d geometry, showing the profiles for the new edges. Right: Alternative natural step which adds an additional rectangle into the plan (dashed green lines) to specify a chimney. }
++\end{figure}
++
++As shown in Fig.~\ref{fig:Chimney} we can use discrete plan edits to locate features such as roof windows, or chimneys. Additionally, by adding a rectangle exterior to the active plan, and applying the appropriate profiles, we can create buttresses, as in Fig.~\ref{fig:multi}. If the input plan has several repeated elements, such as bay windows or buttresses, plan edits give a convenient tool for defining an \emph{instance} once, whilst repeating it at a number of different anchored locations.
++
++\subsection{Positioning Procedural Details}
++
++Anchors can be used to mark the top-left and bottom-right elements in a grid of features, such as windows. Parameters can be set to control the width of the repetitions, and when combined with relative anchors, allow features to be distributed on resizable \facades{}. Variations on this theme allow rows or columns of features to be located, for example a line of dormer windows on a roof. Anchors may also be used to specify the location of complex external features, such as windows and doors, described by arbitrary meshes. Each mesh element can be further parameterized by the location of several defining bones. These control bones deform their associated meshes using pre-defined weights. For example moving the control bones at the top or bottom of a pillar will change its height.
++
++Faces of the output model can be identified by adding \emph{tags} to the profile segment. These are represented by small triangles in the user interface. Once the manifold is complete, the faces that were generated from the specified profile segment are post-processed in a particular way, for example to add tiles to the roof or a brick texture to the wall.
++
++\subsection{Modeling Larger Environments}
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=0.6\columnwidth]{atlantis_input_data.png}
++  \caption{\label{fig:gis}Typical GIS data. In this case this is a subset of the floorplans of buildings in Atlanta (black), which have subsequently been marked up with road data(green).}
++\end{figure}
++
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=0.8\columnwidth]{large_scale.png}
++  \caption[UI for large scale profile assignment]{\label{fig:large_scale}TODO.}
++\end{figure}
++
++We provide a graphical interface to apply sets of profiles and anchors to existing plans semi-automatically. Given a set of floorplans form a \emph{Geographic Information System} (GIS) or similar database, Fig.~\ref{fig:gis}, the user can specify several \emph{machines} to assign profiles and anchors to each plan. Each machine represents a certain style of building, such as victorian, industrial or dutch. The technqiues to assign machines are:
++\begin{itemize}
++\item{Directly: this sets the assigned machine to all the selected plans.}
++\item{Painting: after selecting a set of plans to paint, the user selects a machine type from a pallete, a brush size, and is then able to assign the machines to profiles by painting over the centrum of each plan with the brush.}
++\item{By size: After selecting a set of plans, the user can execute a program that assigns machines based on the area enclosed by the floorplans. For example, the smallest buildings may become garden sheds and the largest become factories.}
++\item{Randomly: The user is given an option to select a fraction of the currently selected plans randomly. This allows, for example, $10\%$ of the plans in a particular area of the city are assigned machines to create victorian properties.}
++\end{itemize}
++
++Each machine that has several items of meta-data derrived from the GIS system to enable the assignment of profiles to each edge, and other features described by the anchors.
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{profile_assignment.png}
++  \caption{\label{fig:assignment} Given a plan (blue) and a road (thick grey line), we assign a set of different profiles (red: front, blue: back, green: right, yellow left, with light and dark shades specifying long and short edges). In b. the naive ordering assigns a label based on the oritenation. In c the long and short labels are assigned by considering triples of consecutive edges. If the first and last edge of the triple have the same orientation, and the second has a shorter length than the first or third, then the assignment of the second edge is changed to a short edge of the same orientation as the first.}
++\end{figure}
++
++The most important datum is a label that is assigned by angle computed by orienting the building to the street and mapping the normal vectors of the footprint edges to the unit disk. We assign labels for the front, left, right and back of the building, Fig.~\ref{fig:assignment}. Furthmore short edges at the front of side of the building are assigned the appropriate profile for their direction. These labels are then mapped by each machine onto profiles.
++
++The positioning of anchors representing machines is also delegated by these labels. Profile anchors are specified by the associated profiles, while the plan-anchors are positioned by short programs which specify an interval to repeat anchors at --- for example to create a row of windows.
++
++%-------------------------------------------------------------------------
++% Main Algorithm
++
++%% XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
++
++\section{Computing Procedural Extrusions}
++\label{sec:WSS}
++
++In this section we give an overview of the procedural extrusion algorithm. We begin by defining the terms used in the algorithm, the inputs and outputs, before outlining the many possible events that take place. Finally we give details for the computation of each event type.
++
++\subsection {Definitions}
++\label{sec:method}
++
++We compute an architectural shell in 3d Euclidean space with a $xyz$ world coordinate system. The up direction is along the $z$ axis. See Fig.~\ref{fig:InputOutput} for an illustration of futher terms.
++
++A \emph{(floor) plan} is a  planar subdivision (a straight line planar embedding of a planar graph) that divides a plane into \emph{inside} and \emph{outside} regions. 
++A plan has corners and edges. 
++A plan is embedded in a plane parallel to the $xy$-plane (the ground plane), so that all corners of a plan have the same $z$ (height) value. 
++We require that the boundaries of a plan are a non-intersecting collection of oriented polygons. 
++The inside is on the left-hand side of each oriented polygon edge. 
++The polygons are typically oriented counter-clockwise, but polygons describing holes are oriented clockwise. Additional bounded regions may be recursively located inside a hole.
++The $j$th polygon is described by $n^j$ polygon corners $c^j_i \in R^3$ with $1 \leq i \leq n^j$.  Each corner $c^j_i$ is connected to the next corner (according to the polygon orientation) by an \emph{edge}, $e^j_i$. 
++In everything that follows, indices should be treated cyclically, so that in a polygon with corners $c^j_1$, $c^j_2$, and $c^j_3$, the corner $c^j_4$ means $c^j_1$.
++
++Each edge in a plan is associated with a \emph{direction plane}, $dp^j_i$, which contains the edge. It is defined by an angle $\theta$ such that $-\pi/2 \leq \theta \leq \pi/2$. 
++%We will use Greek letters in this paper to describe such angles. 
++A vertical direction plane has $\theta = 0$, whilst a direction plane oriented towards the inside (outside) satisfies  $\theta > 0$ ($\theta < 0$ respectively). The angle is measured between the direction plane and a vertical plane that also contains the edge.
++
++A \emph{profile} is a polyline that is used to control the direction plane of an edge. A profile is modeled in a local 2d  $wz$-coordinate system and consists of a list of $m$ points $t_i$. The location of point $i$ is $(t_i.w,t_i.z)$ and we require that $t_i.z \leq t_{i+1}.z$. The profile defines $m-1$ angles, $\theta_1..\theta_{m-1}$. The angle $\theta_i$ is calculated as the clockwise angle between a vertical line and the line $t_i$ to $t_{i+1}$. The angle lies in the range $-\pi/2 \leq \theta_i \leq \pi/2$ and the final angle is constrained such that $\theta_{m-1} > 0$.
++
++%A profile is associated with an edge and it can be mapped to 3d so that the $w$ axis is orthogonal to the edge and the local $z$ coordinate aligned with the $z$-coordinate of the world coordinate system. This mapping to an edge allows us to determine the active gradient (and active angle) for height $z$ in the world coordinate system.
++
++
++
++%A \emph{profile} controls the active gradient. The profile consists of a list of $m$ 2D points, $t^{1..m}$ in the $wz$-plane. The location of point $i$ is $(t^i_w,t^i_z)$. The ordering of the list is constrained to fulfill  $t^i_z \leq t^{i+1}_z$. Additionally $t^{(m-1)}_w > t^m_w$, such that the final $\theta \> 0$ . The profile defines $m-1$ gradients, $\theta^1..\theta^{m-1}$.  $\theta^i$, is then calculated as the clockwise angle between the line $(0,0)$ to $(0,1)$ and the line $t^i$ to $\theta^(i+1)$ in the range $-\pi/2 \leq \theta \leq \pi/2$.
++
++
++% Each edge $e^p_i$ together with the associated angle $\theta^p_i$ define a, possibly infinite, face $sp^p_i$. See Fig.~\ref{fig:InputOutput}.
++
++% A \emph{profile} is associated with an edge and consists of a sequence of 3d gradient vectors that define the extrusion directions of an edge. The gradient vectors are orthogonal to an edge and the length of a gradient vector indicates how long an edge is intending to move in the gradient direction. Through the use of profiles each edge in a plan has an (active) gradient. While a gradient is a 3d vector it is better defined by an angle $\theta^j_i$ such that $-\pi/2 \leq \theta^j_i \leq \pi/2$. A vertical gradient has $\theta^j_i = 0$, whilst a gradient oriented towards the inside (outside) satisfies  $\theta^j_i > 0$ ($\theta^j_i < 0$ respectively).
++
++\subsection {Overview}
++\label{sec:Overview}
++We describe the input, the output, and give an outline of the algorithm. 
++
++{\bf Input:} The input of the algorithm is a (floor) plan, called the \emph{input plan}, profiles associated with the edges of the input plan, profile offset events, subdivison events, and anchor events. Anchor events specify the location of plan edits or a mesh instance.
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{skel_into.png}
++  \caption{\label{fig:InputOutput}
++Our algorithm constructs the architectural shell, shown on the right, for an input plan, shown on the left. In this simple example, each profile only has a single segment; Adding additional segments to the profile eventually allows us to model an entire building, including the walls. The input is defined by the corner positions $c^j_i$, the angles $\theta^j_i$, and the corner connectivity. The output is a shell consisting of faces on the respective direction planes, $dp^j_i$.}
++\end{figure}
++
++{\bf Output:} The main output of the algorithm is an \emph{architectural shell} (3d mesh) in the $xyz$ world coordinate system. In the non-degenerate case the shell is watertight and two-manifold. An architectural shell is a polygonal mesh stored in a half-edge data structure. For the sake of clarity we refer to these output edges as \emph{arcs} (after Aichholzer et al.~\cite{Aichholzer95}). The half-edge data structure stores a set of vertices in $R^3$, a set of arcs between the vertices, and a set of planar faces which may contain holes. Faces are defined by a counter-clockwise ordering of arcs.
++
++% this isn't a half-edge data structure because a face can have holes.
++The architectural shell can then be post-processed to apply textures, add procedural geometry (such as roof tiles), and attach meshes at anchor points.
++
++
++\begin{algorithm} [htb]
++
++\begin{footnotesize}
++%\begin{scriptsize}
++\begin{minipage}{0.45\textwidth}
++  main \Begin{
++    $Q$ = new priority queue\; 
++    \ForEach{ \emph{corner} $c^j_i \in inputPlan$} {
++    \ForEach{ \emph{plan edge} $e^j_i \in planDataStructure$} {
++     $p1$ = $e^j_i.directionPlane$\;
++     $p2$ = $c^j_i.previousEdge.directionPlane$\;
++     $p3$ = $c^j_i.nextEdge.directionPlane$\;
++
++     $IE$ = intersect ($p1$, $p2$, $p3$)\;
++
++      \tcc{Queue ordered by z-height}
++      $Q$.insert ($IE$, $IE_i.z$)\;
++    }
++  }
++
++  \tcc{Insert edge direction, subdivision, profile offset and plan events into the queue}
++  \ForEach{ \emph{event} $ue \in userEdits$} {
++    $Q$.insert($ue$, $ue.z$)\;
++  }    
++
++    $sweepZ$ = 0;
++
++    \While { ! $Q$\emph{.empty()} } {
++        $event$ = $Q$.nextEvent()\;
++	\If { $event$.position.z $\geq$ $sweepZ$ }
++        {
++	  $sweepZ$ = $event.position.z$\;
++          \tcc{handleEvents may insert additional events into the queue}
++          handleEvent($event$)\;
++        }
++    }
++}
++\end{minipage}
++\end{footnotesize}
++  \caption{Pseudo-code for the main loop.}
++  \label{code:main_loop}
++\end{algorithm}
++
++
++{\bf Outline:} 
++The algorithm extrudes the input plan using a sweep plane algorithm. At each height of the sweep plane a 2d cross-section through the building is another 2d plan. We call the plan associated with the current sweep plane the \emph{active plan}. To extrude a plan, each plan edge moves to be colinear with the intersection of the direction and sweep planes. This movement and the implicitly defined geometry is straightforward until an \emph{event} occurs. During events, we process modifications to the active plan. After inserting edges into the active plan, we must recalculate the intersection events between the direction planes. The core algorithm, Fig.~\ref{code:main_loop}, is a loop that handles events according to their height.
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{split_edge_vertex.png}
++  \caption{\label{fig:AlgorithmExample}
++ An example construction demonstrating basic intersection events, and the active plan (blue, green and red lines) on the sweep plane after each event is processed. In (1) three adjacent direction planes collide at an \emph{edge event}. In (2) we see a vertex event where more than three direction planes collide at one point. Finally, in (3) we show a \emph{split event} that splits the area bounded by the plan.}
++\end{figure}
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=0.8\columnwidth]{pointers.png}
++  \caption{\label{fig:pointers}
++ The plan data structure, shown part way through the sweep.}
++\end{figure}
++
++{\bf Data structures:}
++The \emph{plan data structure} describes the implicit active plan on the sweep plane~\cite{Felkel:1998:SKI}. This structure is a doubly linked list of corners. Each corner has a pointer to the next corner and the previous corner (assuming counter-clockwise order) and a pointer to its previous and next edges, Fig.~\ref{fig:pointers}. 
++At the beginning of the algorithm the plan data structure encodes the input plan. During the sweep the data structure is updated to encode any changes to the active plan. To give a concise description we define the algorithm by discussing changes to the implicit active plan.
++
++The second important data structure is a priority queue that sorts events by ascending height.  Intersection events are automatically created, while others (edge direction events, profile offset events, subdivison events and anchor events) are defined by the user. We fill the priority queue with a large number of potential intersection events. An intersection event occurs wherever three or more direction planes intersect.
++
++Given the active plan at all event heights, the generation of the half-edge data structure describing the architectural shell and subsequent triangulation of shell-faces is fairly straightforward.
++
++\subsection{Description of Events}
++
++In this section we describe the events encountered as the sweep plane ascends.
++
++{\bf Generalized Intersection Event:}
++
++There are three event types, in the unweighted case these are given by previous authors~\cite{Felkel:1998:SKI,Epp:98}, which automatically occur to the edges in the active plan as the sweep plane rises. \emph{Edge events} occur as the length of an edge shrinks to zero. When an edge shrinks to zero the direction planes defined by three consecutive (linked by corners) edges collide (Fig.~\ref{fig:AlgorithmExample}, 1). \emph{Split events} take place when two adjacent direction planes, and one non adjacent direction plane collide (Fig.~\ref{fig:AlgorithmExample}, 3). These split the region bounded by the active plan into two parts. Finally \emph{vertex events} occur in the degenerate case when more than three direction planes collide at one point (Fig.~\ref{fig:AlgorithmExample}, 2).
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{bad_case.png}
++  \caption{\label{fig:BadCase} Procedural extrusions that give rise to three degenerate cases. At a and b, four faces collide at one point. Point c shows seven faces colliding from a variety of angles, including horizontally.}
++\end{figure}
++
++Unfortunately, we did not find this categorization of events helpful to designing an algorithm. In practice architectural models give rise to a large number of degenerate events and the implementation is dominated by special event handling. Since edge and split events are special cases of a vertex event, we introduce one \emph{general intersection event} that  consists of an arbitrary number of direction planes, bounding one region, intersecting at one point. See Fig.~\ref{fig:BadCase} and~\ref{fig:RobustEventDetection} for four examples. We use a new algorithm to resolve this generalized intersection event that uses \emph{chains} of edges involved in the intersection.
++
++The techniques developed to handle events with an arbitrary number of edges are given earlier in this report, in Sec.~\ref{section:eventImpl}.
++
++{\bf Edge Direction Events:}
++An edge direction event occurs when a profile curve changes direction. The event updates the angle and direction plane associated with a set of edges in the active plan.
++
++{\bf Profile Offset Events:}
++Profile offset events occur at heights specified by user edits. Intuitively, a profile offset event results in additional inside regions being added to the active plan at the specified height.
++
++{\bf Subdivison Events:}
++Subdivision events are inserted by the user and occur over the entire active plan at a height given by the user. They have the result of dividing the plan into a number of pieces.
++
++
++%** pic: ui and example output
++
++%take the faces of the resulting output shell of the recursive application and to label them to specify the new regions. The output shell is then projected 
++
++% 
++
++%todo: desribe the interface to create a new subdivision event.
++%a subdivision event can be viewed as a generalization of a profile offset event. Instead of adding a single ``overhang'' region to the existing active plan, a subdivision event can add an arbitrary number of regions, all defined by a sub-application of the procedural extrusion algorithm.
++
++
++{\bf Anchor Events:}
++Anchor events specify locations on the architectural shell, and are defined by the user. There are two types of anchor events. \emph{Plan Edit Anchors:} These modify the active plan to insert new features such as chimneys, or dormer windows. \emph {Mesh Anchors:} These store the location of the anchors as an attachment point for geometry.
++
++\subsection {Generalized Intersection Event}
++\label{section:eventImpl}
++
++Generalized intersection events perform topological changes on the active plan to ensure that it never self-intersects as the sweep plane ascends. These events are automatic, not user driven.
++
++There are many possible topologies that can give rise to a generalized intersection event. Previous authors have described how to adjust the active plan to deal with split and edge events. These are the most frequent events when the input is a random polygon. We describe a generalization of these techniques to deal with the most likely class of topologies when dealing with architecture, a \emph{locally connected region}. When our interface is used to model architecture, these account for the vast majority of events. A locally connected region is a region, that immediately before the event is locally equivalent to a topological disc, Fig.~\ref{fig:BadCase} (abc). In a single event the locally connected region may be either an ``inside'' or ``outside''.
++
++In addition to locally connected regions, there are several unlikely classes of increasingly degenerate events in which the intersecting edges define a nested boundary, Fig GONE . When this situation occurs we give a warning in the user interface that the output may be undesirable.
++
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{coheighted.png}
++  \caption{
++  Left: Five faces creating an intersection event. Right: Events can interfere with each other if they have the same height, in this case the four points share a roof ridge.}
++\label{fig:RobustEventDetection}
++\end{figure}
++
++{\bf Event Detection:} We use expanded bounds for intersection location clustering. This addresses two stability problems.
++
++First, in symmetrical inputs, like architectural plans, it is very common for more than three direction planes to meet at a point. To avoid degenerate output in a floating point situation it is necessary to identify intersections whose locations are close together, and treat these as a single event. See Fig.~\ref{fig:RobustEventDetection} (left) for an example.
++
++Second, direction plane intersections that are far apart from each other can interfere if they are close to one other in height, Fig.~\ref{fig:RobustEventDetection} (right). It is necessary to detect and handle these together to ensure the region bounded on the sweep plane does not self-intersect and to resolve the ambiguities that can occur (described in Sec.~\ref{sub:ambiguities}).
++
++{\bf Event Clustering:} After initialization we iteratively process (potential) events stored in the priority queue. To address the two previously mentioned event detection problems, we cluster the events in two directions. We poll the priority queue to collect all intersection events whose height, $z$, is within some threshold, $\delta_2$, of the initial event. Second, we cluster all the events according to their location after projection onto the $xy$ sweep plane. The clustered volume is therefore a cylinder of radius $\delta_3$ and height $\delta_2$. See Fig.~\ref{fig:clustering} for an illustration of the clustering step. For our building floorplans with a size in meters we use double precision floating point representations and values $\delta _2 = 10^{-4}, \delta _3 = 10^{-6}$. There are certain pathological inputs which cause this clustering stage to fail. An example would be a row of events, each within $\delta_2$ of another, which could contain an arbitrary number of events. In such a case we alert the user with a warning message, but none of the users reported such a situation.
++
++{\bf Input:} The input of a generalized intersection event is a point $l \in R^3$, and a set of three or more active plan edges, $f$, whose associated direction planes intersect at $l$. The point $l$ is calculated as the center of the clustered volume.
++
++{\bf Output:} The output of a generalized intersection event is an updated active plan. This represents the bounded region on the sweep plane after the event.
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[height=3cm]{clustering.png}
++  \caption{\label{fig:clustering}
++  When an event is processed we simultaneously extract all intersection events within a height of $\delta_2$. Then we cluster all events that are within a cylinder of radius $\delta_3$ and height $\delta_2$.}
++\end{figure}
++
++{\bf Chain construction:} 
++We process the edges involved in the clustered intersection events into a set of \emph{chains}. A chain defines a connected portion of the active plan boundary involved in the event, Fig~\ref{fig:interchain} (a). A chain, $h^i$, is a list of consecutive active plan edges, $\epsilon^i_1...\epsilon^i_{hmax_i}$. A cyclic \emph{chain list}, $b$, contains all such chains, $h^1...h^{bmax}$ (we assume a cyclic index). The list is ordered by the edge's orientation around $l$. 
++
++The list of chains, $b$, is now processed to update the active plan in two stages. First within each chain (intra-chain), and then between the chains themselves (inter-chain).
++
++{\bf Intra-chain handling:}
++In a chain of 2 or more edges, the interior edges shrink to length 0 as we approach the intersection event, Fig~\ref{fig:interchain} ($\epsilon^2_2$). Therefore in the intra-chain stage we remove all interior edges from a chain $h^i$, leaving only the start, $\epsilon^i_1$, and the end, $\epsilon^i_{hmax_i}$,  of the chain as shown in Fig.~\ref{fig:interchain} (cd). That is, if $hmax_i \ge 3$, then edges $\epsilon^i_2..\epsilon^i_{hmax_i-1}$ are removed from the active plan, being replaced by a new corner at $l$, connecting the end of $\epsilon^i_1$ to the start of  $\epsilon^i_{hmax_i}$.
++
++{\bf Inter-chain handling:}
++In a typical intersection event, the closest edges in adjacent chains move into each other. To allow this without self-intersections the inter-chain stage takes place between each adjacent pair of chains, $h_x$ and $h_{x+1}$ in the cyclic chain list $b$.
++Firstly, if any chains contain only one edge, we split that edge by inserting a corner at $l$, Fig.~\ref{fig:interchain} (de).
++Secondly, for each pair of adjacent chains we create a new corner at $l$ and connect the start of the last edge in the proceeding chain, $\epsilon^x_{hmax_x}$, and the end of the first edge in the following chain, $\epsilon^{x+1}_{1}$, Fig.~\ref{fig:interchain} (e). 
++Finally the inter-chain stage finishes by removing any unreferenced corners from the active plan.
++
++
++%Second, an edge may have been removed from the active plan by a previous event. These edges are also removed from $f$.  After filtering, if the number of edges in $f$ is less than 3, the event is ignored.
++
++
++%\begin{figure}[htb]
++%  \centering
++%  \includegraphics[width=1.0\columnwidth]{intrachain.png}
++%  \caption{\label{fig:intrachain} Intra-chain active plan modification. Left: The chain, $h^i$, consisting of edges  $\epsilon^i_1, \epsilon^i_2$ and $\epsilon^i_3$, approaches an intersection event at point $l$. Right: The interior edge, $\epsilon^i_2$, is removed from the active plan and the chain. Note that these operations take place at the intersection point and this figure illustrates the topological aspect of the technique only.}
++%\end{figure}
++
++\begin{figure*}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{interchain.png}
++  \caption{\label{fig:interchain}
++Active plan modification during a generalized intersection event. a) The active plan just before the intersection of chains $h^1$ (red), $h^2$ (purple), and $h^3$ (green) at the point $l$. The chains consist of edges, $\epsilon$. b) The topology just before the event. c) The active plan geometry at the event, note the disappearing region bounded by coincident edges $\epsilon^2_1$ and $\epsilon^3_1$. d) The topology of the chains after the intra-chain stage. An edge, $\epsilon^2_2$, has been removed. e) The topology of the active plan after the inter-chain stage. The edge in a chain of length one, $\epsilon^3_1$, has been divided at $l$. After the edges are linked at $l$, the active plan has been split into three regions. The three new corners (e, orange) are at the same location, $l$, but they are expected to move in different directions over the course of the extrusion process.}
++\end{figure*}
++
++ {\bf Special cases:}
++ If only one cluster of face intersections occurs at a given height this algorithm is sufficient, however when several events occur at one height we  lose information from the corner data structure that we would otherwise use to determine if a collision has occurred on a face. This is one of the purposes of the height-clustering introduced in Sec.~\ref{section:eventImpl}.
++For this reason all chains at one height are found before any are modified. However a chain may have been separated from  its intended collision by an earlier event at the same height. Before processing, each chain must then recover its new current set of corners.
++
++In addition to this basic technique, there a several implementation issues that we address --- the filtering of invalid events, checking for chain intersections and local non connected events.
++
++{\bf Filtering invalid events:}
++Before the clustering stage we remove any invalid edges from the edge set, $f$. Because the intersections are detected using unbounded direction planes, there may be edges in $f$ that do not approach $l$ on the active plan. Such edges are removed from $f$. The line defined by the intersection of the direction plane and the sweep plane may pass close to $l$, however the line-segment defined by the associated active plan edge may not. A small epsilon range, $\delta_1$, expands the length of the edge and ensures that collisions occur reliably. On our inputs we find  $\delta_1 = 10^{-5}$ a sufficient margin. If $\delta_1$ becomes too big, the chances of the extended edges self-intersecting, Fig.~\ref{fig:ss_epsilon_fail}, becomes too large. Self-intersecting geometry is the main source of the floating point failures. Alternative approaches, such as snapping to the grid, Fig.~\ref{fig:ss_grid_fail} are also bound to fail~\cite{Michelucci:1997}. Indeed, the geometry of floating-point plane is very different to the Euclidian geometry on which our algorithm is based~\cite{Kettner:2008}.
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=0.6\columnwidth]{ss_epsilon_fail.png}
++  \caption{\label{fig:ss_epsilon_fail}A failure case for epsilon-expanding geometry to avoid floating point errors. The edges (black) bound a region (green solid). The external bisector (red) represents the movement of a corner towards this topology. If we use epsilon methods to expand the end point of all lines (green lines), the bisector intersects edge b first instead of a. This leads to a self-intersecting active plan.}
++\end{figure}
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{ss_grid_fail.png}
++  \caption{\label{fig:ss_grid_fail}An alternate floating point robustness technique. Verticies are ``snapped'' to a course grid (above floating point precision), which may then cause the active plan to self-intersect. Left: before the intersection, we are about to snap the circled point. Right: After the snap, a remote portion of the active plan has become self-intersecting.}
++\end{figure}
++
++\subsection {Edge Direction Events}
++\label{section:edgeDirecitonEvents}
++
++A set of edge direction events are created for each profile. An edge direction event updates the angle and direction planes of a set of edges. There are two types of edge direction event, \emph{standard} and \emph{near horizontal}. Standard edge direction events are constructed from a single angle in the plan, while a near horizontal edge direction event is constructed from two consecutive angles and a distance. These values are calculated from the profile polyline.
++
++\emph{Standard Edge Direction Events} {\bf Input:} A set of edges, $f$, in the active plan, each associated with the same profile and a single new angle for all the edges, $\gamma$. {\bf Output:} A new active plan which replaces the original.
++
++For each of these edges $e_i^j \in f$, we update the associated direction plane by setting its angle to $\gamma$. The edge, $e_i^j$, continues to propagate over the sweep plane as defined by the new angle.
++
++\emph{Near Horizontal Edge Direction Events}
++
++We need a separate approach as the angle associated with an edge, $\theta$, approaches $ \pm \pi/2 $, as two parallel (horizontal) direction planes do not intersect to form a line. Additionally, as the angle approaches these limits we are colliding near coplanar planes, causing numerical instability. As Fig.~\ref{fig:horiz} illustrates, we first increase the angles for numerical robustness, recursively apply procedural extrusions, and then project onto the sweep plane. This produces the required horizontal surface.
++
++{\bf Input:} A set of edges in the active plan, $f$, associated with the profile, a distance, $d$, a direction angle, $\gamma$, and a following angle, $\zeta$. The angle $\gamma \approx \pi/2$ ($\gamma \approx -\pi/2$) specifies the direction of the horizontal as towards the inside (respectively outside) of the active plan. $\zeta$ specifies the angle of the following non-horizontal edge event. {\bf Output:} A new active plan which replaces the original.
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{horiz_extrude.png}
++  \caption{\label{fig:horiz}
++The horizontal section desired (b) can be created by an additional application of procedural extrusions to calculate the offset in the given direction. After flattening (c) unchanged edges (red, d) are ignored.}
++\end{figure}
++
++First we create a temporary plan as a copy of the active plan. For each edge in the original plan, $e^j_i$, and associated angle $\theta_i^j$, the temporary plan has an edge $E^j_i$, and associated angle $\Theta_i^j$. Secondly we update the angles in the temporary plan according to the following mapping:
++
++$$
++\Theta_i^j = \left\{ \begin{array}{rl}
++ \tan^{-1}(d) &\mbox{ if $e_i^j \in f$  and $\gamma > 0$ } \\
++ -\tan^{-1}(d) &\mbox{ if $e_i^j \in f$ and $\gamma < 0$ } \\
++ 0 &\mbox{ otherwise}
++       \end{array} \right.
++$$
++A recursive application of procedural extrusions extrudes the temporary plan for a height of one unit. The temporary active plan is projected onto, and replaces, the active plan in the original procedural extrusion instance. That is, $e^j_i$ is replaced by $E^j_i$ if it exists in the updated plan, otherwise $e^j_i$ is removed from the active plan. The location of $E^j_i$ is projected onto the original active plan. Finally the values of $\theta$ in the original skeleton are updated using the mapping:
++$$
++\theta_i^j = \left\{ \begin{array}{rl}
++ \zeta &\mbox{ if $e_i^j \in f$} \\
++  \theta_i^j &\mbox{ otherwise}
++       \end{array} \right.
++$$
++
++%% In addition to similar additions to output architectural shell as the standard edge direction event, a face representing the near-horizontal section of the profile is created. This is calculated from the output shell of the recursive procedural application, projected onto a plane at the height of the direction event.
++
++Occasionally multiple edge direction events occur at the same height. In this situation the direction events are sequenced by the order of user creation. The user can manually override this priority.
++
++\subsection {Profile Offset Events}
++\label{section:profileOffsetEvents}
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{offset.png}
++  \caption{\label{fig:offset_triple} Some meshes that can be computed from an input plan (a) using profile offset events. Buildings b and c are shown in two orientations. By creating two offset boundaries (e) that define an offset region (h), an overhanging roof (b) can be generated from an arbitrary plan (a). If two edges are disabled in the profile offset event, open-ended roofs can be created (c,f,i). Finally, by offsetting inside the active plan, walled roofs can be created (d,g,j). }
++
++\end{figure}
++
++Profile offset events specify the start of overhangs. The difficulty of specifying and handling profile offset events comes from the procedural definition. While it is easy to specify overhangs for a given region, the geometry must adjust itself according to subsequent user edits. Our technique must procedurally perform changes to the active plan without creating awkward self-intersections. 
++
++At a profile offset event an additional inside region, called an \emph{offset region}, is inserted into the active plan (see Fig.~\ref{fig:offset_triple}). Two offset boundaries are grown from the active plan to enclose the new offset region. We introduce new edges and corners into the active plan to represent this newly enclosed region on the sweep plane. The new edges are classified as inside, outside, or side, depending if the edge stems from the first boundary, the second boundary, or an intersection operation between the two boundaries described later in this section.
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{offset_recursive.png}
++  \caption{\label{fig:offset_recursive}The recursive application of procedural extrusions (b) to a plan (a) from Fig.~\ref{fig:offset_triple} (c). The faces between $z=1$ and $z=2$ are projected onto the primary active plan (c), before being merged (d). Zero area faces (blue and purple) are removed, and profiles assigned based on the origin of the edge. In (d) green edges are assigned $profile\_inside$, red $profile\_outside$ and blue $profile\_side$.
++}
++\end{figure}
++
++{\bf Input:} A map for each edge in the active plan, $e^j_i$ to a tuple, $t^j_i = $ \{$disabled^j_i$, $dist\_inside^j_i$, $dist\_outside^j_i$, $profile\_inside^j_i$, $profile\_outside^j_i$\} and a single \newline $profile\_side$. The variable $disabled^j_i$ is a boolean value that specifies if the offset region associated with this edge is present in the output; $dist\_inside^j_i$ and $dist\_outside^j_i$ are real values that define distance and direction from the active plan of the inside and outside offset boundaries;  $profile\_inside^j_i$, $profile\_outside^j_i$ and $profile\_side$ are profiles. We require that all values of $dist\_inside^j_i$ and $dist\_outside^j_i$ have the same sign; a positive (negative) sign indicates an offset (respectively inset) of the active plan. To ensure proper topology on the active plan, the distance, $dist\_inside$, is constrained to be non-zero. {\bf Output:} The output of an offset event is an updated active plan, typically with the additional region defined either inside or outside of the input active plan.
++
++We create a temporary plan as a copy of the primary (input) active plan. For each edge in the primary plan, $e^j_i$, the temporary plan has an edge $E^j_i$, and an associated profile, $profile\_recursive^j_i$. Edge $E^j_i$ is constructed by projecting $e^j_i$ onto the plane $z = 0$. The profile $profile\_recursive^j_i$ defines the angles $\Theta^j_i = tan^{-1}(dist\_inside^j_i)$ at $z = 0$, and $\Theta^j_i = tan^{-1}(dist\_outside^j_i)$ at $z = 1$. We execute a recursive application of procedural extrusions using the temporary plan as input. It is executed from height $0$ to $2$, to create a temporary output shell.
++ Before continuing we correct the orientation to ensure that counter-clockwise loops enclose an inside region; The orientation of each face in the shell is reversed (the counter-clockwise ordering of vertices in the half edge data structure is reversed to a clockwise ordering). 
++Faces of the shell between the planes $z = 1$ and $z = 2$ are projected onto the primary active plan, forming the offset region, Fig.~\ref{fig:offset_recursive}. 
++
++The projection associates each tuple, $t^j_i$, with an offset region in the primary active plan. The entire offset region is bounded by the projected edges, $r$. Additionally the projection defines a 1:1 mapping between the new edges, $e^k_l \in r$, and a subset of the temporary shell's arcs $A^k_l$.
++We remove from the primary active plan any edges in $r$ that enclose an offset region of area $0$ or that are associated with a tuple containing a value of $disabled^j_i = true$. We update the profile, $profile^j_i$, associated with each edge, $e^j_i$, in the primary active plan according to the function: $$ profile^j_i = \left\{ \begin{array}{rl}
++ profile^j_i &\mbox{ if $e_i^j \notin r$ } \\
++ profile\_inside^j_i &\mbox{ if $A^j_i$ lies in the plane $z = 1$} \\
++ profile\_outside^j_i &\mbox{ if $A^j_i$ lies in the plane $z = 2$} \\
++ profile\_side &\mbox{ otherwise }
++       \end{array} \right.$$
++
++Finally we merge adjacent parts of the offset region to avoid self-intersections. We remove the corresponding edges and corners from the active plan.
++
++\subsection{Subdivison Events}
++
++We may also wish to subdivide a given primary active plan into a number of discrete areas. Like profile offset events these occur over the entire active plan a specific height. Again a recursive application of procedural extrusions are used to ensure a robust maniulation of the active plan, Fig.~\ref{fig:subdiv}. The boundaries of these new \emph{subdivision regions} are then assigned profiles corresponding to a combination of their originating primary active plan edge profiles and their classification as {bottom, side} or \emph{top} edges in the subdivision output shell.
++
++{\bf Input:} A map from each profile present on the active plan to a subdivision profile, $m$, and a set of tags, $t_x \in t_0..t_tmax$, attached to output edges with properties, $(profile\_bottom, profile\_top, profile\_side, merge\_bottom, merge\_top,$\newline$ merge\_side)_x$. The map is specified such that $m(profile_1)=profile_2$, where $profile_1$ is a profile in the primary active plan before the subdivision event, and $profile_2$ is a subdivision profile, used to assign space divisions. The boolean values, $profile\_side, merge\_bottom, merge\_top, merge\_side$, specify whether the subdivision region should be merged with corresponding abutting region.  The tag, $t$, is assigned to a set of polyline segments in the subdivision profiles to mark faces in the subdivision shell. The profiles, $profile\_bottom, profile\_top$ and  $profile\_side$ are assigned to the newly created subdivision regions in the primary plan. {\bf Output:} The output of a subdivision event is a new primary active plan.
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{subdiv.png}
++  \caption{\label{fig:subdiv}The subdivision of of the primary active plan at a height (left: green) into two new regions (right: red, yellow). The subdivision is calculated from a recursive application of procedural extrusions (right), that uses the primary active plan as input, and the flattened resulting faces (right: red, yellow polygons) as the subdivision output. These are then replaced in the primary active plan (left: red, yellow).
++}
++\end{figure}
++
++Each edge in an output shell can be classified as $top$, $bottom$ or $side$ according to to how it was created. Edge direction events create $top$ classified edges for the out-going face and $bottom$ classified edges for the in-coming face. All other edges in the output shell are classified as $side$.
++
++We create a new, recursive application of procedural extrusions, the \emph{subdivision} application. Initially this is a copy of the primary active plan, translated to height 0. We update the profile associated with each edge in the subdivision active plan according to the map, $m$. We then execute this instance of procedural extrusions to create a 3d shell. Each face in this shell may have single subdivision tag, $t_x$ associated with it. We the process each face in turn, projecting it onto the primary active plan, possibly merging it with adjacent regions according to the $merge$ tags associated with $t_x$. The profiles of these new regions on the active plan are given by the , $profile\_bottom, profile\_top$ and  $profile\_side$ members of the tuple.
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{skel_subdiv_rel_abs.png}
++  \caption{\label{fig:skel_subdiv_rel_abs} We may use different profiles to divide an irregular plan into regions defined by relative or absolute measures. Above: by assigning the angle on the profile of one edge to be twice the speed (red) of another (purple) we may create a region of relative size $\frac{1}{3} = \frac{a}{b}$ (top left, pink). Below: By only using the lower section of a profile curve, an absolute subdivision of $c$ units may be created.}
++\end{figure}
++
++We note that subdivision events are a generalisation of profile offset events. That is, it is possible to create a profile offset event using a subdivison event. However subdivision events cannot be easily incorpriated into the user interface profile curves, and are generally more involved for the user.
++
++By assigning profiles with angles of a certain ratio, we can split the active plan into relatively sized areas, Fig.~\ref{fig:skel_subdiv_rel_abs} top. Alternately we can only use a certain polyline segement of the profile to create an absulte subdivision, Fig.~\ref{fig:skel_subdiv_rel_abs} bottom. By combing both these techniques, a wide range of shapes can be created. Fig.~\ref{fig:kensington} gives an example of a relative subdivision event in a modeling context.
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{CurvedBuildingFront.png}
++  \caption{\label{fig:kensington}
++ A procedural model that renders a street from a spline. In this case the street was generated by four points defining the street's curve. Seed points were grown using another application of the skeleton to create the building footprints. Relative subdivision events were used to split the roof plan into three areas.}
++\end{figure}
++
++\subsection {Insertions into the polygon}
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{plan_edit.png}
++  \caption{\label{fig:plan_edit} Inserting a plan edit into the active plan during execution. a) The plan data structure (blue dots, green arrows) implicitly defines the active plan (cyan). b) To insert new edges into the active plan, corresponding edges are linked into the plan data structure. c) The resulting architectural shell. }
++\end{figure}
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{natural_step.png}
++  \caption{\label{fig:natural_step} Given an intricate plan, calculating a robust perturbation is challenging. Forced steps are positioned at the location of the anchors (a, orange). These are combined with the boundary using a geometrical union operation. However many geometry artifacts are undesirable (c, red) in an architectural situation. Given natural steps at certain positions (a, orange), small changes to the boundary are made (d), which are then grown (e) using a recursive application of procedural extrusions, to create more natural geometry (f).
++ }
++\end{figure}
++
++Plan edits introduce discrete changes to the active plan at specified heights. We describe how plan edits operate efficiently and detail two methods to define them.
++
++When performing a plan edit, some edges are deleted, some edges are moved, and some edges are inserted, Fig.~\ref{fig:plan_edit}. These new edges are at the height of the current sweep plane.
++
++Our user interface offers two types of plan edits. Inserting an arbitrary shape gives the largest variety of geometric designs. However these \emph{forced steps} offer no guarantees that the resulting active plan will not self intersect and create an invalid topology. The challenge comes again from the procedural nature of our approach and the fact that the edit has to work for all input plans. \emph{Natural steps} offer a solution to this problem by using a recursive application of procedural extrusions to insert edges into the active plan.
++
++Natural steps are calculated on the active plan at a given height by amending a small (typically $10^{-3}$ by $10^{-3}$) protrusion. This is offset by a recursive application of procedural extrusions such that it does self intersect, Fig.~\ref{fig:natural_step}. This is similar to the edge direction events of Sec.~\ref{section:edgeDirecitonEvents}. This application of procedural extrusions is constructed by assigning $\theta = 0$ to all edges not part of the feature, and a user defined $\theta$ to those edges in the protrusion. The resulting temporary active plan is calculated at a specific height, and this is incorporated into the original active plan. The new edges in the active plan have the relevant profiles assigned to them.
++
++We have descovered that natural steps can create a wide range of geoemtry in this robust manner. Butresses and other disjoint regions can be created by growing the protusion in such a manner that it disconnects itself, Fig.~\ref{fig:pe_grow_butress}. The chimney plans of Fig.~\ref{fig:Chimney}, can be be grow by combining this disjoint region with an instep, Fig.~\ref{fig:pe_grow_chimney}.
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{pe_grow_butress.png}
++  \caption{\label{fig:pe_grow_butress}Given a natural step feature location, a, we may insert a small protrusion, d, intro the active plan. It is possible to assign weights (black arrows) to the edges in such a way that the geometry becomes disconected. This changes the genus of the active plan, and creates a suitable footprint for a butress or similar (d).}
++\end{figure}
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=0.7\columnwidth]{pe_grow_chimney}
++  \caption{\label{fig:pe_grow_chimney}If we combine an instep with a genus change, we can create a suitable plan edit to represent a chimney or similar. Note that the length of the black arrows indicates the relative speeds of the natural step offset.}
++\end{figure}
++
++\subsection{Calculating anchor positions}
++\label{sec:anchors}
++
++Anchors define the location of features, such as plan edits. Finding parameterized locations on a surface that are robust to subsequent edits in the floor plan is challenging. The manifold of the structure may not reach any given point in space because, for example, the anticipated active plan edge may have been removed by previous events. Therefore, to position features in a manner robust to plan and profile edits, the user positions a pair of two dimensional anchors, Fig.~\ref{fig:Marker_Product}. The profile anchor defines a plane parallel to the sweep plane, at it's height. When the sweep plane reaches this point, we evaluate the plan anchor. The input plan edge may no longer be in the active plan, so the feature may not be instanced,  Fig.~\ref{fig:anchor} top row, middle.
++
++We allow the user to select from two types of plan anchor --- relative and absolute. 
++A relative anchor's location is a fraction of its length on the active plan edge,  Fig.~\ref{fig:anchor} middle row, left. If the edge is represented in the active plan at the specified height, the feature is instanced.
++Absolute anchors are defined on an input plan edge, and define a plane perpendicular to this edge, Fig.~\ref{fig:anchor} bottom row, left. The intersection of this plane and the corresponding edge in the active plan at the height specified by the profile anchor defines the instance location. Because an active plan edge may grow, it is possible to position absolute anchors beyond the ends of the input plan edge.
++
++Relative and absolute anchors each define a different co-ordinate system on faces of the architecural shell, Fig.~\ref{fig:anchor}. Each system is a more natural way to express certain patterns with different geometric properties:
++\begin{itemize}
++\item{Relative plan edge anchors; if an edge is present at the height, the operation will occur at least once. If a split event has taken place on the corresponding edge, it may take place more than once, ~\ref{fig:anchor}, middle row, right. This makes relative anchors suitable for sloping features that must always exist, however having multiple instances of certain features may be inconvienient.}
++\item{Absolute plan edge anchors; these may occur once or zero times at a certain height. At a certain height the corresponding plan anchor may no longer define a perpendicual plane that intersects the corresponding edge in the active plan. Hence the absolute anchors may not be suitable for referencing features that must exist, ~\ref{fig:anchor}, bottom row, right.}
++\end{itemize}
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=0.85\columnwidth]{anchors.png}
++  \caption{\label{fig:anchor}Top row: plan anchors (green) and profile anchors (blue) combine to locate a feature (purple). If the edge is not in the active plan at a given height, the feature may not be instanced (red). 
++Middle row: Relative plan anchors define a proportional coordinate system relative to the input plan edge's length, $\frac{x_1}{y_1}  = \frac{x_2}{y_2}$  (left). However some features may be repeated (right). Bottom row: Absolute plan anchors define a rectilinear grid over the shell, however they may not be always instanced (red).}
++\end{figure}
++
++It is also desirable to be able to position features on the surfaces created by plan edits. In this situation we may define plan anchors for the new edges introduced by the plan edits, Fig.~\ref{fig:pe_anchor_plan_event}. We translate instances of the profiles associated with the plan event by the height of the event. This also moves the associated profile anchors. These anchors may define additional plan edits, leading to a possibly recursive sequence of plan edits. 
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{pe_anchor_plan_event.png}
++  \caption{\label{fig:pe_anchor_plan_event}A forced step may be defined by a plan segment and a profile (left). The geometry arising from a forced step may be parameterized in several ways, here we show the use of relative plan anchors (middle). The profiles associated with the plan event are offset by some value, $\alpha$, such that feature locations are positioned relative to the start of the plan event (right).}
++\end{figure}
++
++
++\subsection {Ambiguities in Procedural Extrusions}
++\label{sub:ambiguities}
++
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{ambig_demo.png}
++  \caption{\label{fig:ambig_demo}
++Two identical bay windows that lead to the same two events (red circles) involved in an ambiguous situation (red line). 
++To resolve the ambiguous situation, a single edge must be chosen to replace the others. The building on the left (right) resolves the ambiguity using the volume maximizing (respectively minimizing) priority technique. The resulting unused section of the original profile is shown in orange. Note that in each case, two ambiguous events occur at the same height, and must create globally consistent output.}
++\end{figure}
++
++Procedural extrusions (as well as the weighted straight skeleton~\cite{Epp:98}) are ambiguous in the degenerate concave case. Different modeling choices lead to different ambiguous-case resolution strategies, Fig.~\ref{fig:ambig_demo}.
++
++As described in the earlier Sec. ~\ref{FIXME} describing the properties of the weighted straight skeleton, there are several situations in which the WSS is ambiguous. In particular when modeling architecutre the line ambiguities need to resolved in a user specifiable way, Fig.~\ref{fig:ambig_demo}.
++
++We introduce three possible priority schemes that the user can select. It is interesting to note that most architectural roof structures (such as bay or dormer windows) enclose the maximum volume in the ambiguous case. This leads to our default scheme in which the highest priority edge, $e^j_i$, has the lowest (closest to $-\pi/2$) associated angle, $\theta$. Alternately the minimum case (largest associated $\theta$) may be useful when estimating conservative offsets. The third option is to manually define the priority function in the user interface. Section \ref{Sec:Results} describes situations where it is desirable for the user to manually define the priority function.
++
++\cleardoublepage
++
++
++% The other useful case is when we want to ensure that two edges with angles $\theta^p_1,\theta^p_2$, give a reflection when the direction of the edge is reversed, and the angles are negated.
++
++%-------------------------------------------------------------------------
++
++\section{Evaluation}
++\label{Sec:Evaluation}
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=0.6\columnwidth]{multi.png}
++  \caption{\label{fig:multi}
++From top, left: buttress, dormer windows, flying buttress, bay windows, curved plan, eight faces meeting on a symmetrical footprint with a chimney, hipped roof, curved roof, a horizontal overhang, an overhanging gable, standard gable and interior dormer windows}
++\end{figure}
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{condo.png}
++  \caption{\label{fig:condo}
++Inset:  the output of our procedural extrusions using a complex footprint, horizontal sections and plan edits. We are able to create pillars, covered parking and alcoves respectively. Main: A procedural condo with roof texture surrounded by procedural trees}
++\end{figure}
++
++Procedural extrusions are a powerful modeling tool that are able to model many architectural features very quickly. Fig.~\ref{fig:multi} shows many typical architectural shells that are not possible using just the straight skeleton or other existing procedural modeling tools. We can also create buildings with horizontal roof overhangs, such as Fig.~\ref{fig:condo}. The alcoves and columns show how disconnected regions can merge together and interact. This is only possible because we allow negative angles for the roof planes. We may also generate architecture along a curved street, Fig.~\ref{fig:kensington}. The street can be reshaped interactively, while the building models adapt to the new footprints. As an aside we note procedural extrusions can be used to model other architectural features such as windows or moldings, Fig.~\ref{fig:architecture}.
++
++We performed formal evaluations of procedural extrusions as a modeling tool for several different use cases. In Sec.~\ref{Sec:GIS_Eval} we examine the use of PEs as an automated modeling system, Sec.~\ref{Sec:Results} describes our experiences of PEs as an interactive tool. Finally Sec.~\ref{Sec:Art_Eval} describes the use of the PE system by artists.
++
++\cleardoublepage
++
++\subsection{GIS Evaluation}
++\label{Sec:GIS_Eval}
++
++Procedural extrusions may be used on a large scale to describe cityscapes. We created a procedural model using about $6000$ footprints from Atlanta (see Fig.~\ref{fig:Strip}). We used our interactive system to apply three different machines to generate different styles of architecture to the footprints.
++
++
++\begin{figure*}
++  \centering
++  \includegraphics[width=1.0\columnwidth]{strip.png}
++  \caption{\label{fig:Strip} We present an interactive procedural modeling system that is able to model difficult architectural surfaces, such as roof constructions. This figure shows procedural extrusions applied to $6000$ floorplans from a GIS database of Atlanta. }
++\label{fig:teaser}
++\end{figure*}
++
++The model has three million polygons, 3 different building styles, took 20 minutes modeling time, 10 minutes to compute the procedural extrusions, and 15 minutes to render. Our current limitation is that we were not able to find a rendering infrastructure to render a few hundred million polygons of a detailed model. We therefore had to omit ornaments and some details of the roof constructions from the designs.
++
++%This is comparable to CGAL’s implementation computing the straight skeleton on the same input. Note that CGAL does not support different profiles. We also conducted a test where we approximated a circle with footprints of an increasing number of edges. Here our algorithm quickly becomes 100 times faster, because there are so many events happening at one point.
++
++We implemented the proposed system in Java and measured the running time of our system on $64$bit $2.6$GHz Xeon.
++
++%-------------------------------------------------------------------------
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{architecture.png}
++  \caption{\label{fig:architecture} Using a creative set of profiles, a wide range of architectural features can be created. By setting the input in a different plane, various windows may be extruded.}
++\end{figure}
++
++\subsection{Interactive Evaluation}
++\label{Sec:Results}
++
++\begin{figure*}
++  \centering
++  \includegraphics[width=1.0\columnwidth]{fifty_houses.png}
++  \caption{\label{fig:fifty}The example cases and modeling statistics. \emph{v} Vertices in modeled plan (additional vertices); \emph{l} Polygons in modeled plan (polygons in library plan); \emph{p} Number of profile sections in model; \emph{s} Number of natural steps designed (number of natural step applications); \emph{o} Number of offset events. }
++\end{figure*}
++
++\begin{figure*}
++  \centering
++  \includegraphics[width=1.0\columnwidth]{fifty_houses_plans.png}
++  \caption{\label{fig:fifty_houses_plans} The input plans and profiles to Fig.~\ref{fig:fifty}}
++\end{figure*}
++
++To evaluate the skeleton as an interactive modeling primitive we constructed 50 buildings. Here we detail the process we undertook to perform the modeling. 
++
++We modeled each building from a plan and a perspective image. A set of four simple meshes (Fig.~\ref{fig:Meshes}) were used to add detail to the structures. The events used for modeling were edge direction events, profile offset events and natural steps.
++
++\clearpage
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{tt_meshes.png}
++  \caption{\label{fig:Meshes} The four example meshes used in the evaluation. The meshes are parameterized via control points (blue and green circles) and can be instanced to different sizes. }
++\end{figure}
++
++\begin{figure*}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{european_blocks.png}
++  \caption{\label{fig:european}Sample aerial photographs of buildings used for modeling examples 46 to 50 in Fig.~\ref{fig:Meshes}. a,b) Stockholm, c) Copenhagen, d) Edinburgh, e) Vienna  }
++\end{figure*}
++
++We undertook the evaluation with the goal that all major roof features from the elevation drawings should be present, although smaller details (such as cornices, plumbing and decorative windows) may be excluded. We traced the plans from those specified or aerial views of the property. The construction of profiles and positioning of features was performed “by eye” by the first author of this paper.
++
++The first 45 buildings were taken from a library of ready designed architectural styles for family homes~\cite{ePlans}, Fig.~\ref{fig:fifty_houses_plans}. We modeled the first example in each of the categories the library provided. The library contained styles as diverse as \emph{ranch} or \emph{Dutch} (Fig. \ref{fig:fifty}, examples 13 and 32 respectively), however much of the stylistic content was dependent on architectural details that were replaced with our simple meshes. Because the plans were pre-designed, they had predominantly $90^\circ$ and $45^\circ$ degree angles between floorplan edges. That is, the design was not constrained by environmental features. To provide more challenging examples, we chose an additional five buildings from European cities that had irregular plans (Fig.~\ref{fig:fifty}, examples 46-50). These buildings were modeled from satellite and aerial views, Fig.~\ref{fig:european}.
++
++The modeling times ranged from 20 to 120 minutes with a mean time of 63 minutes. Features on the input plan smaller than 30cm were not modeled. We also recorded a number of additional metrics for each building: the number of vertices in the input plan and in the model; the number of corner-loops in the input and in the model; the number of profiles in the model, the number of offset events, the number of natural step templates and the number of instances of those steps.
++
++It was possible to model all the buildings using our interface. Some roof-lines were easier than others, and in this section we describe some of the problems encountered.
++
++\begin{figure*}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{problem_cases.png}
++  \caption{\label{fig:problems}a) The red roof face is not described in the input polygon(left). By creating a small change to the input polygon we can create the desired face (green). b) left: edges can be expected to collide at a certain height (green polygons), right: however when these edges are involved in other events (such as those from the red polygon), there may be undesired consequences, here a non-terminating polygon. c) Some structures (such as dormer windows and chimneys) do not obey the volume-maximizing resolution to the ambiguous case, in this situation we have to lower the ambiguous case priority of some edges (blue) to get the desired result. d) A face (yellow) may be shared between two profiles (blue lines), defining co-planar profile sections requires patience on behalf of the user.}
++\end{figure*}
++
++The most common issue when modeling was the construction of roof areas that contained edges not specified in the input plan (Fig.~\ref{fig:problems} (a). In these circumstances it was necessary to add extra edges to model these features. These would either be added in the plan, leading to the difference between the vertices in the input plans and the model in several of the examples, or by natural steps at certain heights.
++
++We share a limitation with the straight skeleton that certain smaller edits to the footprint can result in bigger changes to the roof surface~\cite{Epp:98}. For example when two adjacent edges with different angles are nearly parallel, the behavior of the resulting roof can be erratic as the angle between the edges is set to greater than, or less than zero. In practice these edges do not appear often in architecture, and we often end up adding a perpendicular edge (Fig.~\ref{fig:problems}, a). 
++
++In several circumstances one face relies upon another, spatially separated, face to halt its propagation at the correct time, that is an edge is fated to meet another (Fig.~\ref{fig:problems}, b). When another feature blocks, or changes the course of one of these faces, the other may not terminate, or collide in an unexpected location. These fated edges lead to potentially undesirable intermediate outputs while editing.
++
++Modeling circular arches was difficult because any adjustment in the width of the arch, would have to be accompanied by a re-scaling of the profiles. Modeling techniques such as shape grammars are able to retain such semantic information to automate such a process, and it is possible to imagine a similar system for the procedural extrusions.
++
++It is not convenient to model a roof that is held only by a large number of pillars, because it is not easy to model the transition from pillars to the roof. For example, pergolas (Fig.~\ref{fig:fifty}, example 31) contain no walls to allow the plan to generate a roof. These were not a large part of our data set, and were approximated by walled structures of similar volume.
++
++It was occasionally necessary to override our default of a volume maximizing priority in the ambiguous case. For example, in the case of a chimney stack or a dormer window (Fig.~\ref{fig:problems}, c). To do this we used tags to specify high priority and low priority profile segments. This proved simple compared to the alternative of specifying a priority for every pair of segments.
++
++While allowing one profile to split into two is the simple case of inserting an edge with a step, allowing two profiles to merge to one is more difficult (Fig.~\ref{fig:problems}, d). We see this architectural feature as two different profiles to merge at the top of a shorter roof (Fig.~\ref{fig:fifty}, examples 3, 20). To design a profile with a face co-planar to another is difficult, especially if the second edge starts from an edge parallel, but not colinear to the first.
++
++Natural steps proved very versatile for inserting edges into the polygons. For example, Fig.~\ref{fig:fifty} (example 34) required a new edge internal to the plan for the back-facing wall of the tower. By positioning a wide square natural step on the end of the building, it was possible to split the polygon into two. One partition became the tower, and the other the remainder of the roof structure.
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{failure_mode.png}
++  \caption{\label{fig:failure_mode}The two observed examples of missing geometry. Note the missing roof sections in both buildings.}
++\end{figure}
++
++However, our modeling system is more specialized than most commercial polygonal modeling packages. The virtual model of Atlanta is unique and we argue that no existing approach can model a city of comparable (roof) complexity in reasonable time.
++
++\subsection{Artistic Evaluation}
++\label{Sec:Art_Eval}
++
++To measure the usability of the system by those unfamilar with procedural modeling we employed two artists to use the system for four weeks. The users reported that it took between 5 hours and 3 weeks to become competent with the tool given a course, three page user guide. Brief telephone calls were made with the artists, and no direct tutoring occured. 
++
++During this training the artists were able to create a number of interesting forms, Fig.~\ref{fig:chase_galen_funtime}. Finally they were asked to create some complex example meshes, Fig.~\ref{fig:chase_galen}. To create these complex examples the artists created their own custom meshes to attach. This took the total modeling time to 30 hours for both artists, although the time spend using the procedural extrusion system ranged from 5-10 hours. The time saved compared to standard mesh modeling techniques was estimated by the artists to be between 5 and 15 hours.
++
++Whilst this approach only gives a coarse qualititive metric, it shows the applicability of the procedural extrusions in the real world. The final interviews with the arists are recorded in Sec.~\ref{sec:artists_comments}.
++
++\begin{figure*}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{chase_galen_funtime.png}
++  \caption{\label{fig:chase_galen_funtime}The artists example work while learning to use procedural extrusions. Note the wide range of roof shapes easily expressed in the system.}
++\end{figure*}
++
++
++\begin{figure*}[htb]
++  \centering
++  \includegraphics[width=0.7\columnwidth]{chase_galen.png}
++  \caption{\label{fig:chase_galen} The final projects from user 1 (above) and user 2 (below). These took ``10 hours'' and ``5-10'' of work with the procedural extrusion system.}
++\end{figure*}
++
++
++\FloatBarrier
++\subsection{Notability}
++
++Procedural extrusions have been used in external academic and commercial projects.
++
++ Fig.~\ref{fig:clockwork_empires} illustrates the intended use of procedural extrusions in the yet to be released video game \emph{Clockwork Empires}\cite{clockworkEmpires}. This project extends on the work presented here by including texturing, and forced termination at specified height, ``caps'', to stop run-away geometry.  
++
++\begin{figure}[htb]
++  \centering
++  \def\svgwidth{1.0\columnwidth}
++  \includesvg{13-procex/small_images/clockwork_empires}
++  \caption[Clockwork Empires video game.]{\label{fig:clockwork_empires}\copyright 2012, 2013, Gaslamp Games. Clockwork Empires~\cite{clockworkEmpires} uses procedural extrusions to generate buildings from user specified footprints. Top: The user designs a footprint. Bottom Left: the resulting mesh. Bottom Right: Another in-game building in context.}
++\end{figure}
++
++In an acadmic project, our PE library has been integrated into the skylineEngine~\cite{skyline}, implemented in Houdini3D~\cite{houdini}. This project allows basic plans an profiles to be defined inside the Houdini environment, as in Fig.~\ref{fig:houdini_integration}.
++
++\begin{figure}[htb]
++  \centering
++  \def\svgwidth{1.0\columnwidth}
++  \includesvg{13-procex/small_images/houdini_integration}
++  \caption[Integration with Houdini.]{\label{fig:houdini_integration}\copyright Gustavo Patow. The integration of our PE implementation with Houdini. Top: Two views of a Raccolet style house, and the graph that generates it. Bottom: Two views of a ``sea view'' style house.}
++\end{figure}
++
++\FloatBarrier
++\section{Discussion}
++
++From a development perspective the algorithms are difficult to implement. It is hard to give a formal guarantee that the implementation will work correctly on all inputs. This may be observed when using our user interface, as occasionally a face will not contain enough arcs to close the area. In this case the face will not be visible to the user. This may occur once in every 5 minutes of interactive editing with multiple edits per second; It is certainly possible to construct pathological input cases.  In the procedural case, we visually identified missing faces in two of the meshes, from the $6000$ floorplans in the GIS database, Fig.~\ref{fig:failure_mode}.
++
++A major design decision for our system was to choose between a rational arithmetic or a floating point implementation. Our floating point implementation is better suited to interactive modeling applications because it prioritizes interactive update speeds over high precision. A rational arithmetic approach may be important to give theoretical guarantees and such an alternative implementation would be very valuable.
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{comparison.png}
++  \caption{\label{fig:Comparison}Left: Straight skeleton; Middle: Straight Skeleton with angle changes; Right: Procedural extrusions}
++\end{figure}
++
++We are the first to introduce an algorithm for extrusions using edges with independent per-edge angles (weights). This results in a 3d instead of a 2d algorithm. We are also the first to recognise the difficulty of independent per-edge angles. The possibility of a 2d weighted skeleton is discussed in previous work~\cite{Epp:98,Epp:08}, but no algorithm is given and the ambiguous cases were not discovered. Even though our work is based on previous work in the unweighted case, e.g.~\cite{Cacciola:2004:ACI,Felkel:1998:SKI}, our modifications result in substantial improvements in the range of forms that can be produced, Fig.~\ref{fig:Comparison}.
++
++In previous work~\cite{Havemann:2005:GMM} the direction of the extrudes is monotonic in the upwards direction, that is they are limited to angles above the sweep plane. By using profile offset events, we can allow non-monotonic profiles.
++
++%-------------------------------------------------------------------------
++\section{Conclusions}
++
++We believe that the combination of interactive and procedural modeling is a significant boost to artists productivity and a great complement to existing modeling tools. In some sense our work is complementary to previous work by Lipp et al.~\cite{Lipp:2008:IEV}. Our approach to encoding procedural models is very different from the previous shape grammar approach~\cite{Mueller:2006:PMB,Lipp:2008:IEV}. We believe that we are the first to provide a solution for the procedural modeling of roofs, procedural modeling from arbitrary building footprints, and other complex architectural surfaces. However, previous work is better suited for placing elements on \facade{} planes and we see some potential in combining both approaches in future work.
++
++The main contribution of this paper is the design of the system and the set of tool choices to enable procedural modeling of complex architectural surfaces. Procedural extrusions can model many complex architectural surfaces that could not be easily modeled with previous procedural modeling tools. Examples are curved roofs, overhanging roofs, dormer windows, interior dormer windows, roof constructions with vertical walls, buttresses, chimneys, bay windows, columns, pilasters, and alcoves.
++
++
++\section{Procedural extrusions as a data loss modeling paradigm}
++
++
++An informative perspective on the Procedural Extrusion system is to consider the MWSS as a system for data loss, while the PE events insert data into the system. That is, as the sweep plane rises, MWSS events such as split and edge events remove edges (and data) from the active plan. Concurrently the edge direction events, profile offset events, subdivision events, and event the input plan creation in PE system insert additional information into the model. For example profile offset events insert additional edges into the active plan. This contrast invites the description of PE as an ``automated data loss'' system. The user specifies the places to insert additional data, while the MWSS is utilised to remove it in an architecturally-meaningful manner. An example is given in  Fig.~\ref{fig:complexity_reduction}.
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=0.6\columnwidth]{complexity_reduction.png}
++  \caption{\label{fig:complexity_reduction} A procedural extrusion model of a haunted house. The green lines show where data is inserted into the rising sweep plane, and the red lines show where an user event removes data.}
++\end{figure}
++
++
++\section{Recursive procedural extrusions}
++
++Another view of the procedural exutrsion system is that we have defined a language of WSS applications. We describe a sequence of operations that detail how to build a particular structure. 
++
++This sequence of operations is recursive. A plan edit can be viewed as a function call; It introduces another set of edges into the plan that, in turn, may call other functions (plan edits). 
++
++If a plan edit contains a use (plan anchor and profile anchor) of itself, we would describe this as a \emph{recursive function}. In our case, there is a condition associated with the recursive call. If the edge associated with the plan anchor is removed from the active plan before we reach the profile anchor, the call may not occur.
++
++Fig.~\ref{fig:recursive} shows an example of a recursive procedural extrusion function. 
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{recursive.png}
++  \caption{\label{fig:recursive}Left to right and top to bottom: A never ending sequence of plans generated by a simple procedural extrusion function. A dimond shaped plan edit introduces two instances of itself at different heights. The profile associated with the dimond edit first expands itself, then shrinks. The seed shape is a trapezium.}
++\end{figure}
++
++\section{Shape simplification}
++\label{sec:shape_simplification}
++
++Here we note that an application of an offset surface (a straight skeleton with all edges of $\theta = const, const \neq 0$) is sufficient to simplify reflex ($\theta < 0$) or convex corners ($ \theta > 0$), Fig.~\ref{fig:simplify_outlines}. If we apply both offsets in sequence we have a fairly robust polygon simplification tool, Fig~\ref{fig:simplify}.
++
++There are several drawbacks with the straight skeleton as a simplification tool. It does not introduce new edges to the polygon, so polygons that do not contain an edge with a good approximation for the local region are not simplified well. ``Very'' reflex corners have a disproportionate effect on the result. However this may be rectified using a variation of the linear axis. The computational complexity is also higher than that of existing algorithms.
++
++The advantages are that it is very conceptually simple, robust to any input shape and compatible with the other approaches given in this document. We also gain some ability to mark edges as important, buy manipulating their weights when using the weighted straight skeleton. The theory extends easily into higher dimensions.
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{simplify_outlines.png}
++  \caption{\label{fig:simplify_outlines} Taken an input shape (a), we may shrink it, to create an simplified version (b), however concave corners remain unsimplified. Alternately we may grow it (b), but convex corners remain unsimplified. However if we shrink, then grow the shape (d) both concave and convex verticies are eliminated.}
++\end{figure}
++
++\begin{figure}[htb]
++  \centering
++  \includegraphics[width=1.0\columnwidth]{simplify.png}
++  \caption{\label{fig:simplify}The operations in Fig.~\ref{fig:simplify_outlines} a, c and d shown in solid 3d (above) and wireframe (below).}
++\end{figure}
++
++%robustness.svg
++%skeleton_language.svg
++
++
++
++%-------------------------------------------------------------------------
++\begin{comment}
++
++\subsection{Notes: Pseudocode}
++\label{sec:pseudocode}
++
++
++
++\begin{algorithm} [htb]
++\begin{footnotesize}
++\begin{minipage}{0.45\textwidth}
++  Main \Begin{
++    \ForEach{ corner $c_i$ } {
++        InsertCornerInPriorityList( $c_i$ )\;
++    }
++
++    sweepZ = 0;
++
++    \While { !EventPriorityQueue.Empty() } {
++        event = PriorityList.FindNextEventsWithin( $\delta_2$ )\;
++	\If { event.height() $>$ sweepZ }
++        {
++	sweepZ = event.height()\;
++        eventClusterList = Cluster( event, $\delta_3$ )\;
++
++        \ForEach{ cluster cl in eventClusterList } {
++            HandleEvent( cl )\;
++        }
++        }
++    }
++}
++
++  InsertCornerInPriorityList( corner $c$ ) \Begin{
++     p1 = c.NextEdge.GetPlane()\;
++     p2 = c.PrevEdge.GetPlane()\;
++     \ForEach{ roof-plane p3 in the input} {
++        PriorityList.insert(\\
++	    IntersectAndCreateEvent(p1, p2, p3))\;
++     }
++   }
++\end{minipage}
++\end{footnotesize}
++  \caption{Pseudo-code for the main part of the algorithm
++  }
++  \label{code:pseudocode1}
++ %\vspace{-0.6cm}
++\end{algorithm}
++
++\begin{algorithm} [htb]
++\begin{footnotesize}
++%\begin{scriptsize}
++\begin{minipage}{0.45\textwidth}
++  HandleEvent( EventCluster $ec$ ) \Begin{
++    RemoveAllInactiveEdgesFromCluster( $ec$ )\;
++    $chainList$ = BuildEdgeChains( $ec$ )\;
++    \If { $chainList$.countEdges() $<$ 3} {
++	return\;
++    }
++    \ForEach{ chain $chain_j$ in $chainList$ } {
++            \ForEach{ consecutivePairOfCorners $c_k,c_l$ in $chain_j$ }
++            {
++                AddSkeletonEdge($ec.location,c_l$)\;
++                $c_l$.inactive = true\;
++            }
++        }
++
++    \ForEach{ consecutive $chain_j, chain_k$ in $chainList$ } {
++            $c1$ = firstCornerOfLastEdgeOf $chain_j$\;
++            $c2$ = firstCornerOfSecondEdgeOf $chain_k$\;
++            $cnew$ = createNewCorner( $ec.location$ )\;
++	    $cnew$.PrevEdge = $c1$.NextEdge\;
++            $cnew$.NextEdge = $c2$.NextEdge\;
++            InsertCornerBetween( cnew, c1, c2 )\;
++    }
++
++    FindEventsForNewCorners()\;
++    FindRemoveUnusedEdges()\;
++}
++\end{minipage}
++\end{footnotesize}
++  \caption{Algorithm for the generalized intersection event.
++  }
++  \label{code:pseudocode2}
++\end{algorithm}
++\end{comment}
++%FIXME: following algorithm doesn't fit on one page
++\begin{comment}
++\begin{algorithm} [htb]
++\begin{footnotesize}
++\begin{minipage}{0.45\textwidth}
++Resolve \Begin{
++ListOfCorner $chains$ = ChainsOfAmbiguousBisectors()\;
++\ForEach{ $g$ in $chains$ } {
++    SetOfCorner $f$ = FindHighestPriorityFirstCorners(g)\;
++    Boolean $inside$ = ! ( $f$ contains (FirstIn($g$)) )\;
++    \ForEach{ $c_i$ in $g$ }{
++        \If {$c_i$ member of $f$}{
++          \If {!$inside$}{
++            $inside$ = false\;
++            AddSkeletonEdge ($c_i$, Raise ($c_i$))\;
++          }
++        }
++	\Else  {
++            \If {$inside$}
++            {
++              $inside$ = false\;
++              AddSkeletonEdge ($c_i$, Raise ($c_i$))\;
++            }
++            AddSkeletonEdge(Raise($c_i$),Raise ($c_i$.nextCorner))\;
++        }
++    }
++}
++
++Corner $first$ = Raise(FirstIn($g$))\;
++Corner $last$ = Raise (LastIn($g$).nextCorner)\;
++InsertCornerBefore($g$, $first$)\;
++InsertCornerAfter($g$, $last$)\;
++RemoveCorners($g$)\;
++$first$.nextEdge = FindOneEdge($f$)\;
++$last$.prevEdge = FindOneEdge($f$)\;
++$first$.nextCorner = $last$\;
++$last$.previousCorner = $first$\;
++
++}
++
++
++FindHighestPriorityEdges \Begin (g)
++{
++  \If{ VolumeMaximizing } {return members of g with largest angle\;}
++  \ElseIf { VolumeMinimizing } {return members of g with smallest angle\; }
++}
++
++Raise \Begin (Corner $c_i$) {
++   \If { cache contains $c_i$} {
++	return cache.get($c_i$)\; }
++   $raised$ = new Corner ( Collide ( $sweep plane$, $c_i$.previousEdge, $c_i$.nextEdge ) )\;
++   return $raised$\;
++}
++
++
++\end{minipage}
++\end{footnotesize}
++  \caption{Pseudo-code for the resolving the ambiguous case. Calculates a geometrically consistent solution to the ambiguity given a chain of corners that start edges which become coincident and adjacent at a the sweep plane's height.}
++  \label{code:ambig}
++\end{algorithm}
++
++
++\subsection{Notes from Architectural Geometry, Pottman, Asperl et al.}
++
++extrusion / translational / rotational surfaces
++ruled surface: generated by moving a straight line spiral ramps, cones, cylinders, mobius strips. can be created by drawing lines between two arbitrary parameterized curves in r3
++sweeping along a path. (Parameterized path defines a parameterized path for the frennet frame).
++skinning: filling in between arbitrary curves. a very under constrained problem
++
++is there something of a hierarchy here:
++extrusion is translation along a straight line
++ruled surface is an extrusion surface with a straight line profile
++rotational surface is an extrusions surface with a circular plan
++
++curve evolution - Darboux's polygon evolution (1878). always moves verticies of polygon to a point. or changing the offset in a level-set.
++
++osculating circle - curve of circle approaches local curvature of 3 points on a curve (as the three points move together in the limit). It forms one type of an offset - an evolut. 
++
++
++concepts of local trimming and global trimming required for offset curves to be slightly sensibel
++
++photo chapters page 339.
++
++
++
++%% XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
++
++%\section{Algorithm}
++%\label{sec:WSS}
++%
++%In this section we give an overview of the algorithm to create the procedural extrusions defined by the user interface. This algorithm extrudes the plan according to a set of profiles. We begin with an overview of the algorithm, before discussing the many possible events that drive the extrusion algorithm, and finally giving details of the computation.
++%
++%\section {Overview}
++%\label{sec:method}
++%We describe the input, the output, define the terminology, and give an outline of the algorithm. 
++%
++%
++%{\bf Input:} The main input of the algorithm is a non intersecting collection of oriented polygons in the plane. These polygons defines a bounded area on the left-hand side of each directed polygon line segment. A polygon, $p$, is described by $n$ polygon corners $c^p_i \in R^3$ with $1 \leq i \leq n$. All input corners are restricted to the same height value, that is they lie in a plane parallel to the $xy$-plane.  Each corner $c^p_i$ is connected to its counter-clockwise neighbor by an \emph{edge} $e^p_i$. Additionally, each edge is associated with a gradient, defined by an angle $\theta^p_i$ such that $-\pi/2 \leq \theta^p_i \leq \pi/2$. A vertical gradient has $\theta^p_i = 0$, whilst a gradient oriented towards the interior (or exterior) of the bounded area satisfies  $\theta^p_i > 0$ (respectively  $\theta^p_i < 0$). Each edge $e^p_i$ together with the associated angle $\theta^p_i$ define a, possibly infinite, face $sp^p_i$. See Fig.~\ref{fig:InputOutput}.
++%
++%In everything that follows, indices should be treated cyclically, so that in a triangle with corners $c^p_1$, $c^p_2$, and $c^p_3$, the vertex $c^p_4$ means $c^p_1$.
++%
++%Note that the orientation for polygons that define holes is reversed (clockwise) and that we can have an arbitrary nesting of oriented polygons (another loop inside a hole). Without loss of generality we describe the algorithm for a single polygon, as multiple polygons can just be interpreted as a single polygon with multiple disconnected loops. 
++%
++%In addition to the collection of polygons, our input contains a set of \emph{events} are defined (generalized intersection events, edge direction events, profile offset events and anchor events).
++%
++%\begin{figure}[htb]
++%  \centering
++%  \includegraphics[width=1.0\columnwidth]{skel_into.png}
++%  \caption{\label{fig:InputOutput}
++%
++%In this example our algorithm constructs a set of faces, shown on the right, for input polygons, shown on the left. In this simple example, each profile only has a single segment; Adding additional segments to the profile eventually allows us to model an entire house, including the walls. The input is defined by the corner positions $c_i$, the gradient $\theta^p_i$, and the corner connectivity. The plane in which each face $sp^p_i$ lies in is calculated from the edges and gradients. The arcs correspond to sides of the output polygon that are not edges.}
++%
++%\end{figure}
++%
++%
++%{\bf Output:} The output of the algorithm is a graph of \emph{arcs} (after Aicholzer~\cite{Aichholzer95:ANT}) connecting the corners, which includes the input plan corners and new corners stemming from intersection points. Each arc is associated with two edges, and defines a portion of the edge's face boundary. A single edge and the associated arcs together define the boundary of each face.  In the non-degenerate case we obtain a watertight 2-manifold polygonal mesh. This output can then be post-processed to apply textures, add procedural geometry, and attach meshes at anchor points.
++%
++%It is important to emphasise that an edge introduces a new face into the execution, as well as forming one of the boundaries of its face in the output, while an arc is simply an method of storing the output, a boundry of two faces.
++%
++%%\begin{algorithm} [htb]
++%
++%\begin{footnotesize}
++%%\begin{scriptsize}
++%\begin{minipage}{0.45\textwidth}
++%  main \Begin{
++%    $Q$ = new priority queue\; 
++%    \ForEach{ corner $c_i$ in $input$} {
++%\tcc{Queue ordered by z-height}
++%        $Q$.insert ( $c_i$, $c_i.z$ )\;
++%    }
++%
++%    sweepZ = 0;
++%
++%    \While { ! $Q$.empty() } {
++%        $event$ = Q.nextEvent()\;
++%	\If { $event$.position.z $\geq$ sweepZ }
++%        {
++%	  sweepZ = $event$.position.z\;
++%          \tcc{handleEvents may insert additional events into $Q$}
++%          handleEvent(event)\;
++%        }
++%    }
++%}
++%\end{minipage}
++%\end{footnotesize}
++%  \caption{Pseudo-code for the main dispatch loop.}
++%  \label{code:main_loop}
++%% \vspace{-0.6cm}
++%\end{algorithm}
++%
++%{\bf Outline:} 
++%
++%The algorithm describes a moving \emph{wavefront} over a sweep plane that rises from the (input) edges. The wavefront defines a 2d cross-section through an architectural solid.
++%
++%Starting from the input polygon a wavefront propagates from each edge, moving according to their gradient as the sweep plane rises. This movement and implicitly defined geometry is straightforward until an \emph{event} occurs. During events, modifications to the wavefront occur, such as the creation and deletion of new edges, corners or arcs. 
++%
++%The core algorithm, Fig.~\ref{code:main_loop}, is a loop that handles events according to their height from the plane in which the edges are embedded\cite{Felkel:1998:SKI}. The resulting architectural solid consists of regions of the faces $sp^p_i$ bounded by corners, and the input polygon
++%
++%DELETE: The algorithm uses a sweep plane that is initially defined as the plane containing the input edges, and moves upwards in the $z$ direction, remaining parallel to the input plane. During the sweep, a multitude of \emph{events} are encountered and processed. These can be basic topological changes or user driven events such as offset or anchor events.  
++%
++%\begin{figure}[htb]
++%  \centering
++%  \includegraphics[width=1.0\columnwidth]{split_edge_vertex.png}
++%  \caption{\label{fig:AlgorithmExample}
++% An example construction demonstrating basic topolgoical events, and the wavefront (blue, green and red lines) on the sweep plane after each event is processed. In (1) three adjacent faces collide at an \emph{edge event}. In (3) we see a \emph{split event} that divides the area bounded by the wavefront. Finally, (2) shows a vertex event where more than three faces collide at one point. The sides of the mesh, that do not form the input polygon (a-i), are the resulting \emph{arcs}.  
++%  }
++%\end{figure}
++%
++%\begin{figure}[htb]
++%  \centering
++%  \includegraphics[width=0.8\columnwidth]{pointers.png}
++%  \caption{\label{fig:pointers}
++% The data structure used to build the skeleton, shown midway through the sweep}
++%\end{figure}
++%
++%{\bf Data structures:}
++%The plan data structure implicitly defines the wavefront on the sweep plane, $sp_s$. This structure is a doubly linked list of corners. Each corner has a pointer to the next corner and the previous corner (assuming counter-clockwise order) and a pointer to its previous and next edges, Fig.~\ref{fig:pointers}. Like the input polygons, the wavefront is a non intersecting collection of oriented polygons. Each corner and following corner define a single \emph{wavefront-edge}, (not to be confused with the \emph{edges} in the input) on the sweep plane. Each wavefront-edge has propagated from an edge. We calculate the wavefront for each polygon, $p$, by processing all corners, $c^p_i$. Given $c^p_i$, and the following corner, $c^p_{i+1}$, we find the associated faces with edges $e^p_{i-1}, e^p_i, e^p_{i+1}$, that is $sp^p_{i-1}, sp^p_i, sp^p_{i+1}$. We intersect the planes in which faces $sp^p_{i-1}, sp^p_i$ are embedded, and the sweep plane $sp^p_s$ to form the start of the wavefront-edge. Similarly $sp^p_{i}, sp^p_{i+1}$ and $sp^p_s$ are intersected to find the end of the wavefront-edge.
++%
++% At the beginning of the algorithm the data structure encodes the input. During the sweep the data structure is updated to define which corners and which portions of which edges define the bounds of the solid.
++%
++%A second important data structure is an priority queue that sorts events by ascending height. The strategy of our algorithm is to use a lazy evaluation of events. We fill the priority queue with a large number of potential intersection events. Wherever three or more of the unbounded faces intersect, there is a potential generalized intersection event. In addition there may be other, user-defined events (edge direction events, profile offset events or anchor events). 
++
++
++\end{comment}
++

@@ -1,0 +1,31 @@
+skeleton notes
+
+fix up introduction re: WSS terminology vs PWSS vs MWSS vs NWSS etc...
+
+we jump into the algorithm too fast. explain naive algorithm - iteratively shrinking the polygon. Also have to introduce Aicholzer's triangulation approach for complexity, so throw it in here?
+
+huber's comments on felkel being broken: do we really not fall for this
+
+description of why the GIE works
+
+finding faces with weights
+
+examples of weighted skeletons with holes? faces spliting, merging and splitting again? face finding with holes example?
+
+illustration of GIE vs. loops of 2
+
+bigger version of the (reflex on reflex)*a billion example?
+
+images in mwss sectino closer to words.
+
+mwss: remove references toloop of two. Consistency with loop of two or loop of 2.
+
+summary of degeneracies
+
+missing:
+properties of the SS section
+Aichholzer's collapsing triangle diagram.
+Eppstein's motorcycle graph (?? necessary?)
+
+Other todo:
+Eppstein

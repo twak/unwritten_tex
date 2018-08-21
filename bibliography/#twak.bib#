@@ -1,0 +1,3191 @@
+@misc{JavaSwing,
+  key =     {Java Swing API 1.7},
+  title =     {Java Swing API 1.7},
+  month =     {March},
+  year =     {2011},
+  note =     {[online] \url{http://docs.oracle.com/javase/7/docs/api/javax/swing/package-summary.html}, retrieved 1/3/12},
+  url = {http://docs.oracle.com/javase/7/docs/api/javax/swing/package-summary.html}
+}
+
+@misc{complexityZoo,
+  key =     {Complexity Zoo},
+  title =     {Complexity Zoo},
+  month =     {January},
+  year =     {2011},
+  note =     {[online] \url{http://qwiki.stanford.edu}, retrieved 1/1/12},
+  url = {http://qwiki.stanford.edu}
+}
+
+@inproceedings{Fortune86,
+ author = {Fortune, S},
+ title = {A sweepline algorithm for Voronoi diagrams},
+ booktitle = {SCG '86: Proceedings of the second annual symposium on Computational geometry},
+ year = {1986},
+ isbn = {0-89791-194-6},
+ pages = {313--322},
+ location = {Yorktown Heights, New York, United States},
+ doi = {http://doi.acm.org/10.1145/10515.10549},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ }
+
+@article{ConwaysLife,
+    author = {Gardner, M.},
+    citeulike-article-id = {1397939},
+    journal = {Scientific American},
+    month = {October},
+    pages = {120--123},
+    posted-at = {2007-07-18 09:39:39},
+    priority = {2},
+    title = {The fantastic combinations of John Conway's new solitaire game ``life''},
+    volume = {223},
+    year = {1970}
+}
+
+@misc{twakMorphogens,
+  key =     {CVE-2008-1368},
+  title =     {{Morphogens Simulation}},
+  author = {twak},
+  month =     {January},
+  year =     2009,
+  note =     {[online] \url{http://www.dcs.gla.ac.uk/~tkelly/bits/morphogens/launch.jnlp}},
+  url = {http://www.dcs.gla.ac.uk/~tkelly/bits/morphogens/launch.jnlp}
+}
+
+@article{LifeEdgeChaos,
+ author = {Langton, Chris G.},
+ title = {Computation at the edge of chaos: phase transitions and emergent computation},
+ journal = {Phys. D},
+ volume = {42},
+ number = {1-3},
+ year = {1990},
+ issn = {0167-2789},
+ pages = {12--37},
+ doi = {http://dx.doi.org/10.1016/0167-2789(90)90064-V},
+ publisher = {Elsevier Science Publishers B. V.},
+ address = {Amsterdam, The Netherlands, The Netherlands},
+ }
+
+@book{CellBiology,
+ author = {Alberts, Bruce and Johnson, Alexander and Walker, Peter and Lewis, Julian and Raff, Martin and Roberts, Keith },
+ title = {Molecular Biology of the Cell},
+ year = {2008},
+ issn = {978-0815341062},
+ publisher = {Garland Publishing},
+}
+
+@article{Voronoi,
+ author = {Voronoi, G},
+ title = {Nouvelles applications des paramètres continus à la théorie des formes quadratiques.},
+ journal = {J. reine angew. Math.},
+ volume = {133},
+ year = {1907},
+ issn = {0167-2789},
+ pages = {97--178},
+ }
+
+@article{Ash84,
+ author = {Peter F. Ash1l and Ethan D. Bolker},
+ title = {Generalized Dirichlet tessellations},
+ journal = {Geometriae Dedicata},
+ volume = {20},
+ year = {1984},
+ issn = {1572-9168},
+ pages = {209--243},
+ }
+
+@article{Watson81,
+    abstract = {The Delaunay tessellation in n-dimensional space is a space-filling aggregate of n-simplices. These n-simplices are the dual forms of the vertices in the commonly used Voronoi tessellation. Several efforts have been made to simulate the 2-dimensional Voronoi tessellation on the computer. Additional problems occur for the 3 and higher dimensional implementations but some of these can be avoided by alternatively computing the dual Delaunay tessellation. An algorithm that finds the topological relationships in these tessellations is given. 10.1093/comjnl/24.2.167},
+    author = {Watson, D. F.},
+    citeulike-article-id = {3340410},
+    citeulike-linkout-0 = {http://dx.doi.org/10.1093/comjnl/24.2.167},
+    citeulike-linkout-1 = {http://comjnl.oxfordjournals.org/cgi/content/abstract/24/2/167},
+    day = {1},
+    doi = {10.1093/comjnl/24.2.167},
+    journal = {The Computer Journal},
+    month = {February},
+    number = {2},
+    pages = {167--172},
+    posted-at = {2010-01-22 20:39:34},
+    priority = {2},
+    title = {Computing the n-dimensional Delaunay tessellation with application to Voronoi polytopes},
+    url = {http://dx.doi.org/10.1093/comjnl/24.2.167},
+    volume = {24},
+    year = {1981}
+}
+
+
+@misc{DTI2002,
+ author = {Department of Trade and Industry},
+ title = {From exuberant youth to sustainable maturity. Competitiveness analysis of the UK games software sector.},
+ year = {2002},
+ }
+
+@BOOK{ABP,
+  title = {The Algorithmic Beauty of Plants},
+  publisher = {Springer Verlag},
+  year = {1991},
+  author = {P. Prusinkiewicz and A. Lindenmayer}
+}
+
+@INPROCEEDINGS{Prusinkiewicz:2001:UPI,
+  author = {P. Prusinkiewicz and P. M{\"u}ndermann and R. Karwowski and B. Lane},
+  title = {The use of positional information in the modeling of plants},
+  booktitle = {Proceedings of {ACM} {SIGGRAPH} 2001},
+  year = {2001},
+  editor = {Eugene Fiume},
+  pages = {289--300},
+  publisher = {ACM Press}
+}
+
+@article{Linden68,
+    author = {Lindenmayer, Aristid},
+    doi = {10.1016/0022-5193(68)90080-5},
+    journal = {Journal of Theoretical Biology},
+    keywords = {representation, sstoma, tissue},
+    month = {March},
+    number = {3},
+    pages = {300--315},
+    posted-at = {2008-08-05 12:46:02},
+    priority = {2},
+    title = {Mathematical models for cellular interactions in development II. Simple and branching filaments with two-sided inputs},
+    url = {http://dx.doi.org/10.1016/0022-5193(68)90080-5},
+    volume = {18},
+    year = {1968}
+}
+
+@INPROCEEDINGS{Hart96,
+    author = {John C. Hart and Brent Baker},
+    title = {Structural Simulation of Tree Growth and Response},
+    booktitle = {In: Proceedings International Conference on Shape Modeling and Applications},
+    year = {1996},
+    pages = {7--11},
+    publisher = {Springer-Verlag}
+}
+
+@inproceedings{Epp98,
+ author = {Eppstein, David and Erickson, Jeff},
+ title = {Raising roofs, crashing cycles, and playing pool: applications of a data structure for finding pairwise interactions},
+ booktitle = {SCG '98: Proceedings of the fourteenth annual symposium on Computational geometry},
+ year = {1998},
+ isbn = {0-89791-973-4},
+ pages = {58--67},
+ location = {Minneapolis, Minnesota, United States},
+ doi = {http://doi.acm.org/10.1145/276884.276891},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ }
+
+@INPROCEEDINGS{Felkel98,
+    author = {Petr Felkel and Stepán Obdrzálek},
+    title = {Straight Skeleton Implementation},
+    booktitle = {Proceedings of Spring Conference on Computer Graphics},
+    year = {1998},
+    pages = {210--218}
+}
+
+@Article{KRVHS02,
+  author       = "K{\"o}hling, R{\"u}diger and Reinel, Jens and Vahrenhold, Jan and Hinrichs, Klaus H. and Speckmann, Erwin-Josef",
+  title        = "Spatio-Temporal Patterns of Neuronal Activity: Analysis of Optical Imaging Data Using Geometric Shape Matching",
+  journal      = "Journal of Neuroscience Methods",
+  number       = "1",
+  volume       = "114",
+  pages        = "17--23",
+  year         = "2002",
+  url          = "http://viscg.uni-muenster.de/publications/2002/KRVHS02"
+}
+
+@inproceedings{Epp09,
+ author = {Barequet, Gill and Vaxman, Amir},
+ title = {Straight skeletons of three-dimensional polyhedra},
+ booktitle = {SCG '09: Proceedings of the 25th annual symposium on Computational geometry},
+ year = {2009},
+ isbn = {978-1-60558-501-7},
+ pages = {100--101},
+ location = {Aarhus, Denmark},
+ doi = {http://doi.acm.org/10.1145/1542362.1542384},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ }
+
+@Article{Aichholzer95,
+  author =     "O. Aichholzer and F. Aurenhammer and D. Alberts and B. Gärtner",
+  title =      "A Novel Type of Skeleton for Polygons",
+  abstract =   "A new internal structure for simple polygons, the  straight skeleton, is introduced and discussed. It is composed of pieces of angular bisectores which partition the interior of a given n-gon P in a tree-like fashion into n monotone polygons. Its straight-line structure and its lower combinatorial complexity may make the straight skeleton preferable to the widely used medial axis of a polygon. As a seemingly unrelated application, the straight skeleton provides a canonical way of constructing a polygonal roof above a general layout of ground walls.",
+  journal =    "Journal of Universal Computer Science",
+  year =       "1995",
+  volume =     "1",
+  number =     "12",
+  pages =      "752--761",
+
+}
+
+@article{Kalogerakis12,
+  title =      "A Probabilistic Model for Component-Based Shape Synthesis",
+  author =     "Evangelos Kalogerakis and Siddhartha Chaudhuri and Daphne Koller and Vladlen Koltun",
+  year =       "2012",
+  pages =      "XXX",
+  month =      aug,
+  journal =    "ACM Transactions on Graphics",
+  number =     "4",
+  volume =     "31",
+}
+
+@article{Xu12,
+  title =      "Fit and Diverse: Set Evolution for Inspiring 3D Shape Galleries",
+  author =     "Kai Xu and Hao Zhang and Daniel Cohen-Or and Baoquan Chen",
+  year =       "2012",
+  pages =      "XXX",
+  month =      aug,
+  journal =    "ACM Transactions on Graphics",
+  number =     "4",
+  volume =     "31",
+}
+
+@article{Bokeloh12,
+  title =      "An Algebraic Model for Parameterized Shape Editing",
+  author =     "Martin Bokeloh and Michael Wand and Hans-Peter Seidel and Vladlen Koltun",
+  year =       "2012",
+  pages =      "XXX",
+  month =      aug,
+  journal =    "ACM Transactions on Graphics",
+  number =     "4",
+  volume =     "31",
+}
+
+@article{Vouga12,
+  author={Vouga, E. and H{\"o}binger, M. and Wallner, J. and Graz, TU and Wien, TU and Pottmann, H.},
+  title = {Design of self-supporting surfaces},
+  year =       "2012",
+  pages =      "XXX",
+  month =      aug,
+  journal =    "ACM Transactions on Graphics",
+  number =     "4",
+  volume =     "31",
+} 
+
+@article{Chom56,
+    author = {Chomsky, N.},
+    citeulike-article-id = {158531},
+    citeulike-linkout-0 = {http://dx.doi.org/10.1109/TIT.1956.1056813},
+    citeulike-linkout-1 = {http://ieeexplore.ieee.org/xpls/abs\_all.jsp?arnumber=1056813},
+    day = {06},
+    doi = {10.1109/TIT.1956.1056813},
+    journal = {Information Theory, IRE Transactions on},
+    keywords = {3mdl, cfg, chomsky, fsm, language},
+    month = {January},
+    number = {3},
+    pages = {113--124},
+    posted-at = {2005-09-30 13:56:41},
+    priority = {0},
+    title = {Three models for the description of language},
+    url = {http://dx.doi.org/10.1109/TIT.1956.1056813},
+    volume = {2},
+    year = {1956}
+}
+
+@inproceedings{Kawaguchi82,
+ author = {Kawaguchi, Yoichiro},
+ title = {A morphological study of the form of nature},
+ booktitle = {SIGGRAPH '82: Proceedings of the 9th annual conference on Computer graphics and interactive techniques},
+ year = {1982},
+ isbn = {0-89791-076-1},
+ pages = {223--232},
+ location = {Boston, Massachusetts, United States},
+ doi = {http://doi.acm.org/10.1145/800064.801284},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ }
+
+
+@article{Turing52,
+    abstract = {It is suggested that a system of chemical substances, called morphogens, reacting together and diffusing through a tissue, is adequate to account for the main phenomena of morphogenesis. Such a system, although it may originally be quite homogeneous, may later develop a pattern or structure due to an instability of the homogeneous equilibrium, which is triggered off by random disturbances. Such reaction-diffusion systems are considered in some detail in the case of an isolated ring of cells, a mathematically convenient, though biologically unusual system. The investigation is chiefly concerned with the onset of instability. It is found that there are six essentially different forms which this may take. In the most interesting form stationary waves appear on the ring. It is suggested that this might account, for instance, for the tentacle patterns on Hydra and for whorled leaves. A system of reactions and diffusion on a sphere is also considered. Such a system appears to account for gastrulation. Another reaction system in two dimensions gives rise to patterns reminiscent of dappling. It is also suggested that stationary waves in two dimensions could account for the phenomena of phyllotaxis. The purpose of this paper is to discuss a possible mechanism by which the genes of a zygote may determine the anatomical structure of the resulting organism. The theory does not make any new hypotheses; it merely suggests that certain well-known physical laws are sufficient to account for many of the facts. The full understanding of the paper requires a good knowledge of mathematics, some biology, and some elementary chemistry. Since readers cannot be expected to be experts in all of these subjects, a number of elementary facts are explained, which can be found in text-books, but whose omission would make the paper difficult reading.},
+    author = {Turing, A. M.},
+    citeulike-article-id = {466389},
+    citeulike-linkout-0 = {http://dx.doi.org/10.2307/92463},
+    citeulike-linkout-1 = {http://www.jstor.org/stable/92463},
+    doi = {10.2307/92463},
+    issn = {00804622},
+    journal = {Philosophical Transactions of the Royal Society of London. Series B, Biological Sciences},
+    keywords = {formation, pattern},
+    number = {641},
+    pages = {37--72},
+    posted-at = {2007-12-09 01:43:36},
+    priority = {2},
+    publisher = {The Royal Society},
+    title = {The Chemical Basis of Morphogenesis},
+    url = {http://dx.doi.org/10.2307/92463},
+    volume = {237},
+    year = {1952}
+}
+
+
+
+@article{Anastacio09,
+ author = {Anastacio, Fabricio and Prusinkiewicz, Przemyslaw and Sousa, Mario Costa},
+ title = {Sketch-Based Interfaces and Modeling (SBIM): Sketch-based parameterization of L-systems using illustration-inspired construction lines and depth modulation},
+ journal = {Comput. Graph.},
+ volume = {33},
+ number = {4},
+ year = {2009},
+ issn = {0097-8493},
+ pages = {440--451},
+ doi = {http://dx.doi.org/10.1016/j.cag.2009.05.001},
+ publisher = {Pergamon Press, Inc.},
+ address = {Elmsford, NY, USA},
+ }
+
+@inproceedings{Greene89,
+ author = {Greene, N.},
+ title = {Voxel space automata: modeling with stochastic growth processes in voxel space},
+ booktitle = {SIGGRAPH '89: Proceedings of the 16th annual conference on Computer graphics and interactive techniques},
+ year = {1989},
+ isbn = {0-89791-312-4},
+ pages = {175--184},
+ doi = {http://doi.acm.org/10.1145/74333.74351},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ }
+
+@article{Bloomenthal85,
+ author = {Bloomenthal, Jules},
+ title = {Modeling the mighty maple},
+ journal = {SIGGRAPH Comput. Graph.},
+ volume = {19},
+ number = {3},
+ year = {1985},
+ issn = {0097-8930},
+ pages = {305--311},
+ doi = {http://doi.acm.org/10.1145/325165.325249},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ }
+
+@inproceedings{Reffye88,
+ author = {de Reffye, Phillippe and Edelin, Claude and Fran\c{c}on, Jean and Jaeger, Marc and Puech, Claude},
+ title = {Plant models faithful to botanical structure and development},
+ booktitle = {SIGGRAPH '88: Proceedings of the 15th annual conference on Computer graphics and interactive techniques},
+ year = {1988},
+ isbn = {0-89791-275-6},
+ pages = {151--158},
+ doi = {http://doi.acm.org/10.1145/54852.378505},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ }
+
+
+@inproceedings{Prusinkiewicz94,
+ author = {Prusinkiewicz, Przemyslaw and James, Mark and M\v{e}ch, Radom\'{\i}r},
+ title = {Synthetic topiary},
+ booktitle = {SIGGRAPH '94: Proceedings of the 21st annual conference on Computer graphics and interactive techniques},
+ year = {1994},
+ isbn = {0-89791-667-0},
+ pages = {351--358},
+ doi = {http://doi.acm.org/10.1145/192161.192254},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ }
+
+@inproceedings{Prusinkiewicz96,
+ author = {M\v{e}ch, Radom\'{\i}r and Prusinkiewicz, Przemyslaw},
+ title = {Visual models of plants interacting with their environment},
+ booktitle = {SIGGRAPH '96: Proceedings of the 23rd annual conference on Computer graphics and interactive techniques},
+ year = {1996},
+ isbn = {0-89791-746-4},
+ pages = {397--410},
+ doi = {http://doi.acm.org/10.1145/237170.237279},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ }
+
+
+@INPROCEEDINGS{Runions07,
+    author = {Adam Runions and Brendan Lane and Przemyslaw Prusinkiewicz},
+    title = {Modeling Trees with a Space Colonization Algorithm},
+    booktitle = {Eurographics Workshop on Natural Phenomena},
+    year = {2007},
+    publisher = {}
+}
+
+@article{Palubicki09,
+ author = {Palubicki, Wojciech and Horel, Kipp and Longay, Steven and Runions, Adam and Lane, Brendan and M\v{e}ch, Radom\'{\i}r and Prusinkiewicz, Przemyslaw},
+ title = {Self-organizing tree models for image synthesis},
+ journal = {ACM Trans. Graph.},
+ volume = {28},
+ number = {3},
+ year = {2009},
+ issn = {0730-0301},
+ pages = {1--10},
+ doi = {http://doi.acm.org/10.1145/1531326.1531364},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ }
+
+@article{Sugihara92,
+ author = {Sugihara, K. and Iri, M.},
+ title = {Construction of the Voronoi diagram for 'one million' generators in single precision arithmetic.},
+ journal = {Proc IEEE. },
+ volume = {80},
+ year = {1992},
+ pages = {1471--1484},
+ publisher = {IEEE},
+ }
+
+@inproceedings{Stiny71,
+    author = {George Stiny and James Gips},
+    title = {Shape Grammars and the Generative Specification of Painting and Sculpture},
+    booktitle = {Segmentation of Buildings for 3DGeneralisation. In: Proceedings of the Workshop on generalisation and multiple representation , Leicester},
+    year = {1971}
+}
+
+@phdthesis{Stiny75,
+ author = {Stiny, George Nicholas},
+ title = {Pictorial and formal aspects of shape and shape grammars and aesthetic systems.},
+ year = {1975},
+ school = {University of California, Los Angeles},
+ }
+
+@article{Stiny77,
+    author = {Stiny, G.},
+    citeulike-article-id = {1526280},
+    journal = {Environment and Planning B},
+    keywords = {ben, development},
+    pages = {89--98},
+    posted-at = {2007-08-01 05:30:38},
+    priority = {2},
+    title = {Ice-Ray: A Note on the Generation of Chinese Lattice Designs},
+    volume = {4},
+    year = {1977}
+}
+
+
+@article{Stiny80, 
+title={Introduction to shape and shape grammars}, 
+volume={7}, 
+url={http://www.envplan.com/abstract.cgi?id=b070343}, 
+number={3}, 
+journal={Environment and Planning B Planning and Design}, 
+author={Stiny, G}, 
+year={1980}, 
+pages={343--351}
+}
+
+@Article{Knight80,
+author="Knight, T. W.",
+title="The generation of Hepplewhite-style chair-back designs",
+journal="Environment and Planning B",
+year="1980",
+publisher="Pion Ltd",
+volume="7",
+number="2",
+pages="227--238",
+abstract="A parametric shape grammar is given for the generation of Hepplewhite-style chair-back",
+url="http://www.envplan.com/abstract.cgi?id=b070227"
+}
+
+@Article{Stiny78,
+  author={G Stiny and W J Mitchell},
+  title={The Palladian grammar},
+  journal={Environment and Planning B: Planning and Design},
+  year=1978,
+  volume={5},
+  number={1},
+  pages={5-18},
+  month={January},
+  keywords={},
+  abstract={A parametric shape grammar that generates the ground plans of Palladio's villas is developed as a definition of the Palladian style. The grammar is applied to generate the plan for the Villa Malcontenta.},
+  url={http://ideas.repec.org/a/pio/envirb/v5y1978i1p5-18.html}
+}
+
+
+@book{APL,
+    author = {Alexander, Christopher and Ishikawa, Sara and Silverstein, Murray},
+    day = {17},
+    edition = {Later printing},
+    howpublished = {Hardcover},
+    isbn = {0195019199},
+    keywords = {architecture, campus, design, experiment, mathgamespatterns, oregon, patterns, planning},
+    month = {August},
+    publisher = {Oxford University Press},
+    title = {A Pattern Language: Towns, Buildings},
+    url = {http://downlode.org/etext/patterns/},
+    year = {1977}
+}
+
+@MISC{SITM,
+    author = {Bill Hillier and Christian Altmann},
+    title = {Space is the Machine},
+    year = {1996},
+    publisher = {Cambridge University Press}
+}
+
+@book{Mitchell90,
+ author = {Mitchell, William J.},
+ title = {The  Logic of Architecture: Design, Computation, and Cognition},
+ year = {1990},
+ isbn = {0262631164},
+ publisher = {MIT Press},
+ address = {Cambridge, MA, USA},
+ }
+
+@inproceedings{Mitchell71,
+ author = {Mitchell, William J.},
+ title = {The automated generation of architectural form},
+ booktitle = {DAC '71: Proceedings of the 8th Design Automation Workshop},
+ year = {1971},
+ pages = {193--207},
+ location = {Atlantic City, New Jersey, United States},
+ doi = {http://doi.acm.org/10.1145/800158.805072},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ }
+
+@book{HBL,
+    author = {Brand, Stewart and Paper, Penguin U. S. A.},
+    day = {20},
+    howpublished = {Paperback},
+    isbn = {0140139966},
+    keywords = {architecture},
+    month = {October},
+    posted-at = {2006-04-04 16:05:45},
+    priority = {2},
+    publisher = {{Penguin Books}},
+    title = {How Buildings Learn: What Happens After They're Built},
+    url = {http://www.amazon.com/exec/obidos/redirect?tag=citeulike07-20\&path=ASIN/0140139966},
+    year = {1995}
+}
+
+@inproceedings{Parish01,
+ author = {Parish, Yoav I. H. and M\"{u}ller, Pascal},
+ title = {Procedural modeling of cities},
+ booktitle = {SIGGRAPH '01: Proceedings of the 28th annual conference on Computer graphics and interactive techniques},
+ year = {2001},
+ isbn = {1-58113-374-X},
+ pages = {301--308},
+ doi = {http://doi.acm.org/10.1145/383259.383292},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ }
+
+@article{Pascal06,
+ author = {M\"{u}ller, Pascal and Wonka, Peter and Haegler, Simon and Ulmer, Andreas and Van Gool, Luc},
+ title = {Procedural modeling of buildings},
+ journal = {ACM Trans. Graph.},
+ volume = {25},
+ number = {3},
+ year = {2006},
+ issn = {0730-0301},
+ pages = {614--623},
+ doi = {http://doi.acm.org/10.1145/1141911.1141931},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ }
+
+
+@article{Habbecke12,
+  title={Linear Analysis of Nonlinear Constraints for Interactive Geometric Modeling},
+  author={Habbecke, M. and Kobbelt, L.},
+  journal = {Proc. Eurographics.},
+  month = {XXX},
+  year = {2012},
+}
+
+@inproceedings{Vanegas10:MAB,
+  title={Modeling the appearance and behaviour of urban spaces},
+  author={Vanegas, C.A. and Aliaga, D.G. and Wonka, P. and M{\"u}ller, P. and Waddell, P. and Watson, B.},
+  booktitle={Computer Graphics Forum},
+  volume={29},
+  pages={25--42},
+  year={2010},
+  organization={Wiley Online Library}
+}
+
+@inproceedings{Wonka03,
+ author = {Wonka, Peter and Wimmer, Michael and Sillion, Fran\c{c}ois and Ribarsky, William},
+ title = {Instant architecture},
+ booktitle = {SIGGRAPH '03: ACM SIGGRAPH 2003 Papers},
+ year = {2003},
+ isbn = {1-58113-709-5},
+ pages = {669--677},
+ location = {San Diego, California},
+ doi = {http://doi.acm.org/10.1145/1201775.882324},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ }
+
+
+@article{Aliaga07,
+ author = {Aliaga, Daniel G. and Rosen, Paul A. and Bekins, Daniel R.},
+ title = {Style Grammars for Interactive Visualization of Architecture},
+ journal = {IEEE Transactions on Visualization and Computer Graphics},
+ volume = {13},
+ number = {4},
+ year = {2007},
+ issn = {1077-2626},
+ pages = {786--797},
+ doi = {http://dx.doi.org/10.1109/TVCG.2007.1024},
+ publisher = {IEEE Educational Activities Department},
+ address = {Piscataway, NJ, USA},
+ }
+
+@article{Finken08,
+author = {Dieter Finkenzeller},
+title = {Detailed Building Facades},
+journal ={IEEE Computer Graphics and Applications},
+volume = {28},
+issn = {0272-1716},
+year = {2008},
+pages = {58-66},
+doi = {http://doi.ieeecomputersociety.org/10.1109/MCG.2008.50},
+publisher = {IEEE Computer Society},
+address = {Los Alamitos, CA, USA},
+}
+
+@article{Aliaga08,
+ author = {Aliaga, Daniel G. and Vanegas, Carlos A. and Bene\v{s}, Bed\v{r}ich},
+ title = {Interactive example-based urban layout synthesis},
+ journal = {ACM Trans. Graph.},
+ volume = {27},
+ number = {5},
+ year = {2008},
+ issn = {0730-0301},
+ pages = {1--10},
+ doi = {http://doi.acm.org/10.1145/1409060.1409113},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ }
+
+@article{Lipp08,
+ author = {Lipp, Markus and Wonka, Peter and Wimmer, Michael},
+ title = {Interactive visual editing of grammars for procedural architecture},
+ journal = {ACM Trans. Graph.},
+ volume = {27},
+ number = {3},
+ year = {2008},
+ issn = {0730-0301},
+ pages = {1--10},
+ doi = {http://doi.acm.org/10.1145/1360612.1360701},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ }
+
+@article{Merrell08,
+ author = {Merrell, Paul and Manocha, Dinesh},
+ title = {Continuous model synthesis},
+ journal = {ACM Trans. Graph.},
+ volume = {27},
+ number = {5},
+ year = {2008},
+ issn = {0730-0301},
+ pages = {1--7},
+ doi = {http://doi.acm.org/10.1145/1409060.1409111},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ }
+
+@inproceedings{Merrell07,
+ author = {Merrell, Paul},
+ title = {Example-based model synthesis},
+ booktitle = {I3D '07: Proceedings of the 2007 symposium on Interactive 3D graphics and games},
+ year = {2007},
+ isbn = {978-1-59593-628-8},
+ pages = {105--112},
+ location = {Seattle, Washington},
+ doi = {http://doi.acm.org/10.1145/1230100.1230119},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ }
+
+@article{Havemann04,
+author = {Sven Havemann and Dieter Fellner},
+title = {Generative Parametric Design of Gothic Window Tracery},
+journal ={Shape Modeling and Applications, International Conference on},
+volume = {0},
+isbn = {0-7695-2075-8},
+year = {2004},
+pages = {350-353},
+doi = {http://doi.ieeecomputersociety.org/10.1109/SMI.2004.1314525},
+publisher = {IEEE Computer Society},
+address = {Los Alamitos, CA, USA},
+}
+
+@InProceedings{Bruneton08,
+  author       = "Bruneton, Eric and Neyret, Fabrice",
+  title        = "Real-time rendering and editing of vector-based terrains",
+  booktitle    = "Eurographics",
+  year         = "2008",
+  url          = "http://www-evasion.imag.fr/Publications/2008/BN08"
+}
+
+
+@article{Weber09,
+    author = {Weber, Basil and Mueller, Pascal and Wonka, Peter and Gross, Markus},
+    booktitle = {Eurographics 2009},
+    journal = {Computer Graphics Forum},
+    month = {April},
+    title = {Interactive Geometric Simulation of 4D Cities},
+    url = {http://www.procedural.com/publications/2008\_EG\_Urban\_Simulation/2008.EG.Weber.UrbanSimulation.Paper.pdf},
+    year = {2009}
+}
+
+@article{Ali08,
+author = {Saif Ali and Jieping Ye and Anshuman Razdan and Peter Wonka},
+title = {Compressed Facade Displacement Maps},
+journal ={IEEE Transactions on Visualization and Computer Graphics},
+volume = {15},
+issn = {1077-2626},
+year = {2008},
+pages = {262-273},
+doi = {http://doi.ieeecomputersociety.org/10.1109/TVCG.2008.98},
+publisher = {IEEE Computer Society},
+address = {Los Alamitos, CA, USA},
+}
+
+  @inproceedings{Gerth05,
+    title = "3D Modeling for Non-Expert Users with the Castle Construction Kit v0.5",
+    author = "Bj{\"{o}}rn Gerth and Ren{\'{e}} Berndt and Sven Havemann and Dieter W. Fellner",
+    booktitle = "VAST 2005: 6th International Symposium on Virtual Reality, Archaeology and
+        Intelligent Cultural Heritage",
+    month = nov, 
+    year = 2005,
+    pages = "49--58",
+  }
+
+@article{Avidan07,
+ author = {Avidan, Shai and Shamir, Ariel},
+ title = {Seam carving for content-aware image resizing},
+ journal = {ACM Trans. Graph.},
+ volume = {26},
+ number = {3},
+ year = {2007},
+ issn = {0730-0301},
+ pages = {10},
+ doi = {http://doi.acm.org/10.1145/1276377.1276390},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ }
+
+
+@INPROCEEDINGS{Li06,
+    author = {M. Li and F. C. Langbein and R. R. Martin},
+    title = {Constructing Regularity Feature Trees for Solid Models},
+    booktitle = {Proc. Geometric Modeling and Processing; LNCS},
+    year = {2006},
+    pages = {267--286},
+    publisher = {Springer}
+}
+
+@INPROCEEDINGS{Mitra06,
+AUTHOR = "N. J. Mitra and L. Guibas and M. Pauly",
+TITLE =	"Partial and Approximate Symmetry Detection for 3D Geometry",
+BOOKTITLE = "ACM Transactions on Graphics",
+VOLUME = "25",
+YEAR = "2006",
+PAGES =	"560--568"
+}
+
+@inproceedings{Pauly08,
+ author = {Pauly, Mark and Mitra, Niloy J. and Wallner, Johannes and Pottmann, Helmut and Guibas, Leonidas J.},
+ title = {Discovering structural regularity in 3D geometry},
+ booktitle = {SIGGRAPH '08: ACM SIGGRAPH 2008 papers},
+ year = {2008},
+ pages = {1--11},
+ location = {Los Angeles, California},
+ doi = {http://doi.acm.org/10.1145/1399504.1360642},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ }
+
+@article{Langton90,
+ author = {Langton, Chris G.},
+ title = {Computation at the edge of chaos: phase transitions and emergent computation},
+ journal = {Phys. D},
+ volume = {42},
+ number = {1-3},
+ year = {1990},
+ issn = {0167-2789},
+ pages = {12--37},
+ doi = {http://dx.doi.org/10.1016/0167-2789(90)90064-V},
+ publisher = {Elsevier Science Publishers B. V.},
+ address = {Amsterdam, The Netherlands, The Netherlands},
+ }
+
+@booklet{DevelopInsider,
+ key={Develop Insider},
+ title = {Develop Insider},
+ volume={69},
+ url = {http://www.develop-online.net/develop-insider/download/69},
+ publisher = {Elsevier Science Publishers B. V.},
+ address = {Amsterdam, The Netherlands, The Netherlands},
+ }
+
+@MISC{Laycock03,
+    author = {Laycock University Of and R. G. Laycock and A. M. Day},
+    title = {Automatically Generating Roof Models from Building Footprints},
+    year = {2003}
+}
+
+@misc{BZReaction,
+url={http://www.scienceamusante.net/wiki/index.php?title=Belousov-Zhabotinsky},
+Title = {Reaction oscillante de Belousov-Zhabotinsky}
+} 
+
+@misc{WeightedVoronoi,
+Title = {2D Apollonius Graphs (Delaunay Graphs of Disks)},
+Author = {Karavelas,M and Yvinec,M},
+url={http://www.cgal.org/Manual/3.3/doc_html/cgal_manual/Apollonius_graph_2/fig/CircleVoronoiLarge.png}
+}
+
+@misc{VCells,
+url={http://www.sojamo.de/blog/wp-content/images/voronoi_knauss_oesterle.jpg},
+Author={Schlegel, A},
+Title={Biological systems, models, and algorithms}
+}
+
+@misc{CGAL,
+    address = {www.cgal.org},
+    citeulike-article-id = {2549687},
+    citeulike-linkout-0 = {http://www.cgal.org},
+    day = {15},
+    howpublished = {www.cgal.org},
+    keywords = {bibtex-import},
+    month = {February},
+    posted-at = {2008-03-18 09:43:38},
+    priority = {2},
+    title = {CGAL, Computational Geometry Algorithms Library},
+    url = {http://www.cgal.org},
+    year = {2008}
+}
+
+@Article{Agarwal98,
+  author={M Agarwal and J Cagan},
+  title={A blend of different tastes: the language of coffeemakers},
+  journal={Environment and Planning B: Planning and Design},
+  year=1998,
+  volume={25},
+  number={2},
+  pages={205-226},
+  month={March},
+  keywords={},
+  abstract={Shape grammars, utilizing function labels, are shown to be applicable to product design. A grammar that describes a language of coffeemakers is presented and shown to generate a large class of coffeemakers currently on the market, as well as new designs that could be introduced to consumers.},
+  url={http://ideas.repec.org/a/pio/envirb/v25y1998i2p205-226.html}
+}
+
+@inproceedings{Gips99,
+  title={Computer implementation of shape grammars},
+  author={Gips, J.},
+  booktitle={NSF/MIT Workshop on Shape Computation},
+  year={1999}
+}
+
+@article{Yue09,
+  title={Computation-friendly shape grammars},
+  author={Yue, K. and Krishnamurti, R. and Gobler, F.},
+  journal={Proceedings of CAAD futures},
+  year={2009},
+  publisher={University of Montreal}
+}
+
+@inproceedings{Galin10,
+  title={Procedural generation of roads},
+  author={Galin, E. and Peytavie, A. and Mar{\'e}chal, N. and Gu{\'e}rin, E.},
+  booktitle={Computer Graphics Forum},
+  volume={29},
+  pages={429--438},
+  year={2010},
+  organization={Wiley Online Library}
+}
+
+@inproceedings{Lipp11,
+  title={Interactive modeling of city layouts using layers of procedural content},
+  author={Lipp, M. and Scherzer, D. and Wonka, P. and Wimmer, M.},
+  booktitle={Computer Graphics Forum},
+  volume={30},
+  pages={345--354},
+  year={2011},
+  organization={Wiley Online Library}
+}
+
+@article{Vanegas09:IDU,
+ author = {Vanegas, Carlos A. and Aliaga, Daniel G. and Bene\v{s}, Bed\v{r}ich and Waddell, Paul A.},
+ title = {Interactive design of urban spaces using geometrical and behavioral modeling},
+ journal = {ACM Trans. Graph.},
+ volume = {28},
+ issue = {5},
+ month = {December},
+ year = {2009},
+ issn = {0730-0301},
+ pages = {111:1--111:10},
+ articleno = {111},
+ numpages = {10},
+} 
+
+@inproceedings{Ovsjanikov11,
+  title={Exploration of continuous variability in collections of 3D shapes},
+  author={Ovsjanikov, M. and Li, W. and Guibas, L. and Mitra, N.J.},
+  booktitle={ACM Transactions on Graphics (TOG)},
+  volume={30},
+  pages={33},
+  year={2011},
+  organization={ACM}
+}
+
+@inproceedings{Li11,
+  title={GlobFit: consistently fitting primitives by discovering global relations},
+  author={Li, Y. and Wu, X. and Chrysathou, Y. and Sharf, A. and Cohen-Or, D. and Mitra, N.J.},
+  booktitle={ACM Transactions on Graphics (TOG)},
+  volume={30},
+  pages={52},
+  year={2011},
+  organization={ACM}
+}
+@article{Livny11,
+ author = {Livny, Yotam and Pirk, Soeren and Cheng, Zhanglin and Yan, Feilong and Deussen, Oliver and Cohen-Or, Daniel and Chen, Baoquan},
+ title = {Texture-lobes for tree modelling},
+ journal = {ACM Trans. Graph.},
+ issue_date = {July 2011},
+ volume = {30},
+ month = jul,
+ year = {2011},
+ issn = {0730-0301},
+ pages = {53:1--53:10},
+ articleno = {53},
+ numpages = {10},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+@inproceedings{Xu11photo,
+  title={Photo-inspired model-driven 3D object modeling},
+  author={Xu, K. and Zheng, H. and Zhang, H. and Cohen-Or, D. and Liu, L. and Xiong, Y.},
+  booktitle={ACM Transactions on Graphics (TOG)},
+  volume={30},
+  pages={80},
+  year={2011},
+  organization={ACM}
+}
+
+@article{Merrell11,
+ author = {Merrell, Paul and Schkufza, Eric and Li, Zeyang and Agrawala, Maneesh and Koltun, Vladlen},
+ title = {Interactive furniture layout using interior design guidelines},
+ journal = {ACM Trans. Graph.},
+ issue_date = {July 2011},
+ volume = {30},
+ month = jul,
+ year = {2011},
+ issn = {0730-0301},
+ pages = {87:1--87:10},
+ articleno = {87},
+ numpages = {10},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+@article{Yu11,
+ author = {Yu, Lap-Fai and Yeung, Sai-Kit and Tang, Chi-Keung and Terzopoulos, Demetri and Chan, Tony F. and Osher, Stanley J.},
+ title = {Make it home: automatic optimization of furniture arrangement},
+ journal = {ACM Trans. Graph.},
+ issue_date = {July 2011},
+ volume = {30},
+ month = jul,
+ year = {2011},
+ issn = {0730-0301},
+ pages = {86:1--86:12},
+ articleno = {86},
+ numpages = {12},
+ address = {New York, NY, USA},
+} 
+
+@inproceedings{Wang11,
+  title={Symmetry Hierarchy of Man-Made Objects},
+  author={Wang, Y. and Xu, K. and Li, J. and Zhang, H. and Shamir, A. and Liu, L. and Cheng, Z. and Xiong, Y.},
+  booktitle={Computer Graphics Forum},
+  volume={30},
+  pages={287--296},
+  year={2011},
+  organization={Wiley Online Library}
+}
+
+@inproceedings{Krecklau11,
+  title={Procedural modeling of interconnected structures},
+  author={Krecklau, L. and Kobbelt, L.},
+  booktitle={Computer Graphics Forum},
+  volume={30},
+  pages={335--344},
+  year={2011},
+  organization={Wiley Online Library}
+}
+@inproceedings{Benevs11,
+  title={Guided procedural modeling},
+  author={Bene{\v{s}}, B. and {\v{S}}t'ava, O. and M{\v{e}}ch, R. and Miller, G.},
+  booktitle={Computer Graphics Forum},
+  volume={30},
+  pages={325--334},
+  year={2011},
+  organization={Wiley Online Library}
+}
+
+@article{Lin11,
+ author = {Lin, Jinjie and Cohen-Or, Daniel and Zhang, Hao and Liang, Cheng and Sharf, Andrei and Deussen, Oliver and Chen, Baoquan},
+ title = {Structure-preserving retargeting of irregular 3D architecture},
+ journal = {ACM Trans. Graph.},
+ issue_date = {December 2011},
+ volume = {30},
+ number = {6},
+ month = dec,
+ year = {2011},
+ issn = {0730-0301},
+ pages = {183:1--183:10},
+ articleno = {183},
+ publisher = {ACM},
+} 
+
+@article{Shen11,
+ author = {Shen, Chao-Hui and Huang, Shi-Sheng and Fu, Hongbo and Hu, Shi-Min},
+ title = {Adaptive partitioning of urban facades},
+ journal = {ACM Trans. Graph.},
+ issue_date = {December 2011},
+ volume = {30},
+ number = {6},
+ month = dec,
+ year = {2011},
+ issn = {0730-0301},
+ pages = {184:1--184:10},
+ articleno = {184},
+ publisher = {ACM},
+} 
+
+@inproceedings{Musialski12,
+  title={A Survey of Urban Reconstruction},
+  author={Musialski, P. and Wonka, P. and Aliaga, D.G. and Wimmer, M. and van Gool, L. and Purgathofer, W. and Mitra, N.J. and Pauly, M. and Wand, M. and Ceylan, D. and others},
+  booktitle={Eurographics 2012-State of the Art Reports},
+  pages={1--28},
+  year={2012},
+  organization={The Eurographics Association}
+}
+
+@article{Bokeloh11,
+ author = {Bokeloh, Martin and Wand, Michael and Koltun, Vladlen and Seidel, Hans-Peter},
+ title = {Pattern-aware shape deformation using sliding dockers},
+ journal = {ACM Trans. Graph.},
+ issue_date = {December 2011},
+ volume = {30},
+ month = dec,
+ year = {2011},
+ issn = {0730-0301},
+ pages = {123:1--123:10},
+ articleno = {123},
+ numpages = {10},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {shape analysis, shape deformation, structural regularity, symmetry},
+} 
+
+@article{Yang11,
+ author = {Yang, Yong-Liang and Yang, Yi-Jun and Pottmann, Helmut and Mitra, Niloy J.},
+ title = {Shape space exploration of constrained meshes},
+ journal = {ACM Trans. Graph.},
+ issue_date = {December 2011},
+ volume = {30},
+ month = dec,
+ year = {2011},
+ issn = {0730-0301},
+ pages = {124:1--124:12},
+ articleno = {124},
+ numpages = {12},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {constrained mesh, design exploration, manifold navigation, shape space},
+} 
+
+@inproceedings{Debevec96,
+ author = {Debevec, Paul E. and Taylor, Camillo J. and Malik, Jitendra},
+ title = {Modeling and rendering architecture from photographs: a hybrid geometry- and image-based approach},
+ booktitle = {Proceedings of the 23rd annual conference on Computer graphics and interactive techniques},
+ series = {SIGGRAPH '96},
+ year = {1996},
+ isbn = {0-89791-746-4},
+ pages = {11--20},
+ numpages = {10},
+ url = {http://doi.acm.org/10.1145/237170.237191},
+ doi = {10.1145/237170.237191},
+ acmid = {237191},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+@inproceedings{Remondino93,
+  title={3D Virtual Reconstruction and Visualization of Complex Architectures-The "3D-ARCH" Project},
+  author={Remondino, F. and El-Hakim, S. and Girardi, S. and Rizzi, A. and Benedetti, S. and Gonzo, L. and others},
+  booktitle={Proceedings of the ISPRS Working Group V/4 Workshop 3D-ARCH" Virtual Reconstruction and Visualization of Complex Architectures", 2009.},
+  year={2009}
+}
+
+@article{Larsen11,
+  title={3D reconstruction of buildings with automatic facade refinement},
+  author={Larsen, C. and Moeslund, T.},
+  journal={Advances in Visual Computing},
+  pages={451--460},
+  year={2011},
+  publisher={Springer}
+}
+
+@inproceedings{Winkler10,
+  title={Multi-Scale Geometry Interpolation},
+  author={Winkler, T. and Drieseberg, J. and Alexa, M. and Hormann, K.},
+  booktitle={Computer Graphics Forum},
+  volume={29},
+  pages={309--318},
+  year={2010},
+  organization={Wiley Online Library}
+}
+
+@inproceedings{Vstava10,
+  title={Inverse Procedural Modeling by Automatic Generation of L-systems},
+  author={{\v{S}}t'ava, O. and Bene{\v{s}}, B. and M{\v{e}}ch, R. and Aliaga, D.G. and Kri{\v{s}}tof, P.},
+  booktitle={Computer Graphics Forum},
+  volume={29},
+  pages={665--674},
+  year={2010},
+  organization={Wiley Online Library}
+}
+
+@article{Pottmann10,
+ author = {Pottmann, Helmut and Huang, Qixing and Deng, Bailin and Schiftner, Alexander and Kilian, Martin and Guibas, Leonidas and Wallner, Johannes},
+ title = {Geodesic patterns},
+ journal = {ACM Trans. Graph.},
+ volume = {29},
+ issue = {4},
+ month = {July},
+ year = {2010},
+ issn = {0730-0301},
+ pages = {43:1--43:10},
+ articleno = {43},
+ numpages = {10},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+}
+
+@article{Eigensatz10,
+ author = {Eigensatz, Michael and Kilian, Martin and Schiftner, Alexander and Mitra, Niloy J. and Pottmann, Helmut and Pauly, Mark},
+ title = {Paneling architectural freeform surfaces},
+ journal = {ACM Trans. Graph.},
+ volume = {29},
+ issue = {4},
+ month = {July},
+ year = {2010},
+ issn = {0730-0301},
+ pages = {45:1--45:10},
+ articleno = {45},
+ numpages = {10},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+@article{Nan10,
+ author = {Nan, Liangliang and Sharf, Andrei and Zhang, Hao and Cohen-Or, Daniel and Chen, Baoquan},
+ title = {SmartBoxes for interactive urban reconstruction},
+ journal = {ACM Trans. Graph.},
+ volume = {29},
+ issue = {4},
+ month = {July},
+ year = {2010},
+ issn = {0730-0301},
+ pages = {93:1--93:10},
+ articleno = {93},
+ numpages = {10},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+@inproceedings{Livny10,
+  title={Automatic reconstruction of tree skeletal structures from point clouds},
+  author={Livny, Y. and Yan, F. and Olson, M. and Chen, B. and Zhang, H. and El-Sana, J.},
+  booktitle={ACM Transactions on Graphics (TOG)},
+  volume={29},
+  pages={151},
+  year={2010},
+  organization={ACM}
+}
+
+@article{Li10,
+ author = {Li, Yuanyuan and Zhang, Eugene and Kobayashi, Yoshihiro and Wonka, Peter},
+ title = {Editing operations for irregular vertices in triangle meshes},
+ journal = {ACM Trans. Graph.},
+ issue_date = {December 2010},
+ volume = {29},
+ month = dec,
+ year = {2010},
+ issn = {0730-0301},
+ pages = {153:1--153:12},
+ articleno = {153},
+ numpages = {12},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+@inproceedings{Peytavie09,
+  title={Arches: a framework for modeling complex terrains},
+  author={Peytavie, A. and Galin, E. and Grosjean, J. and Merillou, S.},
+  booktitle={Computer Graphics Forum},
+  volume={28},
+  pages={457--467},
+  year={2009},
+  organization={Wiley Online Library}
+}
+
+@inproceedings{Cabral09,
+  title={Structure-Preserving Reshape for Textured Architectural Scenes},
+  author={Cabral, M. and Lefebvre, S. and Dachsbacher, C. and Drettakis, G.},
+  booktitle={Computer Graphics Forum},
+  volume={28},
+  pages={469--480},
+  year={2009},
+  organization={Wiley Online Library},
+}
+
+@inproceedings{Bokeloh09,
+  title={Symmetry detection using feature lines},
+  author={Bokeloh, M. and Berner, A. and Wand, M. and Seidel, H.P. and Schilling, A.},
+  booktitle={Computer Graphics Forum},
+  volume={28},
+  pages={697--706},
+  year={2009},
+}
+
+@article{Whiting09,
+ author = {Whiting, Emily and Ochsendorf, John and Durand, Fr{\'e}do},
+ title = {Procedural modeling of structurally-sound masonry buildings},
+ journal = {ACM Trans. Graph.},
+ issue_date = {December 2009},
+ volume = {28},
+ number = {5},
+ month = dec,
+ year = {2009},
+ issn = {0730-0301},
+ pages = {112:1--112:9},
+ articleno = {112},
+ numpages = {9},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+@article{Xiao09,
+ author = {Xiao, Jianxiong and Fang, Tian and Zhao, Peng and Lhuillier, Maxime and Quan, Long},
+ title = {Image-based street-side city modeling},
+ journal = {ACM Trans. Graph.},
+ issue_date = {December 2009},
+ volume = {28},
+ number = {5},
+ month = dec,
+ year = {2009},
+ pages = {114:1--114:12},
+ articleno = {114},
+ numpages = {12},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+
+@article{Jiang09,
+ author = {Jiang, Nianjuan and Tan, Ping and Cheong, Loong-Fah},
+ title = {Symmetric architecture modeling with a single image},
+ journal = {ACM Trans. Graph.},
+ issue_date = {December 2009},
+ volume = {28},
+ number = {5},
+ month = dec,
+ year = {2009},
+ pages = {113:1--113:8},
+ articleno = {113},
+ numpages = {8},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+@article{Gingold09,
+  title={Structured annotations for 2D-to-3D modeling},
+  author={Gingold, Y. and Igarashi, T. and Zorin, D.},
+  journal={ACM Transactions on Graphics (TOG)},
+  volume={28},
+  number={5},
+  pages={148},
+  year={2009},
+  publisher={ACM}
+}
+
+@article{Baran09,
+ author = {Baran, Ilya and Vlasic, Daniel and Grinspun, Eitan and Popovi\'{c}, Jovan},
+ title = {Semantic deformation transfer},
+ journal = {ACM Trans. Graph.},
+ issue_date = {August 2009},
+ volume = {28},
+ number = {3},
+ month = jul,
+ year = {2009},
+ issn = {0730-0301},
+ pages = {36:1--36:6},
+ articleno = {36},
+ numpages = {6},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+@article{Xu09,
+ author = {Xu, Weiwei and Wang, Jun and Yin, KangKang and Zhou, Kun and van de Panne, Michiel and Chen, Falai and Guo, Baining},
+ title = {Joint-aware manipulation of deformable models},
+ journal = {ACM Trans. Graph.},
+ issue_date = {August 2009},
+ volume = {28},
+ number = {3},
+ month = jul,
+ year = {2009},
+ issn = {0730-0301},
+ pages = {35:1--35:9},
+ articleno = {35},
+ numpages = {9},
+ acmid = {1531341},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+@inproceedings{Thomas00,
+  title={Modelling virtual cities dedicated to behavioural animation},
+  author={Thomas, G. and Donikian, S.},
+  booktitle={Computer Graphics Forum},
+  volume={19},
+  pages={71--80},
+  year={2000},
+  organization={Wiley Online Library}
+}
+
+@article{Yin2009,
+  title={Generating 3d building models from architectural drawings: A survey},
+  author={Yin, X. and Wonka, P. and Razdan, A.},
+  journal={Computer Graphics and Applications, IEEE},
+  volume={29},
+  number={1},
+  pages={20--30},
+  year={2009},
+  publisher={IEEE}
+}
+
+@article {Marvie05,
+   author = {Marvie, Jean-Eudes and Perret, Julien and Bouatouch, Kadi},
+   affiliation = {IRISA/INRIA Rennes Campus Universtaire de Beaulieu Avenue du Général Leclerc 35042 Rennes Cedex France},
+   title = {The FL-system: a functional L-system for procedural geometric modeling},
+   journal = {The Visual Computer},
+   publisher = {Springer Berlin / Heidelberg},
+   issn = {0178-2789},
+   keyword = {Computer Science},
+   pages = {329-339},
+   volume = {21},
+   issue = {5},
+   year = {2005}
+
+}
+
+@ARTICLE{Patow12, 
+author={Patow, G.}, 
+journal={Computer Graphics and Applications, IEEE}, title={User-Friendly Graph Editing for Procedural Modeling of Buildings}, 
+year={2012}, 
+month={march-april }, 
+volume={32}, 
+number={2}, 
+pages={66 -75}, 
+keywords={building procedural modeling;directed acyclic graph;graph rewriting;product-based representation;rule-based editing;rule-based representation;user-friendly graph editing;architectural CAD;directed graphs;rewriting systems;solid modelling;}, 
+doi={10.1109/MCG.2010.104}, 
+ISSN={0272-1716},
+}
+
+@inproceedings{Shaw75,
+ author = {Shaw, David E. and Swartout, William R. and Green, C. Cordell},
+ title = {Inferring LISP programs from examples},
+ booktitle = {Proceedings of the 4th international joint conference on Artificial intelligence - Volume 1},
+ series = {IJCAI'75},
+ year = {1975},
+ location = {Tblisi, USSR},
+ pages = {260--267},
+ numpages = {8},
+ url = {http://dl.acm.org/citation.cfm?id=1624626.1624666},
+ acmid = {1624666},
+ publisher = {Morgan Kaufmann Publishers Inc.},
+ address = {San Francisco, CA, USA},
+} 
+@inproceedings{Myers86,
+ author = {Myers, B. A.},
+ title = {Visual programming, programming by example, and program visualization: a taxonomy},
+ booktitle = {Proceedings of the SIGCHI conference on Human factors in computing systems},
+ series = {CHI '86},
+ year = {1986},
+ isbn = {0-89791-180-6},
+ location = {Boston, Massachusetts, United States},
+ pages = {59--66},
+ numpages = {8},
+ url = {http://doi.acm.org/10.1145/22627.22349},
+ doi = {10.1145/22627.22349},
+ acmid = {22349},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+
+@inbook{Kimura90,
+  title={Visual Programming Environments},
+  chapter={Show and Tell: A Visual Programming Language},
+  author={Takayuki Dan Kimura, Julie Choi and Jane M. Mack},
+  pages={397--414},
+  year={1990},
+  publisher={IEEE}
+}
+
+@book{Lieberman01,
+  title={Your wish is my command: Programming by example},
+  author={Lieberman, H.},
+  year={2001},
+  publisher={Morgan Kaufmann}
+}
+
+@inproceedings{Lau03:LPFT,
+ author = {Lau, Tessa and Domingos, Pedro and Weld, Daniel S.},
+ title = {Learning programs from traces using version space algebra},
+ booktitle = {Proceedings of the 2nd international conference on Knowledge capture},
+ series = {K-CAP '03},
+ year = {2003},
+ isbn = {1-58113-583-1},
+ location = {Sanibel Island, FL, USA},
+ pages = {36--43},
+ numpages = {8},
+ acmid = {945654},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+@article{Lau03:PBD,
+  title={Programming by demonstration using version space algebra},
+  author={Lau, T. and Wolfman, S.A. and Domingos, P. and Weld, D.S.},
+  journal={Machine Learning},
+  volume={53},
+  number={1},
+  pages={111--156},
+  year={2003},
+  publisher={Springer}
+}
+
+@INPROCEEDINGS{Mima91, 
+author={Mima, Y.}, 
+booktitle={Visual Languages, 1991., Proceedings. 1991 IEEE Workshop on}, 
+title={A visual programming environment for programming by example abstraction}, 
+year={1991}, 
+month={oct}, 
+volume={}, 
+number={}, 
+pages={132 -137}, 
+}
+
+@inbook{Finzer90,
+  title={Visual Programming Environments},
+  editor={Ephraim P. Gilnert},
+  chapter={},
+  author={Takayuki Dan Kimura, Julie Choi and Jane M. Mack},
+  pages={397--414},
+  year={1990},
+  publisher={IEEE}
+}
+
+@article{Finzer84,
+ title={Programming by Rehearsal},
+ volume={9},
+ number={6},
+ journal={Byte},
+ publisher={Xerox Palo Alto Research Center},
+ author={Finzer, W and Gould, L},
+ year={1984},
+ pages={187--210}
+}
+
+@article{Borning86,
+author = {Borning, Alan},
+title = {Graphically Defining New Building Blocks in ThingLab},
+journal = {Human–Computer Interaction},
+volume = {2},
+number = {4},
+pages = {269-295},
+year = {1986},
+doi = {10.1207/s15327051hci0204_1},
+
+URL = {http://www.tandfonline.com/doi/abs/10.1207/s15327051hci0204_1},
+eprint = {http://www.tandfonline.com/doi/pdf/10.1207/s15327051hci0204_1}
+}
+
+@techreport{smith1975pygmalion,
+  title={Pygmalion: a creative programming environment.},
+  author={Smith, D.C.},
+  year={1975},
+  institution={DTIC Document}
+}
+
+@book{Smith77,
+  title={Pygmalion: a computer program to model and stimulate creative thought},
+  author={Smith, D.C.},
+  series={Interdisciplinary systems research},
+  year={1977},
+  publisher={Birkh{\"a}user}
+}
+
+@inproceedings{Sutherland64,
+  title={Sketch pad a man-machine graphical communication system},
+  author={Sutherland, I.E.},
+  booktitle={Proceedings of the SHARE design automation workshop},
+  pages={6--329},
+  year={1964},
+  organization={ACM}
+}
+
+@article{Knuth68,
+  title={Semantics of context-free languages},
+  author={Knuth, D.E.},
+  journal={Theory of Computing Systems},
+  volume={2},
+  number={2},
+  pages={127--145},
+  year={1968},
+  publisher={Springer}
+}
+
+@ARTICLE{Koning81,
+title = {The language of the prairie: Frank Lloyd Wright's prairie houses},
+author = {Koning, H and Eizenberg, J},
+year = {1981},
+journal = {Environment and Planning B: Planning and Design},
+volume = {8},
+number = {3},
+pages = {295-323},
+}
+
+@article{Aliaga08:IRU,
+  title={Interactive reconfiguration of urban layouts},
+  author={Aliaga, D.G. and Benes, B. and Vanegas, C.A. and Andrysco, N.},
+  journal={Computer Graphics and Applications, IEEE},
+  volume={28},
+  number={3},
+  pages={38--47},
+  year={2008},
+  publisher={IEEE}
+}
+
+@inproceedings{Kwatra2005,
+  title={Texture optimization for example-based synthesis},
+  author={Kwatra, V. and Essa, I. and Bobick, A. and Kwatra, N.},
+  booktitle={ACM Transactions on Graphics (TOG)},
+  volume={24},
+  pages={795--802},
+  year={2005},
+  organization={ACM}
+}
+
+@inproceedings{Xiao08,
+  title={Image-based fa{\c{c}}ade modeling},
+  author={Xiao, J. and Fang, T. and Tan, P. and Zhao, P. and Ofek, E. and Quan, L.},
+  booktitle={ACM Transactions on Graphics (TOG)},
+  volume={27},
+  pages={161},
+  year={2008},
+  organization={ACM}
+}
+
+@inproceedings{Greuter03,
+ author = {Greuter, Stefan and Parker, Jeremy and Stewart, Nigel and Leach, Geoff},
+ title = {Real-time procedural generation of `pseudo infinite' cities},
+ booktitle = {Proceedings of the 1st international conference on Computer graphics and interactive techniques in Australasia and South East Asia},
+ series = {GRAPHITE '03},
+ year = {2003},
+ isbn = {1-58113-578-5},
+ location = {Melbourne, Australia},
+ pages = {87--ff},
+ acmid = {604490},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+
+@inproceedings{Pottmann2007,
+  title={Geometry of multi-layer freeform structures for architecture},
+  author={Pottmann, H. and Liu, Y. and Wallner, J. and Bobenko, A. and Wang, W.},
+  booktitle={ACM Transactions on Graphics (TOG)},
+  volume={26},
+  pages={65},
+  year={2007},
+  organization={ACM}
+}
+
+@article{Pottmann08,
+ author = {Pottmann, Helmut and Schiftner, Alexander and Bo, Pengbo and Schmiedhofer, Heinz and Wang, Wenping and Baldassini, Niccolo and Wallner, Johannes},
+ title = {Freeform surfaces from single curved panels},
+ journal = {ACM Trans. Graph.},
+ issue_date = {August 2008},
+ volume = {27},
+ number = {3},
+ month = aug,
+ year = {2008},
+ issn = {0730-0301},
+ pages = {76:1--76:10},
+ articleno = {76},
+ numpages = {10},
+} 
+
+@article{Smith02,
+ author = {Smith, Jeffrey and Hodgins, Jessica and Oppenheim, Irving and Witkin, Andrew},
+ title = {Creating models of truss structures with optimization},
+ journal = {ACM Trans. Graph.},
+ issue_date = {July 2002},
+ volume = {21},
+ number = {3},
+ month = jul,
+ year = {2002},
+ issn = {0730-0301},
+ pages = {295--301},
+ numpages = {7},
+ address = {New York, NY, USA},
+} 
+
+@article{twak12,
+journal = {Computer Graphics Forum},
+title = {{Procedural Generation of Parcels in Urban Modeling}},
+author = {Carlos A. Vanegas and Tom Kelly and Basil Weber and Jan Halatsch and Daniel G. Aliaga and Pascal Müller },
+pages = {681-690},
+volume= {31},
+number= {2},
+year = {2012},
+}
+
+@article{twak11,
+ author = {Kelly, Tom and Wonka, Peter},
+ title = {Interactive architectural modeling with procedural extrusions},
+ journal = {ACM Trans. Graph.},
+ issue_date = {April 2011},
+ volume = {30},
+ number = {2},
+ month = apr,
+ year = {2011},
+ issn = {0730-0301},
+ pages = {14:1--14:15},
+ articleno = {14},
+ numpages = {15},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+@inproceedings{Simon12,
+title={Parameter-free/Pareto-driven Procedural 3D Reconstruction of Buildings from Ground-Level Sequences},
+author={Simon, Loic and Teboul, Olivier and Koutsourakis, Panagiotis and Van Gool, Luc and Paragios, Nikos},
+booktitle={Computer Vision and Pattern Recognition},
+pages={},
+year={2012},
+organization={IEEE}
+}
+
+@Manual{IBM57,
+  author =	"{International Business Machines Corporation}",
+  title =	"General information manual; programmer's primer for
+		 {FORTRAN} automatic coding system for the {IBM 704}
+		 data processing system",
+  organization = "IBM Corporation",
+  address =	"pub-IBM:adr",
+  pages =	"64",
+  year = 	"1957",
+  bibdate =	"Sat Jan 27 13:40:57 MST 1996",
+  bibsource =	"http://www.math.utah.edu/pub/tex/bib/fortran1.bib",
+  acknowledgement = "Nelson H. F. Beebe, University of Utah, Department
+		 of Mathematics, 110 LCB, 155 S 1400 E RM 233, Salt Lake
+		 City, UT 84112-0090, USA, Tel: +1 801 581 5254, FAX: +1
+		 801 581 4148, e-mail: \path|beebe@math.utah.edu|,
+		 \path|beebe@acm.org|, \path|beebe@computer.org|
+		 (Internet), URL:
+		 \path|http://www.math.utah.edu/~beebe/|",
+  keywords =	"IBM 7040 (Computer) --- Programming.; {Fortran}
+		 (Computer program language).",
+}
+
+@article{Gosling96,
+  title={The Java Language Environment: A White Paper. 1995},
+  author={Gosling, J. and McGilton, H.},
+  journal={Sun Microsystems},
+  year={1996}
+}
+
+@article{Ritchie78,
+  title={The C programming language},
+  author={Ritchie, D.M. and Johnson, SC and Lesk, ME and Kernighan, BW},
+  journal={Bell Sys. Tech. J},
+  volume={57},
+  pages={1991--2019},
+  year={1978}
+}
+
+@article{Hudak92,
+  title={Report on the programming language Haskell: a non-strict, purely functional language version 1.2},
+  author={Hudak, P. and Peyton Jones, S. and Wadler, P. and Boutel, B. and Fairbairn, J. and Fasel, J. and Guzm{\'a}n, M.M. and Hammond, K. and Hughes, J. and Johnsson, T. and others},
+  journal={ACM SigPlan notices},
+  volume={27},
+  number={5},
+  pages={1--164},
+  year={1992},
+  publisher={ACM}
+}
+
+@inproceedings{Gottler83,
+  title={Attributed graph grammars for graphics},
+  author={G{\"o}ttler, H.},
+  booktitle={Graph-Grammars and their Application to Computer Science},
+  pages={130--142},
+  year={1983},
+  organization={Springer}
+}
+
+@inproceedings{pfaltz69,
+  title={Web grammars},
+  author={Pfaltz, J.L. and Rosenfeld, A.},
+  booktitle={Proceedings of the 1st international joint conference on Artificial intelligence},
+  pages={609--619},
+  year={1969},
+  organization={Morgan Kaufmann Publishers Inc.}
+}
+
+@incollection {Gottler91,
+   author = {Göttler, Herbert and Günther, Joachim and Nieskens, Georg},
+   affiliation = {Universität Erlangen-Nürnberg Lehrstuhl für Programmiersprachen Martensstr. 3 D-8520 Erlangen F R Germany Martensstr. 3 D-8520 Erlangen F R Germany},
+   booktitle = {Graph Grammars and Their Application to Computer Science},
+   title = {Use graph grammars to design CAD-systems!},
+   series = {Lecture Notes in Computer Science},
+   editor = {Ehrig, Hartmut and Kreowski, Hans-Jörg and Rozenberg, Grzegorz},
+   publisher = {Springer Berlin / Heidelberg},
+   isbn = {978-3-540-54478-4},
+   keyword = {Computer Science},
+   pages = {396-410},
+   volume = {532},
+   year = {1991}
+}
+
+@inproceedings{Ehrig73,
+  title={Graph-grammars: An algebraic approach},
+  author={Ehrig, H. and Pfender, M. and Schneider, H.J.},
+  booktitle={Switching and Automata Theory, 1973. SWAT'08. IEEE Conference Record of 14th Annual Symposium on},
+  pages={167--180},
+  year={1973},
+  organization={IEEE}
+}
+
+@article{Dolado88, 
+author={Dolado, J.J. and Torrealdea, F.J.}, 
+journal={Systems, Man and Cybernetics, IEEE Transactions on}, title={Formal manipulation of Forrester diagrams by graph grammars}, 
+year={1988}, 
+month={nov/dec}, 
+volume={18}, 
+number={6}, 
+pages={981 -996}, 
+keywords={Forrester diagrams;attributed graphs;formal specification;graph grammars;interactive modeling;system dynamics;grammars;graph theory;system theory;}, 
+doi={10.1109/21.23096}, 
+ISSN={0018-9472},}
+
+@incollection {Gottler89,
+   author = {Göttler, Herbert},
+   affiliation = {Universität Erlangen-Nürnberg Lehrstuhl für Programmiersprachen Martensstr. 3 D-8520 Erlangen F. R. Germany Martensstr. 3 D-8520 Erlangen F. R. Germany},
+   title = {Graph grammars, a new paradigm for implementing visual languages},
+   booktitle = {Rewriting Techniques and Applications},
+   series = {Lecture Notes in Computer Science},
+   editor = {Dershowitz, Nachum},
+   publisher = {Springer Berlin / Heidelberg},
+   isbn = {978-3-540-51081-9},
+   keyword = {Computer Science},
+   pages = {152-166},
+   volume = {355},
+   year = {1989}
+}
+
+@inproceedings{Han05,
+  title={Bottom-up/top-down image parsing by attribute graph grammar},
+  author={Han, F. and Zhu, S.C.},
+  booktitle={Computer Vision, 2005. ICCV 2005. Tenth IEEE International Conference on},
+  volume={2},
+  pages={1778--1785},
+  year={2005},
+  organization={IEEE}
+}
+
+@article{Chomsky59,
+  title={On certain formal properties of grammars*},
+  author={Chomsky, N.},
+  journal={Information and control},
+  volume={2},
+  number={2},
+  pages={137--167},
+  year={1959},
+  publisher={Elsevier}
+}
+
+@book{Davis94,
+  title={Computability, complexity, and languages: fundamentals of theoretical computer science},
+  author={Davis, M. and Sigal, R. and Weyuker, E.J.},
+  year={1994},
+  publisher={Morgan Kaufmann}
+}
+
+@book{Klop03,
+  title={Term rewriting systems},
+  author={Klop, J.W. and de Vrijer, R.},
+  year={2003},
+  publisher={Cambridge Univ Pr}
+}
+
+@article{Wolfram83,
+  title = {Statistical mechanics of cellular automata},
+  author = {Wolfram, Stephen},
+  journal = {Rev. Mod. Phys.},
+  volume = {55},
+  issue = {3},
+  pages = {601--644},
+  year = {1983},
+  month = {Jul},
+  doi = {10.1103/RevModPhys.55.601},
+  url = {http://link.aps.org/doi/10.1103/RevModPhys.55.601},
+  publisher = {American Physical Society}
+}
+
+@article{Wolfram84,
+  title={Universality and complexity in cellular automata},
+  author={Wolfram, S.},
+  journal={Physica D: Nonlinear Phenomena},
+  volume={10},
+  number={1},
+  pages={1--35},
+  year={1984},
+  publisher={Elsevier}
+}
+
+@article{Wolfram03,
+  title={A new kind of science},
+  author={Wolfram, S. and Gad-el-Hak, M.},
+  journal={Applied Mechanics Reviews},
+  volume={56},
+  pages={B18},
+  year={2003}
+}
+
+@incollection{Ehrig76,
+  title={Parallel graph grammars},
+  author={Ehrig, H. and Kreowski, H.J.},
+  booktitle={Automata, Languages, Development},
+  pages={425--442},
+  year={1976},
+  publisher={Amsterdam: North Holland}
+}
+
+@inproceedings{Nagl83,
+  title={Software specification by graph grammars},
+  author={Nagl, M. and Engels, G. and Gall, R. and Sch{\"a}fer, W.},
+  booktitle={Graph-Grammars and Their Application to Computer Science},
+  pages={267--287},
+  year={1983},
+  organization={Springer}
+}
+
+@article{Nagl76,
+  title={Formal languages of labelled graphs},
+  author={Nagl, M.},
+  journal={Computing},
+  volume={16},
+  number={1},
+  pages={113--137},
+  year={1976},
+  publisher={Springer}
+}
+
+
+@book{Gottler88,
+  title={Graphgrammatiken in der Softwaretechnik: Theorie und Anwendungen},
+  author={G{\"o}ttler, H.},
+  volume={178},
+  year={1988},
+  publisher={Not Avail}
+}
+
+@inproceedings{Eppstein95,
+  title={Subgraph isomorphism in planar graphs and related problems},
+  author={Eppstein, D.},
+  booktitle={Proceedings of the sixth annual ACM-SIAM symposium on Discrete algorithms},
+  pages={632--640},
+  year={1995},
+  organization={Society for Industrial and Applied Mathematics}
+}
+
+@article{Habel96,
+  title={Graph grammars with negative application conditions},
+  author={Habel, A. and Heckel, R. and Taentzer, G.},
+  journal={Fundamenta Informaticae},
+  volume={26},
+  number={3},
+  pages={287--313},
+  year={1996},
+  publisher={IOS Press}
+}
+
+@book{Rozenberg97,
+  title={Handbook of formal languages: Beyond words},
+  author={Rozenberg, G. and Salomaa, A.},
+  volume={1},
+  year={1997},
+  publisher={Springer Verlag}
+}
+
+@inproceedings{Prusinkiewicz88,
+  title={Development models of herbaceous plants for computer imagery purposes},
+  author={Prusinkiewicz, P. and Lindenmayer, A. and Hanan, J.},
+  booktitle={ACM SIGGRAPH Computer Graphics},
+  volume={22},
+  pages={141--150},
+  year={1988},
+  organization={ACM}
+}
+
+@book{Hanan92,
+  title={Parametric L-systems and their application to the modelling and visualization of plants},
+  author={Hanan, J.S. and Adviser-Prusinkiewicz, P.},
+  year={1992},
+  publisher={The University of Regina (Canada)}
+}
+
+@inproceedings{Lindenmayer79,
+  title={Parallel generation of maps: Developmental systems for cell layers},
+  author={Lindenmayer, A. and Rozenberg, G.},
+  booktitle={Graph-grammars and their application to computer science and biology},
+  pages={301--316},
+  year={1979},
+  organization={Springer}
+}
+
+@inproceedings{Prusinkiewicz86,
+  title={Graphical applications of L-systems},
+  author={PRUSINKIEWICZ, P.},
+  booktitle={Canadian Information Processing Society Graphics Interface 1986},
+  year={1986},
+  pages={247--253},
+}
+
+@article{Buck05,
+  title={Barley morphology, genetics and hormonal regulation of internode elongation modelled by a relational growth grammar},
+  author={Buck-Sorlin, G.H. and Kniemeyer, O. and Kurth, W.},
+  journal={New Phytologist},
+  volume={166},
+  number={3},
+  pages={859--867},
+  year={2005},
+  publisher={Wiley Online Library}
+}
+
+@article{Nakielski00,
+  title={Tensorial model for growth and cell division in the shoot apex},
+  author={Nakielski, J.},
+  journal={Pattern Formation in Biology, Vision and Dynamics},
+  pages={252--267},
+  year={2000},
+  publisher={World Scientific Publishing Signapore}
+}
+
+@article{Shlyakhter01,
+  title={Reconstructing 3D tree models from instrumented photographs},
+  author={Shlyakhter, I. and Rozenoer, M. and Dorsey, J. and Teller, S.},
+  journal={Computer Graphics and Applications, IEEE},
+  volume={21},
+  number={3},
+  pages={53--61},
+  year={2001},
+  publisher={IEEE}
+}
+
+@article{Yokomori80,
+  title={Stochastic characterizations of E0L languages},
+  author={Yokomori, T.},
+  journal={Information and Control},
+  volume={45},
+  number={1},
+  pages={26--33},
+  year={1980},
+  publisher={Elsevier}
+}
+
+@article{Chau04,
+  title={Evaluation of a 3D shape grammar implementation},
+  author={Chau, HH and Chen, X. and McKAY, A. and de PENNINGTON, A.},
+  journal={Design computing and cognition},
+  volume={4},
+  pages={357--376},
+  year={2004}
+}
+
+@article{Mccormack02,
+  title={Supporting designers' hierarchies through parametric shape recognition},
+  author={McCormack, J.P. and Cagan, J.},
+  journal={Environment and Planning B},
+  volume={29},
+  number={6},
+  pages={913--932},
+  year={2002},
+  publisher={PION LTD}
+}
+
+@article{Krishnamurti80,
+  title={The arithmetic of shapes},
+  author={Krishnamurti, R.},
+  journal={Environment and Planning B: Planning and Design},
+  volume={7},
+  number={4},
+  pages={463--484},
+  year={1980},
+  publisher={Pion Ltd, London}
+}
+
+@article{krishnamurti81,
+  title={The construction of shapes},
+  author={Krishnamurti, R.},
+  journal={Environment and Planning B},
+  volume={8},
+  pages={5--40},
+  year={1981}
+}
+@article{Krishnamurti92,
+  title={Shape recognition in three dimensions},
+  author={Krishnamurti, R. and Earl, CF},
+  journal={Environment and Planning B: Planning and Design},
+  volume={19},
+  number={5},
+  pages={585--603},
+  year={1992},
+  publisher={Pion Ltd, London}
+}
+
+
+@inproceedings{Grasl10,
+  title={Palladian Graphs},
+  author={Grasl, T. and Economou, A.},
+  booktitle={Future cities: proceedings of the 28th Conference on Education in Computer Aided Architectural Design in Europe, September 15-18, 2010, Zurich, Switzerland, ETH Zurich},
+  pages={275},
+  year={2010},
+  organization={vdf Hochschulverlag AG}
+}
+
+@article{Pugliese02,
+  title={Capturing a rebel: modeling the Harley-Davidson brand through a motorcycle shape grammar},
+  author={Pugliese, M.J. and Cagan, J.},
+  journal={Research in Engineering Design},
+  volume={13},
+  number={3},
+  pages={139--156},
+  year={2002},
+  publisher={Springer}
+}
+
+@article{Orsborn06,
+  title={Creating cross-over vehicles: Defining and combining vehicle classes using shape grammars},
+  author={Orsborn, S. and Cagan, J. and Pawlicki, R. and Smith, R.C.},
+  journal={AI EDAM-Artificial Intelligence Engineering Design Analysis and Manufacturing},
+  volume={20},
+  number={3},
+  pages={217--246},
+  year={2006},
+  publisher={Cambridge Univ Press}
+}
+
+@book{Gips74,
+  title={Shape grammars and their uses},
+  author={Gips, J.},
+  number={231},
+  year={1974},
+  publisher={Stanford University}
+}
+
+@article{Earl1992shape,
+  title={Shape recognition in three dimensions},
+  author={Krishnamurti, R and Earl, CF},
+  journal={Environment and Planning B: Planning and Design},
+  volume={19},
+  pages={585--603},
+  year={1992}
+}
+
+@inproceedings{Kurlander88,
+  title={Graphical search and replace},
+  author={Kurlander, D. and Bier, E.A.},
+  booktitle={ACM SIGGRAPH Computer Graphics},
+  volume={22},
+  pages={113--120},
+  year={1988},
+  organization={ACM}
+}
+
+@article{Gips75,
+  title={Shape Grammars and Their Uses: Artificial Perception},
+  author={Gips, J.},
+  journal={Shape Generation and Computer Aesthetics (Basel and Stuttgart: Birkhauser, 1975)},
+  year={1975}
+}
+
+@article{Stiny82,
+  title={Spatial relations and grammars},
+  author={Stiny, G.},
+  journal={Environment and Planning B: Planning and Design},
+  volume={9},
+  number={1},
+  pages={113--114},
+  year={1982},
+  publisher={Pion Ltd, London}
+}
+
+@article{Mastercam,
+ title = {Auto{CAD}},
+ author ={CNC Software},
+ NOTE = {www.mastercam.com}
+}
+
+@article{AutoCAD,
+ title = {Auto{CAD}},
+ author ={Autodesk},
+ NOTE = {www.autodesk.co.uk/autocad}
+}
+
+@article{ArcGIS,
+ title = {Arc{GIS}},
+ author ={Autodesk},
+ NOTE = {www.esri.com/software/arcgis}
+}
+
+@article{cityEngine,
+ title = {{E}sri {C}ity{E}ngine},
+ author ={Esri},
+ NOTE = {www.esri.com/software/cityengine/index.html}
+}
+
+@article{zBrush,
+ title = {Z{B}rush},
+ author ={Pixologic},
+ NOTE = {http://www.pixologic.com/zbrush}
+}
+
+@article{Mudbox,
+ title = {Mudbox},
+ author ={Autodesk},
+ NOTE = {http://www.autodesk.com/mudbox}
+}
+
+@misc{grasshopper,
+ title = {Grasshopper},
+ author ={Scott Davidson},
+ NOTE = {http://www.grasshopper3d.com/}
+}
+
+@misc{bentley,
+ title = {{G}enerative {C}omponents},
+ author ={Bentley},
+ NOTE = {www.bentley.com/en-GB/Products/GenerativeComponents/}
+}
+
+@article{blockly,
+ title = {Google {B}lockly},
+ author = {Google},
+ NOTE = {code.google.com/p/blockly}
+}
+
+@article{labview,
+ title = {Labview},
+ author ={National Instruments},
+ NOTE = {www.ni.com/labview}
+}
+
+
+@inproceedings{Ilvcik10,
+  title={Procedural skeletons: kinematic extensions to CGA-shape grammars},
+  author={Il{\v{c}}{\'\i}k, M. and Fiedler, S. and Purgathofer, W. and Wimmer, M.},
+  booktitle={Proceedings of the 26th Spring Conference on Computer Graphics},
+  pages={157--164},
+  year={2010},
+  organization={ACM}
+}
+
+@inproceedings{Muller05,
+  title={Spatial relations and grammars},
+  author={M\"{u}ller, Pascal and Verneenooghe, T and  Ulmer, Andy and Van Gool, Luc},
+  booktitle={International Workshop on Recording, Modeling and Visualization of Cultural Heritage},
+  pages={287--297},
+  year={2005},
+}
+@article{Said08,
+  title={A Parametric Shape Grammar of the Traditional Malay Long-Roof Type Houses},
+  author={Said, S. and Embi, M.R.},
+  journal={International Journal of Architectural Computing},
+  volume={6},
+  number={2},
+  pages={121--144},
+  year={2008},
+  publisher={Multi-Science}
+}
+
+@article{Dylla08,
+  title={Rome reborn 2.0: A case study of virtual city reconstruction using procedural modeling techniques},
+  author={Dylla, K. and Frischer, B. and Mueller, P. and Ulmer, A. and Haegler, S.},
+  journal={Computer Graphics World},
+  volume={16},
+  pages={25},
+  year={2008}
+}
+
+@article{Haegler09,
+  title={Procedural modeling for digital cultural heritage},
+  author={Haegler, S. and M{\"u}ller, P. and Van Gool, L.},
+  journal={Journal on Image and Video Processing},
+  volume={2009},
+  pages={4--4},
+  year={2009},
+  publisher={Hindawi Publishing Corp.}
+}
+
+@article{Johnston04,
+  title={Advances in dataflow programming languages},
+  author={Johnston, W.M. and Hanna, JR and Millar, R.J.},
+  journal={ACM Computing Surveys (CSUR)},
+  volume={36},
+  number={1},
+  pages={1--34},
+  year={2004},
+  publisher={ACM}
+}
+
+@inproceedings{Haeberli88,
+  title={ConMan: a visual programming language for interactive graphics},
+  author={Haeberli, P.E.},
+  booktitle={ACM SigGraph Computer Graphics},
+  volume={22},
+  pages={103--111},
+  year={1988},
+  organization={ACM}
+}
+
+@article{Davis82,
+  title={Data Flow Program Graphs},
+  author={Davis, AL and Keller, RM},
+  journal={Computer},
+  pages={26--41},
+  year={1982},
+  publisher={IEEE Comput. Soc.}
+}
+
+@article{Lee06,
+  title={Specifying parametric building object behavior (BOB) for a building information modeling system},
+  author={Lee, G. and Sacks, R. and Eastman, C.M.},
+  journal={Automation in construction},
+  volume={15},
+  number={6},
+  pages={758--776},
+  year={2006},
+  publisher={Elsevier}
+}
+
+@article{Resnick09,
+  title={Scratch: programming for all},
+  author={Resnick, M. and Maloney, J. and Monroy-Hern{\'a}ndez, A. and Rusk, N. and Eastmond, E. and Brennan, K. and Millner, A. and Rosenbaum, E. and Silver, J. and Silverman, B. and others},
+  journal={Communications of the ACM},
+  volume={52},
+  number={11},
+  pages={60--67},
+  year={2009},
+  publisher={ACM}
+}
+
+@inproceedings{Tanimoto86,
+  title={Play: an iconic programming system for children},
+  author={Tanimoto, S.L. and Runyan, M.S.},
+  booktitle={Visual Languages},
+  pages={191--205},
+  year={1986},
+  organization={Plenum Press: New York}
+}
+
+@techreport{Bell92,
+  title={Chemtrains: A rule-based visual language for building graphical simulations},
+  author={Bell, B.},
+  year={1992},
+  institution={Technical Report CUCS-592-92, Department of Computer Science, University of Colorado at Boulder}
+}
+
+@book{Upstill90,
+  title={The renderman companion},
+  author={Upstill, S.},
+  year={1990},
+  publisher={Addison-Wesley Reading, MA}
+}
+
+@article{Wernecke94,
+  title={Open Inventor C++ Reference Manual},
+  author={Wernecke, J.},
+  journal={United States of America},
+  year={1994}
+}
+
+@article{Shizuki00,
+  title={Smart browsing among multiple aspects of data-flow visual program execution, using visual patterns and multi-focus fisheye views},
+  author={Shizuki, B. and Toyoda, M. and Shibayama, E. and Takahashi, S.},
+  journal={Journal of Visual Languages and Computing},
+  volume={11},
+  number={5},
+  pages={529--548},
+  year={2000},
+  publisher={Elsevier}
+}
+
+@phdthesis{Sutherland66,
+  title={ON-LINE GRAPHICAL SPECIFICATION OF COMPUTER PROCEDURES.},
+  author={Sutherland, W.R.},
+  year={1966},
+  school={MIT}
+}
+
+@inproceedings{Dennis74,
+  title={First version of a data flow procedure language},
+  author={Dennis, J.},
+  booktitle={Programming Symposium},
+  pages={362--376},
+  year={1974},
+  organization={Springer}
+}
+
+@article{Hankin81,
+  title={The data flow programming language CAJOLE-an informal introduction},
+  author={Hankin, C.L. and Glaser, HW},
+  journal={ACM Sigplan Notices},
+  volume={16},
+  number={7},
+  pages={35--44},
+  year={1981},
+  publisher={ACM}
+}
+
+@article{Jong82,
+  title={Structured data flow programming},
+  author={{d}e Jong, MD and Hankin, CL},
+  journal={ACM SIGPLAN Notices},
+  volume={17},
+  number={8},
+  pages={18--27},
+  year={1982},
+  publisher={ACM}
+}
+
+@inproceedings{Plas76,
+  title={LAU system architecture: A parallel data driven processor based on single assignment},
+  author={Plas, A. and Comte, D. and Gelly, O. and Syre, JC},
+  booktitle={Proceedings of the International Conference on Parallel Processing},
+  pages={293--302},
+  year={1976}
+}
+
+@article{Davis81,
+  title={A sample management application program in a graphical data driven programming language},
+  author={Davis, AL and Lowder, SA},
+  journal={Digest of Papers Compcon Spring},
+  volume={81},
+  pages={162--167},
+  year={1981}
+}
+
+@inproceedings{Cox89,
+  title={Prograph: a step towards liberating programming from textual conditioning},
+  author={Cox, P.T. and Giles, FR and Pietrzykowski, T.},
+  booktitle={Visual Languages, 1989., IEEE Workshop on},
+  pages={150--156},
+  year={1989},
+  organization={IEEE}
+}
+
+@article{Matwin1985,
+  title={PROGRAPH: a preliminary report},
+  author={Matwin, S. and Pietrzykowski, T.},
+  journal={Computer Languages},
+  volume={10},
+  number={2},
+  pages={91--126},
+  year={1985},
+  publisher={Elsevier}
+}
+
+@article{Kiper97,
+  title={Criteria for evaluation of visual programming languages},
+  author={Kiper, J.D. and Howard, E. and Ames, C.},
+  journal={Journal of Visual Languages \& Computing},
+  volume={8},
+  number={2},
+  pages={175--192},
+  year={1997},
+  publisher={Elsevier}
+}
+
+@mastersthesis{Lovejoy92,
+  title={Turtle graphics implementation using a graphical dataflow programming approach(M. S. Thesis)},
+  school={Navel Postgraduate School},
+  author={Lovejoy, R.},
+  year={1992}
+}
+
+@inproceedings{Abram95,
+  title={An extended data-flow architecture for data analysis and visualization},
+  author={Abram, G. and Treinish, L.},
+  booktitle={Proceedings of the 6th conference on Visualization'95},
+  pages={263},
+  year={1995},
+  organization={IEEE Computer Society}
+}
+
+@inproceedings{Kass92,
+  title={Condor: Constraint-based dataflow},
+  author={Kass, M.},
+  booktitle={ACM SIGGRAPH Computer Graphics},
+  volume={26},
+  number={2},
+  pages={321--330},
+  year={1992},
+  organization={ACM}
+}
+
+@inproceedings{Ludolph88,
+  title={The Fabrik programming environment},
+  author={Ludolph, F. and Chow, Y.Y. and Ingalls, D. and Wallace, S. and Doyle, K.},
+  booktitle={Visual Languages, 1988., IEEE Workshop on},
+  pages={222--230},
+  year={1988},
+  organization={IEEE}
+}
+
+@article{Watson79,
+author = {Ian Watson and John Gurd},
+title = {A prototype data flow computer with token labelling},
+journal ={Managing Requirements Knowledge, International Workshop on},
+volume = {0},
+year = {1979},
+pages = {623},
+doi = {http://doi.ieeecomputersociety.org/10.1109/AFIPS.1979.14},
+publisher = {IEEE Computer Society},
+address = {Los Alamitos, CA, USA},
+}
+
+@book{Thompson01,
+  title={OpenDX: Paths to Visulization: Material Used for Learning OpenDX-the Open Derivate of IBM's Visualization Data Explorer},
+  author={Thompson, D. and Braun, J. and Ford, R.},
+  year={2001},
+  publisher={Visualization an imagery solutions}
+}
+
+@article{Mendez08,
+  title={Generating semantic 3D models of underground infrastructure},
+  author={Mendez, E. and Schall, G. and Havemann, S. and Fellner, D. and Schmalstieg, D. and Junghanns, S.},
+  journal={Computer Graphics and Applications, IEEE},
+  volume={28},
+  number={3},
+  pages={48--57},
+  year={2008},
+  publisher={IEEE}
+}
+
+@inproceedings{Funkhouser04,
+  title={Modeling by example},
+  author={Funkhouser, T. and Kazhdan, M. and Shilane, P. and Min, P. and Kiefer, W. and Tal, A. and Rusinkiewicz, S. and Dobkin, D.},
+  booktitle={ACM Transactions on Graphics},
+  volume={23},
+  pages={652--663},
+  year={2004},
+  organization={ACM}
+}
+
+@inproceedings{Lee08,
+  title={Sketch-Based Search and Composition of 3D Models},
+  author={Lee, J. and Funkhouser, T.},
+  booktitle={Eurographics Workshop on Sketch-Based Interfaces and Modeling},
+  pages={97--104},
+  year={2008},
+  organization={The Eurographics Association}
+}
+
+@article{Sharf06,
+  title={SnapPaste: an interactive technique for easy mesh composition},
+  author={Sharf, A. and Blumenkrants, M. and Shamir, A. and Cohen-Or, D.},
+  journal={The Visual Computer},
+  volume={22},
+  number={9},
+  pages={835--844},
+  year={2006},
+  publisher={Springer}
+}
+
+@inproceedings{Owada06,
+  title={Copy-paste synthesis of 3d geometry with repetitive patterns},
+  author={Owada, S. and Nielsen, F. and Igarashi, T.},
+  booktitle={Smart Graphics},
+  pages={184--193},
+  year={2006},
+  organization={Springer}
+}
+
+@inproceedings{Efros99,
+  title={Texture synthesis by non-parametric sampling},
+  author={Efros, A.A. and Leung, T.K.},
+  booktitle={Computer Vision, 1999. The Proceedings of the Seventh IEEE International Conference on},
+  volume={2},
+  pages={1033--1038},
+  year={1999},
+  organization={Ieee}
+}
+
+@article{Cohen03,
+  title={Wang tiles for image and texture generation},
+  author={Cohen, M.F. and Shade, J. and Hiller, S. and Deussen, O.},
+  journal={ACM Transactions on Graphics},
+  volume={22},
+  number={3},
+  pages={287--294},
+  year={2003},
+  publisher={Citeseer}
+}
+
+@inproceedings{Sibley04,
+  title={Wang cubes for video synthesis and geometry placement},
+  author={Sibley, P.G. and Montgomery, P. and Marai, G.E.},
+  booktitle={ACM SIGGRAPH 2004 Posters},
+  pages={20},
+  year={2004},
+  organization={ACM}
+}
+
+@inproceedings{Sharf04,
+  title={Context-based surface completion},
+  author={Sharf, A. and Alexa, M. and Cohen-Or, D.},
+  booktitle={ACM Transactions on Graphics},
+  volume={23},
+  pages={878--887},
+  year={2004},
+  organization={ACM}
+}
+
+@article{Bokeloh10,
+  title={A connection between partial symmetry and inverse procedural modeling},
+  author={Bokeloh, M. and Wand, M. and Seidel, H.P.},
+  journal={ACM Transactions on Graphics (TOG)},
+  volume={29},
+  number={4},
+  pages={104},
+  year={2010},
+  publisher={ACM}
+}
+
+@article{Talton11,
+  title={Metropolis procedural modeling},
+  author={Talton, J.O. and Lou, Y. and Lesser, S. and Duke, J. and M{\v{e}}ch, R. and Koltun, V.},
+  journal={ACM Transactions on Graphics (TOG)},
+  volume={30},
+  number={2},
+  pages={11},
+  year={2011},
+  publisher={ACM}
+}
+
+@inproceedings{Vanegas10,
+  title={Building reconstruction using manhattan-world grammars},
+  author={Vanegas, C.A. and Aliaga, D.G. and Benes, B.},
+  booktitle={Computer Vision and Pattern Recognition (CVPR), 2010 IEEE Conference on},
+  pages={358--365},
+  year={2010},
+  organization={IEEE}
+}
+
+@inproceedings{Hohmann09,
+  title={CityFit: High-quality urban reconstructions by fitting shape grammars to images and derived textured point clouds},
+  author={Hohmann, B. and Krispel, U. and Havemann, S. and Fellner, D.},
+  booktitle={Proceedings of the 3rd ISPRS Workshop},
+  year={2009},
+  organization={Citeseer}
+}
+
+@article{Hohmann10,
+  title={A GML shape grammar for semantically enriched 3D building models},
+  author={Hohmann, B. and Havemann, S. and Krispel, U. and Fellner, D.},
+  journal={Computers \& Graphics},
+  volume={34},
+  number={4},
+  pages={322--334},
+  year={2010},
+  publisher={Elsevier}
+}
+
+@inproceedings{Mathias11,
+  title={Procedural 3D Building Reconstruction using Shape Grammars and Detectors},
+  author={Mathias, M. and Martinovic, A. and Weissenberg, J. and Gool, L.V.},
+  booktitle={3D Imaging, Modeling, Processing, Visualization and Transmission (3DIMPVT), 2011 International Conference on},
+  pages={304--311},
+  year={2011},
+  organization={IEEE}
+}
+
+@inproceedings{Toshev10,
+  title={Detecting and parsing architecture at city scale from range data},
+  author={Toshev, A. and Mordohai, P. and Taskar, B.},
+  booktitle={Computer Vision and Pattern Recognition (CVPR), 2010 IEEE Conference on},
+  pages={398--405},
+  year={2010},
+  organization={IEEE}
+}
+
+@inproceedings{Ripperda09,
+  title={Application of a formal grammar to facade reconstruction in semiautomatic and automatic environments},
+  author={Ripperda, N. and Brenner, C.},
+  booktitle={Proc. of the 12th AGILE Conference on GIScience},
+  year={2009}
+}
+
+@article{Ripperda08,
+  title={Determination of facade attributes for facade reconstruction},
+  author={Ripperda, N.},
+  journal={International Archives of Photogrammetry, Remote Sensing and Spatial Information Sciences},
+  volume={37},
+  number={B3a},
+  pages={285--290},
+  year={2008}
+}
+
+@article{Becker09,
+  title={Generation and application of rules for quality dependent fa{\c{c}}ade reconstruction},
+  author={Becker, S.},
+  journal={ISPRS journal of photogrammetry and remote sensing},
+  volume={64},
+  number={6},
+  pages={640--653},
+  year={2009},
+  publisher={Elsevier}
+}
+
+@article{Dick04,
+  title={Modelling and interpretation of architecture from several images},
+  author={Dick, A.R. and Torr, PHS and Cipolla, R.},
+  journal={International Journal of Computer Vision},
+  volume={60},
+  number={2},
+  pages={111--134},
+  year={2004},
+  publisher={Springer}
+}
+
+@inproceedings{Nagel09,
+  title={Conceptual requirements for the automatic reconstruction of building information models from uninterpreted 3D models},
+  author={Nagel, C. and Stadler, A. and Kolbe, T.H.},
+  booktitle={Academic Track of Geoweb 2009 Conference, Vancouver},
+  year={2009}
+}
+
+@article{Lafarge10,
+  title={Structural approach for building reconstruction from a single DSM},
+  author={Lafarge, F. and Descombes, X. and Zerubia, J. and Pierrot-Deseilligny, M.},
+  journal={Pattern Analysis and Machine Intelligence, IEEE Transactions on},
+  volume={32},
+  number={1},
+  pages={135--147},
+  year={2010},
+  publisher={IEEE}
+}
+
+@inproceedings{Wenzel08,
+  title={Semi-supervised incremental learning of hierarchical appearance models},
+  author={Wenzel, S. and F{\"o}rstner, W.},
+  booktitle={Proceeding of the 21st Congress of the International Society for Photogrammetry and Remote Sensing (ISPRS)},
+  volume={3},
+  pages={399--405},
+  year={2008}
+}
+
+@article{Fischler81,
+  title={Random sample consensus: a paradigm for model fitting with applications to image analysis and automated cartography},
+  author={Fischler, M.A. and Bolles, R.C.},
+  journal={Communications of the ACM},
+  volume={24},
+  number={6},
+  pages={381--395},
+  year={1981},
+  publisher={ACM}
+}
+
+@article{Umetani12,
+  title={Guided exploration of physically valid shapes for furniture design},
+  author={Umetani, N. and Igarashi, T. and Mitra, N.J.},
+  journal={ACM Transactions on Graphics (TOG)},
+  volume={31},
+  number={4},
+  pages={86},
+  year={2012},
+  publisher={ACM}
+}
+
+@inproceedings{Prusinkiewicz93,
+    author = {Przemyslaw Prusinkiewicz},
+    title = {Modeling and Visualization of Biological Structures},
+    booktitle = {In Proceeding of Graphics Interface},
+    year = {1993},
+    pages = {128--137}
+}
+
+@article{Smith06,
+  title={A plausible model of phyllotaxis},
+  author={Smith, R.S. and Guyomarc'h, S. and Mandel, T. and Reinhardt, D. and Kuhlemeier, C. and Prusinkiewicz, P.},
+  journal={Proceedings of the National Academy of Sciences of the United States of America},
+  volume={103},
+  number={5},
+  pages={1301--1306},
+  year={2006},
+  publisher={National Acad Sciences}
+}
+
+@article{vouga2012design,
+  title={Design of self-supporting surfaces},
+  author={Vouga, E. and H{\"o}binger, M. and Wallner, J. and Pottmann, H.},
+  journal={ACM Transactions on Graphics (TOG)},
+  volume={31},
+  number={4},
+  pages={87},
+  year={2012},
+  publisher={ACM}
+}
+
+@article{Berleth07,
+  title={Towards the systems biology of auxin-transport-mediated patterning},
+  author={Berleth, T. and Scarpella, E. and Prusinkiewicz, P.},
+  journal={Trends in plant science},
+  volume={12},
+  number={4},
+  pages={151--159},
+  year={2007},
+  publisher={Elsevier}
+}
+
+@inproceedings{Honda04,
+  title={Generating autonomous time-varying virtual cities},
+  author={Honda, M. and Mizuno, K. and Fukui, Y. and Nishihara, S.},
+  booktitle={Cyberworlds, 2004 International Conference on},
+  pages={45--52},
+  year={2004},
+  organization={IEEE}
+}
+@article{Kheder08,
+  title={Fuzzy inference guided cellular automata urban-growth modelling using multi-temporal satellite images},
+  author={Al-Kheder, S. and Wang, J. and Shan, J.},
+  journal={International Journal of Geographical Information Science},
+  volume={22},
+  number={11-12},
+  pages={1271--1293},
+  year={2008},
+  publisher={Taylor \& Francis}
+}
+
+@article{Meinhardt87,
+  title={A model for pattern formation on the shells of molluscs},
+  author={Meinhardt, H. and Klingler, M.},
+  journal={Journal of Theoretical Biology},
+  volume={126},
+  number={1},
+  pages={63--89},
+  year={1987},
+  publisher={Elsevier}
+}
+
+@article{Simmonds99,
+  title={The design of the DELTA land-use modelling package},
+  author={Simmonds, DC},
+  journal={Environment and Planning B},
+  volume={26},
+  pages={665--684},
+  year={1999},
+  publisher={PION LTD}
+}
+
+@article{Anderl96,
+  title={Modelling with constraints: theoretical foundation and application},
+  author={Anderl, R. and Mendgen, R.},
+  journal={Computer-Aided Design},
+  volume={28},
+  number={3},
+  pages={155--168},
+  year={1996},
+  publisher={Elsevier}
+}
+
+@inproceedings{Igarashi05,
+  title={As-rigid-as-possible shape manipulation},
+  author={Igarashi, T. and Moscovich, T. and Hughes, J.F.},
+  booktitle={ACM Transactions on Graphics (TOG)},
+  volume={24},
+  pages={1134--1141},
+  year={2005},
+  organization={ACM}
+}
+
+@article{Lipman05,
+  title={Linear rotation-invariant coordinates for meshes},
+  author={Lipman, Y. and Sorkine, O. and Levin, D. and Cohen-Or, D.},
+  journal={ACM Transactions on Graphics (TOG)},
+  volume={24},
+  number={3},
+  pages={479--487},
+  year={2005},
+  publisher={ACM}
+}
+
+@article{Tilove80,
+  title={Closure of boolean operations on geometric entities},
+  author={Tilove, RB and Requicha, A.A.G.},
+  journal={Computer-Aided Design},
+  volume={12},
+  number={5},
+  pages={219--220},
+  year={1980},
+  publisher={Elsevier}
+}
+
+@article{Requicha82,
+  title={Solid Modeling: A Historical Summary and Contemporary Assessment.},
+  author={Requicha, A.},
+  journal={IEEE COMP. GRAPHICS \& APPLIC.},
+  volume={2},
+  number={2},
+  pages={9--24},
+  year={1982}
+}
+
+@inproceedings{Gingold08,
+  title={Shading-based surface editing},
+  author={Gingold, Y. and Zorin, D.},
+  booktitle={ACM Transactions on Graphics (TOG)},
+  volume={27},
+  number={3},
+  pages={95},
+  year={2008},
+  organization={ACM}
+}
+
+@inproceedings{Bourguignon04,
+  title={Relief: A Modeling by Drawing Tool},
+  author={Bourguignon, D. and Chaine, R. and Cani, M.P. and Drettakis, G.},
+  booktitle={Sketch-Based Interfaces and Modeling},
+  pages={151--160},
+  year={2004},
+  organization={The Eurographics Association}
+}
+
+@inproceedings{Kerautret05,
+  title={Intuitive shape modeling by shading design},
+  author={Kerautret, B. and Granier, X. and Braquelaire, A.},
+  booktitle={Smart Graphics},
+  pages={923--923},
+  year={2005},
+  organization={Springer}
+}
+
+@article{Steyer10,
+  title={3D external restorations of stegocephalian skulls using ZBrush: The renaissance of fossil amphibians},
+  author={Steyer, J.S. and Boulay, M. and Lorrain, S.},
+  journal={Comptes Rendus Palevol},
+  volume={9},
+  number={6-7},
+  pages={463--470},
+  year={2010},
+  publisher={Elsevier}
+}
+
+@article{Beier92,
+  title={Feature-based image metamorphosis},
+  author={Beier, T. and Neely, S.},
+  journal={Computer Graphics},
+  volume={26},
+  number={2},
+  pages={35--42},
+  year={1992}
+}
+
+
+@techreport{Smythe90,
+  title={A two-pass mesh warping algorithm for object transformation and image interpolation},
+  author={Smythe, D.B.},
+  institution={ILM Computer GRaphcis Department, Lucasfilm},
+  volume={1030},
+  year={1990}
+}
+
+@inproceedings{Yoshizawa07,
+  title={Skeleton-based Variational Mesh Deformations},
+  author={Yoshizawa, S. and Belyaev, A. and Seidel, H.P.},
+  booktitle={Computer Graphics Forum},
+  volume={26},
+  number={3},
+  pages={255--264},
+  year={2007},
+  organization={Wiley Online Library}
+}
+
+@inproceedings{Bloomenthal02,
+  title={Medial-based vertex deformation},
+  author={Bloomenthal, J.},
+  booktitle={Proceedings of the 2002 ACM SIGGRAPH/Eurographics symposium on Computer animation},
+  pages={147--151},
+  year={2002},
+  organization={ACM}
+}
+
+@article{Sederberg86,
+  title={Free-form deformation of solid geometric models},
+  author={Sederberg, T.W. and Parry, S.R.},
+  journal={ACM Siggraph Computer Graphics},
+  volume={20},
+  number={4},
+  pages={151--160},
+  year={1986},
+  publisher={Association for Computing Machinery, Inc, One Astor Plaza, 1515 Broadway, New York, NY, 10036-5701, USA,}
+}
+
+@inproceedings{Borrel91,
+  title={Deformation of n-dimensional objects},
+  author={Borrel, P. and Bechmann, D.},
+  booktitle={Proceedings of the first ACM symposium on Solid modeling foundations and CAD/CAM applications},
+  pages={351--369},
+  year={1991},
+  organization={ACM}
+}
+
+@inproceedings{Lewis00,
+  title={Pose space deformation: a unified approach to shape interpolation and skeleton-driven deformation},
+  author={Lewis, J.P. and Cordner, M. and Fong, N.},
+  booktitle={Proceedings of the 27th annual conference on Computer graphics and interactive techniques},
+  pages={165--172},
+  year={2000},
+  organization={ACM Press/Addison-Wesley Publishing Co.}
+}
+
+@article{Paczkowski11,
+  title={Insitu: sketching architectural designs in context},
+  author={Paczkowski, P. and Kim, M.H. and Morvan, Y. and Dorsey, J. and Rushmeier, H. and O’Sullivan, C.},
+  journal={ACM Transactions on Graphics (TOG)},
+  volume={30},
+  number={6},
+  pages={182},
+  year={2011},
+  publisher={ACM}
+}
+
+@inproceedings{Sinha08,
+  title={Interactive 3D architectural modeling from unordered photo collections},
+  author={Sinha, S.N. and Steedly, D. and Szeliski, R. and Agrawala, M. and Pollefeys, M.},
+  booktitle={ACM Transactions on Graphics (TOG)},
+  volume={27},
+  number={5},
+  pages={159},
+  year={2008},
+  organization={ACM}
+}
+
+@article{Lewis98,
+  title={Generation of 3D building models from 2D architectural plans},
+  author={Lewis, R. and S{\'e}quin, C.},
+  journal={Computer-Aided Design},
+  volume={30},
+  number={10},
+  pages={765--779},
+  year={1998},
+  publisher={Elsevier}
+}
+
+@article{Dosch00,
+  title={A complete system for the analysis of architectural drawings},
+  author={Dosch, P. and Tombre, K. and Ah-Soon, C. and Masini, G.},
+  journal={International Journal on Document Analysis and Recognition},
+  volume={3},
+  number={2},
+  pages={102--116},
+  year={2000},
+  publisher={Springer}
+}
+
+@unpublished{Fong11,
+title= {Levelshop: From Grid Paper to Playable},
+author = {Fong, Harvey},
+year = {2011},
+note= {Game Developers Conference},
+URL= {http://www.youtube.com/watch?v=eQaotCfTC-8},
+}
+
+@inproceedings{Horry97,
+  title={Tour into the picture: using a spidery mesh interface to make animation from a single image},
+  author={Horry, Y. and Anjyo, K.I. and Arai, K.},
+  booktitle={Proceedings of the 24th annual conference on Computer graphics and interactive techniques},
+  pages={225--232},
+  year={1997},
+  organization={ACM Press/Addison-Wesley Publishing Co.}
+}
+
+@inproceedings{Dellaert00,
+  title={Structure from motion without correspondence},
+  author={Dellaert, F. and Seitz, S.M. and Thorpe, C.E. and Thrun, S.},
+  booktitle={Computer Vision and Pattern Recognition, 2000. Proceedings. IEEE Conference on},
+  volume={2},
+  pages={557--564},
+  year={2000},
+  organization={IEEE}
+}
+
+@inproceedings{Collins96,
+  title={A space-sweep approach to true multi-image matching},
+  author={Collins, R.T.},
+  booktitle={Computer Vision and Pattern Recognition, 1996. Proceedings CVPR'96, 1996 IEEE Computer Society Conference on},
+  pages={358--363},
+  year={1996},
+  organization={IEEE}
+}
+
+@inproceedings{Bauer03,
+  title={Segmentation of building models from dense 3D point-clouds},
+  author={Bauer, J. and Karner, K. and Schindler, K. and Klaus, A. and Zach, C.},
+  booktitle={Proc. 27th Workshop of the Austrian Association for Pattern Recognition},
+  pages={253--258},
+  year={2003}
+}
+
+@inproceedings{Teller98,
+  title={Automated urban model acquisition: Project rationale and status},
+  author={Teller, S.},
+  booktitle={Image Understanding Workshop},
+  pages={455--462},
+  year={1998}
+}
+
+@article{Werner02,
+  title={New techniques for automated architectural reconstruction from photographs},
+  author={Werner, T. and Zisserman, A.},
+  journal={Computer Vision—ECCV 2002},
+  pages={808--809},
+  year={2002},
+  publisher={Springer}
+}
+
+@article{Pollefeys04,
+  title={Visual modeling with a hand-held camera},
+  author={Pollefeys, M. and Van Gool, L. and Vergauwen, M. and Verbiest, F. and Cornelis, K. and Tops, J. and Koch, R.},
+  journal={International Journal of Computer Vision},
+  volume={59},
+  number={3},
+  pages={207--232},
+  year={2004},
+  publisher={Springer}
+}
+
+@inproceedings{Irschara07,
+  title={Towards wiki-based dense city modeling},
+  author={Irschara, A. and Zach, C. and Bischof, H.},
+  booktitle={Computer Vision, 2007. ICCV 2007. IEEE 11th International Conference on},
+  pages={1--8},
+  year={2007},
+  organization={IEEE}
+}
+
+@article{Irschara11,
+  title={Large-scale, dense city reconstruction from user-contributed photos},
+  author={Irschara, A. and Zach, C. and Klopschitz, M. and Bischof, H.},
+  journal={Computer Vision and Image Understanding},
+  year={2011},
+  publisher={Elsevier}
+}
+
+@inproceedings{Agarwal09,
+  title={Building rome in a day},
+  author={Agarwal, S. and Snavely, N. and Simon, I. and Seitz, S.M. and Szeliski, R.},
+  booktitle={Computer Vision, 2009 IEEE 12th International Conference on},
+  pages={72--79},
+  year={2009},
+  organization={Ieee}
+}
+
+@article{Frahm10,
+  title={Building Rome on a cloudless day},
+  author={Frahm, J.M. and Fite-Georgel, P. and Gallup, D. and Johnson, T. and Raguram, R. and Wu, C. and Jen, Y.H. and Dunn, E. and Clipp, B. and Lazebnik, S. and others},
+  journal={Computer Vision--ECCV 2010},
+  pages={368--381},
+  year={2010},
+  publisher={Springer}
+}
+
+@inproceedings{Tuite11,
+  title={PhotoCity: Training experts at large-scale image acquisition through a competitive game},
+  author={Tuite, K. and Snavely, N. and Hsiao, D.Y. and Tabing, N. and Popovic, Z.},
+  booktitle={Proceedings of the 2011 annual conference on Human factors in computing systems},
+  pages={1383--1392},
+  year={2011},
+  organization={ACM}
+}
+
+@article{Morsdorf04,
+  title={LIDAR-based geometric reconstruction of boreal type forest stands at single tree level for forest and wildland fire management},
+  author={Morsdorf, F. and Meier, E. and K{\"o}tz, B. and Itten, K.I. and Dobbertin, M. and Allg{\"o}wer, B.},
+  journal={Remote Sensing of Environment},
+  volume={92},
+  number={3},
+  pages={353--362},
+  year={2004},
+  publisher={Elsevier}
+}
+
+@article{Pu09,
+  title={Knowledge based reconstruction of building models from terrestrial laser scanning data},
+  author={Pu, S. and Vosselman, G.},
+  journal={ISPRS Journal of Photogrammetry and Remote Sensing},
+  volume={64},
+  number={6},
+  pages={575--584},
+  year={2009},
+  publisher={Elsevier}
+}
+
+@inproceedings{Zhou08,
+  title={Fast and extensible building modeling from airborne lidar data},
+  author={Zhou, Q.Y. and Neumann, U.},
+  booktitle={Proceedings of the 16th ACM SIGSPATIAL international conference on Advances in geographic information systems},
+  pages={7},
+  year={2008},
+  organization={ACM}
+}
+
+@inproceedings{Nealen07,
+  title={FiberMesh: designing freeform surfaces with 3D curves},
+  author={Nealen, A. and Igarashi, T. and Sorkine, O. and Alexa, M.},
+  booktitle={ACM Transactions on Graphics (TOG)},
+  volume={26},
+  number={3},
+  pages={41},
+  year={2007},
+  organization={ACM}
+}
+
+@article{Wang12,
+ author = {Wang, He and Komura, Taku},
+ title = {Manipulation of Flexible Objects by Geodesic Control},
+ journal = {Comp. Graph. Forum},
+ issue_date = {May 2012},
+ volume = {31},
+ number = {2pt2},
+ month = may,
+ year = {2012},
+ issn = {0167-7055},
+ pages = {499--508},
+ numpages = {10},
+ url = {http://dx.doi.org/10.1111/j.1467-8659.2012.03029.x},
+ doi = {10.1111/j.1467-8659.2012.03029.x},
+ acmid = {2318907},
+ publisher = {John Wiley \& Sons, Inc.},
+ address = {New York, NY, USA},
+ keywords = {I.3.7 [Computer Graphics]: Three-Dimensional Graphics and Realism\&\#x2014;Animation},
+} 

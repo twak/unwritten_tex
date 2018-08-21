@@ -1,0 +1,82 @@
+Index: introduction.tex
+===================================================================
+--- introduction.tex	(revision 1492)
++++ introduction.tex	(working copy)
+@@ -26,19 +26,19 @@
+ \item{The removal of the existing restriction that the size of a virtual environment is proportional to the time spent creating it.}
+ \item{The quality of the environment is consistent at no additional cost.}
+ \item{Procedural geometry tools could lead to run­time environment generation. A virtual world can be generated as the user explores it, giving an experience with more variety and less repetition to the user~\cite{Hahn06}}. 
+-\item{Procedural methods offers the potential to generate content that reacts to various stimuli. For example it could respond to current hardware availability, to users’ level of expertise, the length of their attention span, or the medium on which it is presented.}
++\item{Procedural methods offers the potential to generate content that reacts to various stimuli. For example it could respond to current hardware availability, to users' level of expertise, the length of their attention span, or the medium on which it is presented.}
+ \end{itemize}
+ 
+ One particular application that has become a testbed for the concepts of PGM is urban modeling. In 2010, half of the people in the world lived in cities, and this fraction is increasing. Cities form the backdrops to large portions of our lives; the way they are designed, how they look, how we think about them, and how we get around them directly affects us all. With the rise of computer graphics, creating cityscapes in virtual worlds has become a common task in a wide range of disciplines such as architecture, city planning, 3D cartography, video games and cinema. 
+ 
+-However, creating virtual representations of cityscapes is expensive. At the crudest level, paying an artist to attach a door-handle to every building in a town is costly. Alternately we may obtain 3D city geometry by reconstructing photographs, but obtaining the photos is difficult, and the results often have a lot of noise. Furthermore, the cities that we wish to model may not yet exist, may have only existed before the invention of photography, or be entirely fictional. PGM offers a solution to these issues by promising to generate large quantities of characteristic geometry very quickly. The real world applications of urban procedural modeling are growing, recent examples include ---
++However, creating virtual representations of cityscapes is expensive. At the crudest level, paying an artist to attach a door-handle to door in every building in a town is costly. Alternately we may obtain 3D city geometry by reconstructing photographs, but obtaining the photos is difficult, and the results often have a lot of noise. Furthermore, the cities that we wish to model may not yet exist, may have only existed before the invention of photography, or be entirely fictional. PGM offers a solution to these issues by promising to generate large quantities of characteristic geometry very quickly. The real world applications of urban procedural modeling are growing, recent examples include ---
+ 
+ \begin{itemize}
+ \item{Masdar is a new city, designed and built entirely on undeveloped land outside Abu Dhabi. The initial project is intended to be completed in 2015 and will cover $10^6 m^2$\cite{masdarCity2}. Given the large quantity of architecture that had to created, one of the designers turned to PGM, in the form of CityEngine\cite{cityEngine} to design the Swiss Quarter of the city\cite{masdarCity}.}
+ 
+ \item{Video games can use procedural technology to create new locations as the player explores. For example Dwarf Fortress~\cite{dwarfFortress} generates the terrain, structures and inhabitants of a virtual world procedurally. In this situation the key advantage is that a player may continually explore and discover unique structures, that neither they, nor anyone else, have seen before. }
+ 
+-\item{When the first \emph{Superman} movie was filmed in 1978 computer graphics were in their infancy. To give the appearance of Superman flying, Christopher Reeve was composited on top of footage from New York City, as a stand in for the fictional city of Metropolis. In contrast 2013 release \emph{Man of Steel} portrayed the same fictional city, this time generated using the PGM tools Houdini\cite{houdini} and CityEngine\cite{EffectsOmelette}. The advantages of PGM in this situation is that an entirely unrecognisable yet realistic fictional city could be created. Additionally, because the model was digital it could be realistically destroyed by a physical simulation of the alien invaders.}
++\item{When the first \emph{Superman} movie was filmed in 1978 computer graphics were in their infancy. To give the appearance of Superman flying, Christopher Reeve was composited on top of footage from New York City, as a stand in for the fictional city of Metropolis. In contrast the 2013 release of \emph{Man of Steel} portrayed the same fictional city, this time generated using the PGM tools Houdini\cite{houdini} and CityEngine\cite{EffectsOmelette}. The advantages of PGM in this situation is that an entirely unrecognisable yet realistic fictional city could be created. Additionally, because the model was digital it could be realistically destroyed by a physical simulation of the alien invaders.}
+ 
+ \end{itemize}
+ 
+@@ -57,35 +57,34 @@
+ 
+ In this thesis we are concerned with removing several of these drawbacks, specifically the requirement that current PGM systems require considerable programming expertise.
+ 
++\section{Hypothesis}
++\label{c:intro:thesisstatement}
+ 
++We propose that a geometric construct, the \emph{straight skeleton}, and its generalisations, are a powerful technique for the creation of PGM systems that are accessible to people without programming skills.  Systems exploiting these skeletons and variations thereof are able to generate large scale, varied and highly realistic results within the domain of urban procedural modeling.
++
+ \section{Contributions}
+ 
+-The specific contributions introduced while examining the below hypothesis include:
++Our contributions to the corpus while examining the above hypothesis include:
+ 
+ \begin{itemize}
+-\item{An analysis of a variety of weighted and unweighted skeletons.}
+-\item{The geometric polygon subdivision, the \emph{mixed weighted straight skeleton}}.
+-\item{An analysis of the degenerate cases of the MWSS.}
++\item{A simplification of existing straight skeleton events, the \emph{generalised intersection event}.}
++\item{The novel skeleton, the \emph{mixed weighted straight skeleton}.}
+ \item{A method and evaluation of a system for procedural modeling of city lot shapes using the straight skeleton.}
+ \item{A method and evaluation for the procedural modeling of architectural shells using the MWSS.}
+ \end{itemize}
+ 
+-The papers written in the course of this thesis were
++The papers written in the course of this thesis were:
+ \begin{itemize}
+ 
+-\item{\emph{Interactive Architectural Modeling with Procedural Extrusions}~\cite{twak11}}
+-\item{\emph{Procedural Generation of Parcels in Urban Modeling}~\cite{twak12}}
++\item{\emph{Interactive Architectural Modeling with Procedural Extrusions}\cite{twak11}}
++\item{\emph{Procedural Generation of Parcels in Urban Modeling}\cite{twak12}}
+ 
+ \end{itemize}
+ 
+ 
+ %==============================================================================
+ 
+-\section{Hypothesis}
+-\label{c:intro:thesisstatement}
+ 
+-We propose that a geometric construct, the \emph{straight skeleton}, and its generalisations, are a powerful technique for the creation of PGM systems that are accessible to people without programming skills.  Systems exploiting these skeletons and variations thereof are able to generate large scale, varied and highly realistic results within the domain of urban procedural modeling.
+-
+ \section{Overview}
+ 
+ To lay the ground for this work Chapter 2 examines existing work, and describes the properties of existing procedural systems. We continue to analyse the straight skeleton in Chapter 3 and to apply the skeleton to the problem of urban procedural modeling in Chapters 4 and 5. 
+@@ -108,7 +107,7 @@
+ \caption[CityEngine results]{\label{fig:cityEngineINTRO}The results of our parcel subdivision algorithm within CityEngine. Left: The parcel subdivision generated with both skeleton (bottom left of grey line) and OBB (top right) techniques; the colouring denotes relative area. Right: the result of the urban procedural modeling pipeline within CityEngine.}
+ \end{figure*}
+ 
+-The first application of thse properties is the problem of subdividing city blocks to many parcels of land. We introduce the first complete algorithms and evaluation of block subdivision within computer graphics. In addition, we demonstrate how subdivision can take place without additional end user programming by presenting a parameterised algorithm that utilises the straight skeleton, as illustrated in Fig.~\ref{fig:cityEngineINTRO}. The results of this system are presented at the end of Chapter 4, and evaluated favourably again real-world subdivisions and existing block subdivision schemes.
++The first application of these properties is to the problem of subdividing city blocks to many parcels of land. We introduce the first complete algorithms and evaluation of block subdivision within computer graphics. In addition, we demonstrate how subdivision can take place without additional end user programming by presenting a parameterised algorithm that utilises the straight skeleton, as illustrated in Fig.~\ref{fig:cityEngineINTRO}. The results of this system are presented at the end of Chapter 4, and evaluated favourably again real-world subdivisions and existing block subdivision schemes.
+ 
+ 
+ \begin{figure*}

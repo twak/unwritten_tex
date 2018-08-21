@@ -1,0 +1,79 @@
+%% Creator: Inkscape inkscape 0.48.3.1, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'wss_gie_example.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{331.73357544bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,1.00300585)%
+    \put(0,0){\includegraphics[width=\unitlength]{wss_gie_example.pdf}}%
+    \put(0.17406247,0.64331007){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{1}}}%
+    \put(0.08000814,0.61964091){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{1}}}%
+    \put(0.12174085,0.54614148){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{1}}}%
+    \put(0.0731567,0.67009379){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{2}}}%
+    \put(0.23136737,0.62773817){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{2}}}%
+    \put(0.25192229,0.58164537){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{2}}}%
+    \put(0.34167709,0.9093316){\color[rgb]{1,1,1}\makebox(0,0)[lb]{\smash{*}}}%
+    \put(0.34770993,0.88905295){\color[rgb]{0,0.65882353,0.15686275}\makebox(0,0)[lb]{\smash{*}}}%
+    \put(0.34749437,0.8605004){\color[rgb]{1,1,1}\makebox(0,0)[lb]{\smash{*}}}%
+    \put(0.35585482,0.83440859){\color[rgb]{0,0.65882353,0.15686275}\makebox(0,0)[lb]{\smash{*}}}%
+    \put(0.30776528,0.81541888){\color[rgb]{0,0.65882353,0.15686275}\makebox(0,0)[lb]{\smash{*}}}%
+    \put(0.20809477,0.81115541){\color[rgb]{0,0.65882353,0.15686275}\makebox(0,0)[lb]{\smash{*}}}%
+    \put(0.17862029,0.82937055){\color[rgb]{0,0.65882353,0.15686275}\makebox(0,0)[lb]{\smash{*}}}%
+    \put(0.17512945,0.85804905){\color[rgb]{0,0.65882353,0.15686275}\makebox(0,0)[lb]{\smash{*}}}%
+    \put(0.20925801,0.88944022){\color[rgb]{0,0.65882353,0.15686275}\makebox(0,0)[lb]{\smash{*}}}%
+    \put(0.16836334,0.92248579){\color[rgb]{1,1,1}\makebox(0,0)[lb]{\smash{*}}}%
+    \put(0.14532807,0.89288973){\color[rgb]{1,1,1}\makebox(0,0)[lb]{\smash{*}}}%
+    \put(0.0830544,0.76453169){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{a}}}%
+    \put(0.11300478,0.51066468){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{b}}}%
+    \put(0.44333445,0.51595){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{c}}}%
+    \put(0.79392464,0.51771158){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{d}}}%
+    \put(0.12445623,0.31863314){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{e}}}%
+    \put(0.45830964,0.31775206){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{f}}}%
+    \put(0.79392464,0.31863314){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{g}}}%
+    \put(0.62303379,0.01825296){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{h}}}%
+  \end{picture}%
+\endgroup%

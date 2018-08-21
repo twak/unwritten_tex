@@ -1,0 +1,288 @@
+
+\section{The Mixed Weighted Straight Skeleton}
+\label{sec:mwss}
+
+% Do we want to say that the PWSS may not grow (if all theta zero),?
+
+The final variation of the SS we will introduce is the \emph{mixed weighted straight skeleton} (MWSS). This new structure allows the angle of the direction planes, $\theta$, to be positive or negative over edges in a single plan. Thus regions of the active plan can shrink inwards or grow outwards. Once again the increased degrees of freedom introduce new types of degeneracy. This section introduces some of the issues surrounding these \emph{point degeneracies}, presents an algorithm for simplifying them, and introduces one theorem as to the solution of such cases.
+
+%: $-\frac{\pi}{2} < \theta < \frac{\pi}{2}$. Inititively this allows the edges of the active plan to move towards the interior or exterior at the same time.
+As in the PWSS case, $\theta$ is limited in the MWSS to avoid infinitely fast edges on the active plan, allowing only  $-\frac{\pi}{2} < \theta < \frac{\pi}{2}$. Therefore a $\theta < 0$ implies that an active plan edge is moving away from the interior of the polygon, a $\theta = 0$ implies an edge that does not move, and a $\theta > 0$ implies an edge is moving towards to interior of the polygon. Fig.~\ref{fig:wss_strange} gives an example of both a PWSS and MWSS.
+%The angle defines the slope of the face associated with that edge of the input plan. That is, $\theta$ defines the speed of the edge on the active plan as the sweep plan rises.
+
+\begin{figure}
+  \centering
+  \def\svgwidth{1.0\columnwidth}
+  \includesvg{12-skeleton/images/wss_strange}
+  \caption[Degenerate events in the PWSS and MWSS]{\label{fig:wss_strange}. Left: A complex event in a PWSS, over a plan (green). Right: A MWSS in which four areas merge to become one. Note that the 3D models are the resulting terrains of a skeleton as some MWS skeletons are difficult to illustrate in 2D.}
+\end{figure}
+
+The MWSS enables a wider variety of 3D terrains to be defined; the set of skeletons definable are a superset of the SS, PWSS and NWSS schemes. For example the active plan can grow, as well as shrink, or can be a mixture of both. Therefore certain MWSSs may not terminate after the final event; the enclosed area may continue growing indefinitely as the sweep plane rises. It is an open problem to determine if a given MWSS will terminate if it contains any values of $\theta < 0$, without executing the skeleton algorithm itself. Fig.~\ref{fig:wss_unbounded} gives an example in which the resolution of a borderline case differentiates between an non-terminating skeleton, and a terminating one.
+
+\begin{figure}
+  \centering
+  \def\svgwidth{1.0\columnwidth}
+  \includesvg{12-skeleton/images/wss_unbounded}
+  \caption[Unbounded MWSS]{\label{fig:wss_unbounded}MWSS that are bounded (left) and unbounded (right). The red face grows to an infinite area as the sweep plane rises. A small perturbation to the input plans is the only difference between the input plans, all $\theta$ value are equal. The PCE event which occurs along the orange line determines the behaviour of the skeleton. }
+\end{figure}
+
+As with the PWSS, the active plan can split as the sweep plane rises. But as Fig.~\ref{fig:wss_strange} shows, like the NWSS, MWSS regions can merge.
+
+We note in passing that MWSS events exist in which no resolution is necessary. The edges intersect only at the event, but not after it. We disregard these \emph{grazing} events in what follows, as they are trivial to test for and may be simply ignored.
+
+Given the additional degrees of freedom available in the MWSS we expect to encounter the degenerate situations observed in the SS and PWSS cases. In addition there are are a new class of \emph{point degeneracies} observable
+
+\FloatBarrier
+\subsection{Point degeneracies}
+
+Given the additional degrees of freedom available in the MWSS, it is unsurprising that the GIE solution no longer solves all situations. Fig.~\ref{fig:pwss_gie_failure} gives one simple example event in which the GIE causes the active plan to become badly formed.
+
+\begin{figure}
+  \centering
+  \def\svgwidth{1.0\columnwidth}
+  \includesvg{12-skeleton/images/pwss_gie_failure}
+  \caption[The GIE doesn't work on the PWSS]{\label{fig:pwss_gie_failure}A MWSS topology at (left) and after (middle, right) an event (orange) that is not suitable for the GIE. The GIE output (middle, purple) is self-intersecting, and thus badly formed. A non-intersecting solution does exist (right).}
+\end{figure}
+
+Indeed every edge of an arbitrary input plan may be coerced to collide at single point by altering the values of $\theta$. A more complex example of a simple event is introduced in Fig.~\ref{fig:wss_example_topology}, which shows a possible event with many edges colliding. Here we can see chains of edges representing bounded, as well as unbounded areas, loops, and chains surrounding other chains, colliding at a simple event. 
+
+\begin{figure}
+  \centering
+  \def\svgwidth{1.0\columnwidth}
+  \includesvg{12-skeleton/images/wss_example_topology}
+  \caption[A point degeneracy]{\label{fig:wss_example_topology} Left: The active plan just before an event. A complex set of chains collide at a single event (orange). Right: after the intra-chain step and one-chain step of the GIE the topology is simplified. Note that the curved edges marked with an asterisk represent the topology of two colinear straight edges.}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \def\svgwidth{0.4\columnwidth}
+  \includesvg{12-skeleton/images/wss_enclosing_chain}
+  \caption[Enclosing chains]{\label{fig:wss_enclosing_chain} We describe the chain \emph{a} as enclosing chain \emph{b}, as \emph{b} lies inside \emph{a}, and therefore $\phi < \gamma$, $\phi < \pi$ radians. The chains are shown here before a collision at the orange point.}
+\end{figure}
+
+If all the edges are moving inwards or outwards, as with the PWSS or NWSS, the SS GIE introduced in Sec.~\ref{s:gie} is still suitable. However in the complex degenerate events that may occur with some angles of $\theta > 0$ and some $\theta < 0$, another algorithm is needed. Fig.~\ref{fig:wss_options} gives one such situation and a number of plausible solutions.
+
+\begin{figure}
+  \centering
+  \def\svgwidth{1.0\columnwidth}
+  \includesvg{12-skeleton/images/wss_options}
+  \caption[Several solutions to the MWSS]{\label{fig:wss_options}Above: Four chains collide at an event (orange point). The desired plan topology after the event is unclear. We must keep the interface edges (above, right: bold green arrows) in the same locations to remain compatible with the remainder of the plan. Below: There are many possible options for the topology change at the event. (Note that we show the active plan a time after the event). Some solutions use existing edges, others create new zero length edges (below: red shadows). During the event these edges have zero length, but subsequently grow).}
+\end{figure}
+
+\FloatBarrier
+
+Characteristics that are logical in an algorithm for such events include:
+
+\begin{enumerate}
+\item{The plan remains well formed.}
+\item{Consistency with the SS when all angles are a positive constant.}
+\item{Consistency with the PWSS when all angles are positive.}
+\item{Consistency with the NWSS when all angles are negative.}
+\item{Invariance to rotation of the plan. As with the the straight skeleton the result of an event should not depend on the orientation of the plan.}
+\item\label{enum:tmp}{No creation of new zero length edges during the event. The SS, PWSS and NWSS do not introduce additional edges; for consistency, neither should the MWSS.}
+\end{enumerate}
+
+We have been unable to find a elegant general solution to this problem!
+
+\begin{figure}
+  \centering
+  \def\svgwidth{0.8\columnwidth}
+  \includesvg{12-skeleton/images/wss_hand_examples}
+  \caption[Manual examples of good MWSS solutions]{\label{fig:wss_hand_examples} Several example events and solutions that do not require 0-length edges to be introduced into the active plan. The geometry (green area) is shown after the event, and consists of length 2 chains colliding. A good solution for each topology is shown in purple. All examples except that in top, middle, fail when the GIE is used.}
+\end{figure}
+
+We hypothesise that it is always possible to find a solution in the events we encounter. Fig.~\ref{fig:wss_hand_examples} shows several events and potential solutions, however an algorithm to compute these events has not been discovered. In particular it is condition \ref{enum:tmp}, finding solutions that do not introduce zero length edges, that rules out many obvious algorithms.
+
+We continue by introducing one further processing step that simplifies these point degeneracies by removing parallel edges. Finally we conclude by introducing a concise description of the unsolved problem, given this simplified event.
+
+\subsection{Removing Parallel Adjacent Edges}
+
+As per the GIE introduced in Sec.~\ref{s:gie} the topology of the event can be simplified by the intra chain and one chain steps. These steps simulate the plan as the sweep plan reaches the height of the event. Zero length edges, including chains that form a closed loop are removed and chains of length 1 are split, leaving a homogeneous topology of chains of length 2.
+
+At an event all the edges involved in the collision approach the location in an ordering defined by the edge's orientation. Fig.~\ref{fig:wss_ordered_point}, left, shows the orientation-ordered points for Fig.~\ref{fig:wss_example_topology}. Any edges that do not approach according to their angle must have been removed by an earlier collision, Fig.~\ref{fig:wss_ordered_point}, right. This property is known as the \emph{$\ge$ approaching edges} property. This refers to the fact that the angle between consecutive edges around an intersection is equal to, or greater than, zero.
+
+\begin{figure}
+  \centering
+  \def\svgwidth{1.0\columnwidth}
+  \includesvg{12-skeleton/images/wss_ordered_point}
+  \caption[Ordering chains around the event]{\label{fig:wss_ordered_point} As the chains of edges in the MWSS approach the event (orange) they become ordered (left). If this were not the case (right), they would have intersected during an separate earlier event (red).}
+\end{figure}
+
+The simplification we would like to perform is the removal of edges which are adjacent and parallel as they approach the event. That is when two parallel edges separated by $0^{\circ}$ approach an event from the same side. The area between these edges approaches zero near the event. If we connect these adjacent edges together, the event at the other end of the parallel lines will remove the loop in its intra chain stage. Therefore it can be ignored for the purposes of this event. After we remove these lines, we can say that the event has the \emph{$>$ approaching edges property} as all the angles between adjacent approaching edges are greater than zero.
+
+This basic approach is hampered by the fact that more than two parallel edges may be adjacent at an event. If there are an even number of such edges at one event, the adjacent pairs of edges can be connected together to enclose a region under the sweep plane, as in Fig.~\ref{fig:wss_linear_align}. However if there are an odd number of edges, one edge must be chosen that is not connected to another and remains. This decision should be independent of the order co-heighted events are processed in, and must discard the same edge globally. Here we present two resolutions:
+\begin{itemize}
+\item{\emph{interior bias:} The pairs of lines surrounding an interior region of the plan are always connected.}
+\item{\emph{exterior bias:} The pairs of lines surrounding an exterior region of the plan are always connected.}
+\end{itemize}
+
+\begin{figure}
+  \centering
+  \def\svgwidth{0.7\columnwidth}
+  \includesvg{12-skeleton/images/wss_linear_align}
+  \caption[Global coordination of a solution with parallel edges]{\label{fig:wss_linear_align} Given a plan before the event (top left) that leads to a number of events with parallel adjacent edges at the same height (top right, red blue and yellow circles), a deterministic and reproducible decision must be made as to which of the parallel edges are connected. The solutions given are to connect the parallel adjacent lines with an interior bias (bottom left) or exterior bias (bottom right). The areas v, w, x and y are all removed by subsequent events.}
+\end{figure}
+
+The earlier example in Fig.~\ref{fig:wss_example_topology}, is resolved using these two resolutions as shown in Fig.~\ref{fig:wss_equal_approach_killer}. Note that although the edges remaining have the same orientation, they may have different speeds. A consequence of the necessity of choosing an interior or exterior bias is that otherwise symmetrical plans may produce an asymmetrical outcome after an event. For example Fig~\ref{fig:skel_impossible} shows a plan that before the event is not changing area, but after will either be gaining, or losing area if the interior or exterior biases are chosen respectively.
+
+\begin{figure}
+  \centering
+  \def\svgwidth{1.0\columnwidth}
+  \includesvg{12-skeleton/images/wss_equal_approach_killer}
+  \caption[Removing zero area chains]{\label{fig:wss_equal_approach_killer} After the intra chain step and one chain steps, we have a simplified topology (top, left). The chains are shown just before the event for clarity. The black lines connect (asterisked) edges which would become adjacent and parallel at the event. We convert these pairs of edges into single chains as shown. We either use the interior bias (top right) or exterior bias (bottom left). After any subsequent events at the same height are processed we are left with simplified topology (bottom right, for exterior bias).
+}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \def\svgwidth{1.0\columnwidth}
+  \includesvg{12-skeleton/images/skel_impossible}
+  \caption[A MWSS event that cannot be fairly solved]{\label{fig:skel_impossible}A MWSS event that has unchanging area before the event, but will either grow or shrink after, depending on the resolution strategy.}
+\end{figure}
+
+
+\FloatBarrier
+\subsection{The Pincushion Problem}
+\label{sec:pincushion}
+
+Once an event has been prepared in the above way, we wish to process it in such a way that the plan remains well formed after the event. This is an unsolved problem; this section makes only definitions and observations.
+
+Given a valid event that has been pre-processed such that it has the $>$ approaching edges property, the \emph{pincushion problem} is to devise an algorithm that always finds a solution that does not introduce new zero length edges in to the active plan. First we will show that the plan remains topologically invariant after an event, and then that we can draw a circle around all possible intersections of edges involved in the event. This ``pincushion'' circle, with ``pin'' edges leading into it encapsulates the problem of solving a general MWSS event.
+
+As the sweep plane rises towards an event, after it has processed any previous events, the topology of the edges does not change. By definition the plan is well-formed before the event, with no self-intersections. Furthermore we can note that there are no topological changes as the sweep plane approaches the height; such changes would be witnessed by other events. Of more consequence is that topological invariance may also be observed after the event. That is, if we do not handle the event, the geometry after the event only scales, rather than changing topology.
+We call this the \emph{sector property} of SS events, and is introduced in Fig~\ref{fig:wss_sector}. The sector property is summarised in the trivial statement ``between events, no events occur''.
+
+
+\begin{figure}
+  \centering
+  \def\svgwidth{1.0\columnwidth}
+  \includesvg{12-skeleton/images/wss_sector}
+  \caption[The sector property]{\label{fig:wss_sector}The plan (green triangles) undergoes an event (orange). The sector property states that topology of the edges remains unchanged after the event if we make no attempts at solving it (after 1, 2).}
+\end{figure}
+
+%\begin{figure}
+%  \centering
+%  \def\svgwidth{0.5\columnwidth}
+%  \includesvg{12-skeleton/images/wss_sector_2}
+%  \caption[The sector property]{\label{fig:skel_sector_2}After an event (orange), any intersection %between two edges, such as a corner, remains at constant angle, $\gamma$, relative to the event %location. This gives rise to the sector property.}
+%\end{figure}
+
+
+The sector property follows from two previous definitions:
+\begin{itemize}
+\item{The edges move over the plan in a self-parallel manner, at a constant speed.}
+\item{The edges involved in an event pass through the event's location at the event}
+\end{itemize}
+Applying these two definitions allows us to make the trivial observation that all intersections between any pairs of edges move directly away from the intersection point after the event, each with constant speed. Therefore the order of crossings of any subset of involved edges remains invariant, along with the topology.
+
+We may note in passing that there are three topologies of the edges involved in the event - before, at and after. The topology at the event only occurs for a single sweep-plane height, at an instant in time. We define the pincushion problem on the topology after the event.
+
+To find solutions in the MWSS case it is necessary to extend some of the edges. An example where this is required is shown in Fig.~\ref{fig:pwss_extenstions_required}.
+
+\begin{figure}
+  \centering
+  \def\svgwidth{0.7\columnwidth}
+  \includesvg{12-skeleton/images/pwss_extensions_required}
+  \caption[Edges become rays in the pincushion problem]{\label{fig:pwss_extenstions_required}A PWSS event in which the only solution requires the extension of edges (dashed line) from their unmodified post-event topology.}
+\end{figure}
+
+Given the invariant topology at some time after the event in question, there are only a finite number of edges involved. If we intersect all the edges we obtain a finite number of possible intersection points that may make up the solution. We discount non-intersections between parallel edges. Therefore we may attempt to encapsulate our problem by drawing a circle that encompasses all these possible intersection points. An example of the resulting \emph{pincushion} diagram is given in Fig.~\ref{fig:pincushion}. From the edge of the circle, an even number of unbounded edge-rays are ordered by angle around the perimeter. Rays are used since we may have to extend some of the line segments. There are an even number of rays, for each edge of the active plan that enters and leaves the circle.
+
+A trivial observation is that for any successful solution only odd-numbered rays may intersect even number rays and vice versa (for any ordering around the perimeter of the pincushion). This matches the intuition that the orientation of the edges within the active plan determines which other edges they may intersect with. To this end we may colour the rays in the diagram with alternating colours; rays may only connect with other rays of the other colour, but may not cross any other rays as in Fig.~\ref{fig:pincushion} bottom row.
+
+\begin{figure}
+  \centering
+  \def\svgwidth{1.0\columnwidth}
+  \includesvg{12-skeleton/images/pincushion}
+  \caption[The Pincushion diagram]{\label{fig:pincushion}Top Left: It is possible to draw a circle around all possible edges that intersect at an event. Top Middle, Right: Given the sector property, we may summarise the topology as rays entering the pincushion circle. Bottom Left: We may assign alternating colours to rays around the circle. Bottom Middle: A pincushion diagram coloured in this way. Bottom Right: A solution to this pincushion consisting of the intersections $\{(m_2,f_1), (m_1,f_2), (f_3, m_4), (m_3, f_4), (m_6, f_5) (m_5, f_6)\}$}
+\end{figure}
+
+In a valid solution all pairs of rays in the pincushion diagram are connected to form chains of length 2, in such a way that the chains do not cross. We hypothesise that it is \emph{always possible to solve the pincushion problem}. Given a such a solution we can update the active plan in all situations.
+
+The solution is not unique, as in Fig.~\ref{fig:mwss_multiple_solns}. Given a number of solutions we may chose to use the criteria of Sec.~\ref{sec:mwss} to determine which solution is most suitable for our application.
+
+\begin{figure}
+  \centering
+  \def\svgwidth{1.0\columnwidth}
+  \includesvg{12-skeleton/images/mwss_multiple_solns}
+  \caption[PWSS events may not have unique solutions]{\label{fig:mwss_multiple_solns}Given the post-event topology (top left), and the corresponding pincushion diagram (top right), there are three different solutions that do not introduce zero length lines (bottom).}
+\end{figure}
+
+A brute force search program has been written to search for valid edge pairs to intersect. Fig.~\ref{code:brute_force_pincushion} details an algorithm that applies the intra-chain stage of the GIE to all allowable subsets of edges in the event. This algorithm, together with a visual interface, as in Fig.~\ref{fig:bute_app_screenies}, never failed to find a solution to a valid pincushion arrangement. However, without a proof that there is always a solution to the pincushion problem we can not be certain that the brute force approach will always return a valid active plan.
+
+\begin{algorithm} [htb]
+\begin{footnotesize}
+  BruteForceEvent ( Event $event$ ) \Begin{
+   
+    $pincusion$ = preprocess( $event$ )\; 
+   
+    Set$<$Set$<$Set$<$Chain$>>>$ $combinations$ = all covering combinations of $pincushion$.chains()\;
+
+    \ForEach{ Set $<$Set$<$Chain$>>$ $GIEChains$ in $combinations$} {
+        Set$<$Chain$>$ $resolvedChains$ = new emptySet()\;
+
+        \ForEach { Set$<$Chain$>$ $chain$ in $GIEChains$ }{
+          $resolvedChains$.add( interChainStage ( $chains$ ) )\;
+        }
+        
+        \If { noChainsIntersect( $resolvedChains$ )  } {
+            return $resolvedChains$\;
+          }
+        }
+    
+    return $null$\;
+}
+\end{footnotesize}
+  \caption[A brute force approach to the pincusion problem]{A brute force approach to the pincusion problem. We hypothesise that it will never return $null$.}
+  \label{code:brute_force_pincushion}
+\end{algorithm}
+
+\begin{figure}
+  \centering
+  \def\svgwidth{0.7\columnwidth}
+  \includesvg{12-skeleton/images/bute_app_screenies}
+  \caption[Brute force application]{\label{fig:bute_app_screenies}A user interface to the pincusion event solver. Top Left: The users selects a resolution algorithm (a), draws the edges involved in the event around the event location (b), and selects the time relative to the event (c). Top Right: The system simulates the topology at the event. Bottom: The system shows the solutions given by the GIE (Left) and brute force algorithms (Right) in purple after the event.}
+\end{figure}
+
+Another approach is a constructive methodology to incrementally add the next pair of rays to an already valid solution, given some arbitrary order of rays. Since we theorise that all such arrangements have a valid solution, such a solution should be possible. However a counter example was found in the ``5-star'' structure of Fig.~\ref{fig:epp_5_cycle}. Attempting to incrementally add rays around the circumference, always keeping a valid solution with those lines already processed, either is not possible, or does not terminate; it is necessary to solve the system globally. In this case the GIE provides such a solution. We therefore believe that a global solution must be found, rather than an iteratively constructed one.
+
+\begin{figure}
+  \centering
+  \def\svgwidth{1.0\columnwidth}
+  \includesvg{12-skeleton/images/epp_5_cycle}
+  \caption[The 5 Star Pincushion]{\label{fig:epp_5_cycle} The ``5 star'' event arrangement of edges, shown after the event (a), and the corresponding pincushion diagram (b). A constructive approach, which takes an arbitrary ordering of edges  (c, grey lines) and attempts to maintain a valid solution with each additional line (d), runs into problems when it cannot alter a past result (e). The correct solution in this case (f,g) must be found globally, and happens to be the same as the GIE solution.}
+\end{figure}
+
+The failures of the GIE, brute force, and incremental approaches to the pincushion problem are disappointing. Ultimately the lack of proof that the events of the MWSS have well formed solutions is problematic to the definition of the MWSS. However we may take solace that these are very degenerate situations and solutions that do introduce zero length edges are common.
+
+\greybox{The pincushion problem was discussed with David Eppstein, author of \cite{Epp:98} and Antoine Vigneron, author of \cite{Cheng02}.}
+
+\FloatBarrier
+\section{Summary}
+
+In this chapter we have explored a certain class of skeletons, formed by allowing the edges of a 2D shape to move in a self-parallel manner. By observing intersection events as the edges collapse we are able to trace out the arcs of the skeletons. Indeed it is by the simulation of the edge movements that we are able to evaluation skeletons. We may go so far as to describe the skeleton as a ``procedural geometric construct''. However the fact that we will use such a construct for ``procedural modeling'' would make such a description less than helpful.
+
+
+
+By specifying different constraints over the speed of these edges, distinct classes of behaviour can be witnessed. Four varieties of the straight skeleton have been introduced -- the unweighted straight skeleton, the positively weighted skeleton, the negatively weighted straight skeleton, and the mixed weighted straight skeleton. These skeletons form a tree of generalisation as the requirements on the angle of the direction planes are relaxed; SS $\subseteq$ PWSS $\subseteq$ MWSS and NWSS $\subseteq$ MWSS. Of these different geometric constructs only the SS was well previously well described in the literature. 
+
+In the non-degenerate case of the of SS, PWSS and NWSS we have simplified existing algorithms by introducing a GIE that specifies a general behaviour given an arbitrary topology of collapsing edges. However each additional generalisation has also brought with it new degenerate cases which we have presented, and found resolution strategies for. These have included the parallel consecutive edge event, many edge degeneracy, point degeneracy and parallel adjcent edges.
+However in the deepest, most unlikely, degenerate cases we were unable to suggest a general solution for the MWSS, managing only to formulate the pincushion description. Although we tried, we were unable to create either a proof that the pincushion problem was solvable or not.
+
+The skeletons studied here also contain interesting properties, such as the SS splitting faces into two, the PWSS introducing holes into faces, and the MWSS allowing faces to merge together and split apart. We may also observe that many of the skeletons output resemble fragments of man made structures. The arcs between the faces of the output, the skeleton itself, serves as a polygonal partition of the polygon, influenced by a distance field. We take insipration from this fact in the following Chapter 4, where we use the arcs to partition city blocks into parcels. The offset 2D polygons generated in the shrinking process are reminsicent of man made arches or frames, while the 3D terrain model resembles building's roofs. In addition we find that it is possible to halt the evaluation of the MWSS at any point, creating a new form of extrusion between two plans. It is this observation that will lead us to the ideas in Chapter 5, using the MWSS for solid building modeling.
+
+
+
+
+
+
+%We now define several features of the MWSS that help us. The major axis, approaching edges and the sector properties.
+
+%The \emph{major axis} defines the direction that all chains of length one take. There may be more than one chain of length one in the MWSS, Fig.~\ref{fig:wss_example_topology}. However it is impossible for these chains to have more than one orientation in a single event as it occurs at a single point.
+
+%\begin{figure}
+%  \centering
+%  \def\svgwidth{0.5\columnwidth}
+%  \includesvg{12-skeleton/images/wss_major_axis}
+%  \caption{\label{fig:wss_major_axis}At an event (orange) we may not have more than one orientation of chains of length one. %If this were the case (above), there would be a point (red) which the 1-chains (green and blue) arrived at before the event. There would, therefore, have been another (red) event which combines these edges before they arrive at the first event (orange).}
+%\end{figure}

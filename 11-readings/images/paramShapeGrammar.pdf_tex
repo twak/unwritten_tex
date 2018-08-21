@@ -1,0 +1,69 @@
+%% Creator: Inkscape inkscape 0.48.3.1, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'paramShapeGrammar.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{409.36066169bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.44509084)%
+    \put(0,0){\includegraphics[width=\unitlength]{paramShapeGrammar.pdf}}%
+    \put(0.72510836,0.31278822){\color[rgb]{0,0,0}\rotatebox{44.13362194}{\makebox(0,0)[lb]{\smash{$(x_2,\;  y_2)$}}}}%
+    \put(0.87993412,0.26563706){\color[rgb]{0,0,0}\rotatebox{45}{\makebox(0,0)[lb]{\smash{$(x_3,\;  y_3)$}}}}%
+    \put(0.82377378,0.13260631){\color[rgb]{0,0,0}\rotatebox{-30.00000011}{\makebox(0,0)[lb]{\smash{$(x_4,\;  y_4)$}}}}%
+    \put(0.71520414,0.1210023){\color[rgb]{0,0,0}\rotatebox{45}{\makebox(0,0)[rb]{\smash{$(x_5,\;  y_5)$}}}}%
+    \put(0.64443568,0.20295185){\color[rgb]{0,0,0}\rotatebox{-30.00000011}{\makebox(0,0)[rb]{\smash{$(x_1,\;  y_1)$}}}}%
+    \put(0.66403683,0.24512729){\color[rgb]{0,0,0}\rotatebox{-30.00000011}{\makebox(0,0)[rb]{\smash{$(x_6,\;  y_6)$}}}}%
+    \put(0.81241596,0.28761962){\color[rgb]{0,0,0}\rotatebox{45}{\makebox(0,0)[lb]{\smash{$(x_7,\;  y_7)$}}}}%
+    \put(0.68543701,0.16728353){\color[rgb]{0,0,0}\rotatebox{45}{\makebox(0,0)[rb]{\smash{$(x_{10},\;  y_{10})$}}}}%
+    \put(0.83947572,0.17578649){\color[rgb]{0,0,0}\rotatebox{-30.00000011}{\makebox(0,0)[lb]{\smash{$(x_8,\;  y_8)$}}}}%
+    \put(0.78059351,0.11611921){\color[rgb]{0,0,0}\rotatebox{-30.00000011}{\makebox(0,0)[lb]{\smash{$(x_9,\;  y_9)$}}}}%
+    \put(0.22708031,0.31514511){\color[rgb]{0,0,0}\rotatebox{44.13362194}{\makebox(0,0)[lb]{\smash{$(x_2,\;  y_2)$}}}}%
+    \put(0.38190876,0.26799196){\color[rgb]{0,0,0}\rotatebox{45}{\makebox(0,0)[lb]{\smash{$(x_3,\;  y_3)$}}}}%
+    \put(0.32574622,0.13496172){\color[rgb]{0,0,0}\rotatebox{-30.00000011}{\makebox(0,0)[lb]{\smash{$(x_4,\;  y_4)$}}}}%
+    \put(0.21717807,0.12335631){\color[rgb]{0,0,0}\rotatebox{45}{\makebox(0,0)[rb]{\smash{$(x_5,\;  y_5)$}}}}%
+    \put(0.14299494,0.2175204){\color[rgb]{0,0,0}\rotatebox{-30.00000011}{\makebox(0,0)[rb]{\smash{$(x_1,\;  y_1)$}}}}%
+  \end{picture}%
+\endgroup%

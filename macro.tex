@@ -1,0 +1,101 @@
+\newcommand{\facade}{fa\c{c}ade}
+\newcommand{\Facade}{Fa\c{c}ade}
+\newcommand{\facades}{fa\c{c}ades}
+\newcommand{\Facades}{Fa\c{c}ades}
+
+
+\newcommand{\twak}    {\color{blue}}
+\newcommand{\kawt}    {\color{black}}
+
+\newcommand{\mymaketitle}
+{
+\null
+  \thispagestyle{empty}%
+  \vfill
+  \begin{center}\leavevmode
+       {\LARGE Making Things Bigger\par}
+\vskip 1em
+   {\large
+      \lineskip .5em
+      \begin{tabular}[t]{c}
+         Tom Kelly (twakelly@gmail.com)
+      \end{tabular}\par}
+  \vfill
+  Second year PhD report, Jan 2011
+  \vfill
+  \end{center}
+}
+
+\long\def\quote#1{
+\begin{center}
+\textit {``#1''}
+\end{center}
+}
+
+
+\long\def\greybox#1{%
+    \newbox\contentbox%
+    \newbox\bkgdbox%
+    \setbox\contentbox\hbox to \hsize{%
+        \vtop{
+            \kern\columnsep
+            \hbox to \hsize{%
+                \kern\columnsep%
+                \advance\hsize by -2\columnsep%
+                \setlength{\textwidth}{\hsize}%
+                \vbox{
+                    \parskip=\baselineskip
+                    \parindent=0bp
+                    #1
+                }%
+                \kern\columnsep%
+            }%
+            \kern\columnsep%
+        }%
+    }%
+    \setbox\bkgdbox\vbox{
+        \pdfliteral{0.85 0.85 0.85 rg}
+        \hrule width  \wd\contentbox %
+               height \ht\contentbox %
+               depth  \dp\contentbox
+        \pdfliteral{0 0 0 rg}
+    }%
+    \wd\bkgdbox=0bp%
+    \vbox{\hbox to \hsize{\box\bkgdbox\box\contentbox}}%
+    \vskip\baselineskip%
+}
+
+\long\def\codebox#1{%
+    \newbox\contentbox%
+    \newbox\bkgdbox%
+    \setbox\contentbox\hbox to \hsize{%
+        \vtop{
+            \kern\columnsep
+            \hbox to \hsize{%
+                \kern\columnsep%
+                \advance\hsize by -2\columnsep%
+                \setlength{\textwidth}{\hsize}%
+                \vbox{
+                    \parskip=\baselineskip
+                    \parindent=0bp
+                    \lstset{language=Pascal}
+                     #1
+                }%
+                \kern\columnsep%
+            }%
+            \kern\columnsep%
+        }%
+    }%
+    \setbox\bkgdbox\vbox{
+        \pdfliteral{0.85 0.85 0.85 rg}
+        \hrule width  \wd\contentbox %
+               height \ht\contentbox %
+               depth  \dp\contentbox
+        \pdfliteral{0 0 0 rg}
+    }%
+    \wd\bkgdbox=0bp%
+    \vbox{\hbox to \hsize{\box\bkgdbox\box\contentbox}}%
+    \vskip\baselineskip%
+}
+
+
