@@ -1,4 +1,4 @@
-This is the source for my old thesis ([pdf](https://drive.google.com/file/d/0B6r_mUgXfBLdUXRaNXJ2VzdVWms) | [doi](http://theses.gla.ac.uk/4975) | [blog](http://twak.blogspot.com/2014/02/unwritten-procedural-modeling-with.html) ). It includes a random assortment of .tex, .svg, and .blend files.
+This is the source for my old thesis ( [pdf](https://drive.google.com/file/d/0B6r_mUgXfBLdUXRaNXJ2VzdVWms) | [doi](http://theses.gla.ac.uk/4975) | [blog](http://twak.blogspot.com/2014/02/unwritten-procedural-modeling-with.html) ). It includes a random assortment of .tex, .svg, and .blend files.
 
 All contents not marked © other parties is released under the Creative Commons CC-BY 3.0 license.
 
